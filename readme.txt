@@ -6,16 +6,11 @@ Header image: Wikimedia Commons, Public Domain (http://commons.wikimedia.org/wik
 
 = TO DO =
 
- - custom header
- - custom backgrounds
  - custom colors (detect color contrast and auto-configure text color to mesh background choice)
- - post thumbnails
- - text styles
  - editor styles
  - post formats
  - screenshot
  - review translations
  - add widget descriptions
  - add footer widget regions
- - make responsive
  
