@@ -1,0 +1,123 @@
+.menu-toggle:before {
+	font-family: dashicons;
+	content: "\f333";
+	vertical-align: middle;
+	font-size: 1.6em;
+	line-height: 1;
+}
+
+.primary-menu, .secondary-menu {
+	margin: .5em 0;
+	padding: 0;
+	font-size: 1.1em;
+	position: relative;
+}
+
+.primary-menu {
+	background: #111;
+}
+
+.primary-menu ul, .secondary-menu ul {
+	margin: 0;
+	padding: 0 0 1px;
+	list-style-type: none;
+}
+
+.primary-menu a, .primary-menu a:visited, .secondary-menu a, .secondary-menu a:visited  {
+	display: block;
+	font-weight: 400;
+	position: relative;
+	text-align: left;
+}
+
+.primary-menu a, .primary-menu a:visited {
+	padding: .75em 1em;
+	text-decoration: none;
+	background: #111;
+	color: #fff;
+}
+
+.secondary-menu a {
+	margin: .5em;
+}
+
+.primary-menu li.current_page_item a {
+	background: #555;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.primary-menu li.current_page_item a:active, .primary-menu li.current_page_item a:focus {
+	background: #555;
+	color: #fff;
+}
+
+.primary-menu li.current_page_item li a {
+	text-decoration: none;
+}
+
+.primary-menu a:hover,.primary-menu a:active, .primary-menu a:focus, .primary-menu li.current_page_item a:hover {
+	background: #555;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.primary-menu li.current_page_item a:hover {
+	background: #000;
+	text-decoration: none; 
+}
+
+.primary-menu li, .secondary-menu li {
+	display: inline-block; 	
+	position: relative;
+}
+
+.primary-menu li li {
+	width: 100%;
+	position: relative;
+	z-index: 10;
+}
+
+.primary-menu li li a, .primary-menu li li a:link, .primary-menu li li a:visited {
+	width: 100%;
+	border-radius: 0!important;
+	float: none;
+	margin: 0;
+	padding: 8px;
+	border-bottom: 1px solid #666;
+	font-size: .95em;
+}
+
+.primary-menu li li a:hover, .primary-menu li li a:active, .primary-menu li li a:focus {
+	background: #555 !important;	
+}
+
+.primary-menu li li.current_page_item a {
+	background: #111;
+}
+
+.primary-menu li ul {
+	position: absolute;
+	width: 12em;
+	left: -999em;
+	padding: 0;	
+}
+
+.primary-menu li:hover ul, .primary-menu li:active ul, .primary-menu li:focus ul, .primary-menu li.focus ul, .focus ul {
+	left: auto;
+	display: block;
+}
+
+.primary-menu li:hover ul, .primary-menu li.focus ul {
+	left: auto;
+}
+
+.primary-menu ul ul ul {
+	position: relative;
+	left: 0;
+}
+
+.primary-menu ul ul ul li a {
+	background: #333;
+	color: #fff;
+}

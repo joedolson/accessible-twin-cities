@@ -1,0 +1,516 @@
+/*
+Theme Name: Accessible Twin Cities
+Theme URI: http://www.joedolson.com/articles/accessible-twin-cities/
+Version: 1.0
+Author: Joseph C Dolson
+Author URI: http://www.joedolson.com
+Description: Accessible Twin Cities is a theme. Woot woot.
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, editor-style, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
+*/
+/* general */
+@import url('css/reset.css');
+@import url('css/menu.css');
+
+/* Colors */
+.header { background-color: #fff; color: #333; }
+.sidebar { background-color: #fff; color: #333; }
+.content { background-color: #fff; color: #333; }
+.wrapper { background-color: rgba( 240,240,240, .85 ); color: #333; }
+.page-wrapper { background-color: #fff; color: #333; }
+
+body {
+	font-family: Raleway, Arial, Verdana, sans-serif;
+	text-align: center;
+	font-size: 62.5%;
+	background: #fff;
+}
+
+a {
+	color: #00d;
+	text-decoration: underline;
+}
+
+a:hover, a:focus, a:active {
+	color: #33f;
+	text-decoration: none;
+}
+
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+strong {
+	font-weight: 700;
+}
+
+pre, code, kbd, var, tt {
+	font-family: monospace;
+	font-size: 1.1em;
+	background-color: rgba( 0,0,0, .05 );
+	word-wrap: break-word;
+}
+
+pre { 
+	padding: .5em; 
+	overflow: scroll;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	font-size: 1.3em;
+	text-align: center;
+	box-shadow: 0 0 5px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+.page-wrapper {
+	padding: 1em;
+	text-align: left;
+	outline: 1px solid #ccc;
+}
+
+.sidebar ul {
+	list-style-type: none;
+}
+
+.post-wrapper ul, .post-wrapper ol { 
+	margin: 1em 2em;
+}
+
+.post-wrapper ol > li {
+	list-style-type: decimal;
+}
+
+.post-wrapper ul > li {
+	list-style-type: disc;
+}
+
+.post-wrapper li {
+	line-height: 1.5;
+}
+
+.post {
+	margin-bottom: 1em;
+}
+
+.post:after {
+	content: ''; 
+	display: table;
+	clear: both;
+}
+
+.post:last {
+	margin-bottom: 0;
+}
+
+.paginated {
+	margin: .5em 0;
+}
+
+.paginated a {
+	text-decoration: none;
+	background-color: rgba( 0,0,0,.07 );
+	padding: 3px;
+	outline: 1px solid;
+}
+
+.paginated a:hover, .paginated a:focus {
+	background-color: rgba( 0,0,0,.01 );
+	outline: 1px solid #ddd;
+}
+
+.featured-image img {
+	width: 100%;
+	height: auto;
+}
+
+address {
+	line-height: 1.5;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #aaa;
+}
+
+cite, em, address {
+	font-style: italic;
+}
+
+small {
+	font-size: .8em;
+}
+
+dl {
+	margin: 1em 0;
+}
+
+dt, dd {
+	margin: 0; 
+	padding: 0;
+	line-height: 1.5; 
+}
+
+dt {
+	font-weight: 700;
+	margin-top: 1em;
+}
+
+dt:first {
+	margin-top: 0;
+}
+
+.header {
+	padding: 1em 0 0;
+	line-height: 1.5;
+	outline: 1px solid #ccc;
+}
+
+.header .site-title {
+	font-size: 2em;
+}
+
+.header-image {
+	display: block;
+	width: 100% !important;
+	height: auto !important;
+}
+
+.header .site-title a {
+	text-decoration: none;
+}
+
+.header .site-title a:hover, .header .site-title a:focus {
+	text-decoration: underline;
+}
+
+.header .site-description {
+	font-size: 1.4em; 
+	text-transform: uppercase;
+	opacity: .95; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: .25em 0;
+	line-height: 1.4;
+}
+
+p {
+	padding: 0 0 1em;
+	line-height: 1.7;
+}
+
+.hentry p:last-of-type { padding-bottom: 0; }
+
+h1 { font-weight: 700; font-size: 2.4em; }
+h2 { font-size: 2em; }
+h3 { font-weight: 700; font-size: 1.8em; }
+h4 { font-weight: 700; font-size: 1.4em; }
+h5, h6 { font-weight: 700; }
+
+.meta {
+	border: 1px solid #eee;
+	box-shadow: 1px 1px 1px #eee;
+	padding: .5em;
+	margin-bottom: .5em;
+	line-height: 1.5;
+}
+
+/* icons */
+
+.dashicon { font-family: 'dashicons'; vertical-align: middle; }
+.dashicon.the-tags:before { content: "\f323"; }
+.dashicon.the-author:before { content: "\f110"; }
+.dashicon.the-category:before { content: "\f318"; }
+.dashicon.the-date:before { content: "\f145"; }
+.dashicon.prevpage:before { content: "\f340"; }
+.dashicon.nextpage:before { content: "\f344"; }
+
+.footer {
+	clear: both;
+	padding: 15px;
+}
+
+.searchform input{
+	font-size: 1.2em; 
+}
+
+.searchform input[type=text] {
+	width: 73%;
+}
+
+.searchform input[type=submit] {
+	width: 24%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table th, table td {
+	padding: .5em;
+}
+
+table th {
+	text-align: center;
+	background: #ddd;
+	color: #000;
+	font-weight: 700;
+	border: 1px solid #ccc;
+}
+
+table td {
+	border: 1px solid #eee;
+}
+
+caption {
+	font-weight: 700;
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+
+.post-content {
+	font-size: 1.1em;
+}
+
+.tag-aside, .tag-status, .tag-quote {
+	padding: 2em;
+}
+
+.tag-aside .post-content {
+	font-style: italic;
+}
+
+.tag-status .post-content {
+	font-size: 1.3em;
+}
+
+.tag-quote .post-content {
+	font-size: 1.3em;
+	padding: 1em;
+}
+
+.sticky {
+	background-color: rgba( 0,0,0,.1 );
+	color: #000;
+	padding: 1.5em;
+	font-size: 1.1em; 
+}
+.sticky .meta {
+	border: none;
+	box-shadow: 0px 0px 0px #000;
+	padding: 0;
+}
+
+#wp-calendar td {
+	text-align: center;
+	width: 14.2857%;
+}
+
+#wp-calendar a {
+	font-weight: 700; 
+	display: inline-block; 
+	height: 100%;
+	padding: .5em;
+	border-radius: 30px;
+	background: #e0e0e0;	
+}
+
+#wp-calendar a:hover, #wp-calendar a:focus {
+	background: #fff; 
+}
+
+.wp-caption {
+	text-align: center;
+	padding: 5px 0;
+	background: rgba( 0,0,0,.05 );
+}
+
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto 1em;
+}
+
+.alignnone, .alignnone img, .aligncenter, .aligncenter img, .alignleft, .alignleft img, .alignright, .alignright img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption-text {
+	font-size: .9em;
+	color: #111;
+	padding: 0 5px;
+	text-align: center;
+}
+
+#content .gallery-caption { 
+	text-align: left;
+	width: 70%;
+	margin: 0 auto!important;
+}
+
+.alignright .wp-caption-text {
+	text-align: right;
+}
+
+.alignleft .wp-caption-text {
+	text-align: left;
+}
+
+.post-content .twitter-tweet {
+	margin: 1em auto!important;
+}
+
+.more-link {
+	float: right;
+	font-size: .9em;
+	padding: 3px;
+	background-color: rgba( 0,0,0,.05 );
+}
+
+/* Comments */
+.comments-wrapper .commentlist, .comments-wrapper .commentlist ol {
+	margin: 0;
+}
+
+.comments-wrapper .commentlist ol {
+	margin: 0 0 1em 1em;
+}
+
+.comments-wrapper .commentlist li, .comments-wrapper .commentlist li li {
+	margin: 0 0 1em;
+	list-style-type: none;	
+}
+
+.comments-wrapper .commentlist .comment article ol li {
+	list-style-type: decimal;
+}
+
+.comment {
+	padding: 1em;
+}
+
+.navigation:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.nav-previous {
+	float: left;
+}
+
+.nav-next {
+	float: right;
+}
+
+.comment.bypostauthor {
+	background: #fff;
+	color: #111; 
+	outline: 1px solid #888;
+}
+
+.comment .reply {
+	margin: 0 0 1em;
+}
+
+.comment.even {
+	background-color: rgba( 0,0,0,.02 );
+}
+
+.comment .avatar {
+	float: left;
+	margin: 0 .5em .5em 0;
+}
+
+.comment .comment-meta {
+	font-size: 1.2em;
+}
+
+.comment .fn {
+	font-weight: 700;
+}
+
+label[for=comment], label[for=email], label[for=author], label[for=url] { display: block; }
+textarea[id=comment] { width: 100%; }
+
+
+
+/* Utility Classes */
+.clear:after { content: ''; display: table; clear: both; }
+.screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; }
+.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background: #fff; font-size: 1.1em; }
+
+/* Mobile first */
+/* Triggered when wider than 480px */
+@media only screen and (min-width: 480px) {
+	button.menu-toggle { display: none; }
+	.post-wrapper { padding: 1em; }
+	.content, .sidebar {
+		width: 100%;
+		float: none; 
+	}
+	.header .site-title {
+		font-size: 3em;
+	}
+}
+
+/* Triggered when wider than 800px */
+@media only screen and (min-width: 800px) {
+	.content {
+		width: 66.666666%;
+		float: right;
+	}
+	.sidebar {
+		width: 33.333333%;
+	}
+	.header .site-title {
+		font-size: 4em;
+	}	
+}
+
+/* Triggered when wider than 1000px */
+@media only screen and (min-width: 1000px) {
+	.wrapper {
+		width: 960px;
+		padding: 1em;		
+	}
+}
+
+/* Triggered when wider than 1360px */
+@media only screen and (min-width: 1360px) {
+	.wrapper {
+		width: 1280px;
+		padding: 2em;
+	}
+	.post-wrapper {
+		padding: 2em;
+	}
+	.post-content {
+		font-size: 1.3em;	
+	}
+}
+

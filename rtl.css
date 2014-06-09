@@ -1,0 +1,67 @@
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.page-wrapper {
+	text-align: right;
+}
+
+#content .gallery-caption { 
+	text-align: right;
+}
+
+.alignright .wp-caption-text {
+	text-align: right;
+}
+
+.more-link {
+	float: left;
+}
+
+.comments-wrapper .commentlist ol {
+	margin: 0 1em 1em;
+}
+
+.nav-previous {
+	float: right;
+}
+
+.nav-next {
+	float: left;
+}
+
+.comment .avatar {
+	float: right;
+	margin: 0 0 .5em .5em;
+}
+
+.primary-menu a, .primary-menu a:visited, .secondary-menu a, .secondary-menu a:visited  {
+	text-align: right;
+}
+
+.primary-menu li ul {
+	right: -999em;
+}
+
+.primary-menu li:hover ul, .primary-menu li:active ul, .primary-menu li:focus ul, .primary-menu li.focus ul, .focus ul {
+	right: auto;
+}
+
+.primary-menu li:hover ul, .primary-menu li.focus ul {
+	right: auto;
+}
+
+.primary-menu ul ul ul {
+	right: 0;
+}
+
+/* Utility Classes */
+.screen-reader-text:focus { right: 1em;  }
+
+/* Triggered when wider than 800px */
+@media only screen and (min-width: 800px) {
+	.content {
+		float: left;
+	}
+}
