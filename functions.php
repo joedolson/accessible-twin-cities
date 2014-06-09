@@ -47,9 +47,12 @@ register_sidebar( array(
 
 load_theme_textdomain( 'accessible-twin-cities', get_template_directory() . '/lang' );
 
+// for demo purposes, I want this overridden by the inaccessible child; but will change after.
+require_once( get_stylesheet_directory_uri() . '/inc/a11y.php' );
+//require_once( get_template_directory_uri() . '/inc/a11y.php' );
+
 if ( ! isset( $content_width ) ) $content_width = 600; 
 if ( is_singular() ) wp_enqueue_script( "comment-reply" );
-
 
 add_filter( 'wp_title', 'atc_home_title' );
 function atc_home_title( $title ) {
@@ -104,24 +107,6 @@ function atc_custom_header_image( $value ) {
 	if ( get_header_image() ) {
 		// until header image customizer supports alt attributes, leave alt attribute blank.
 		echo "<img class='header-image' src='".get_header_image()."' width='".get_custom_header()->width."' height='".get_custom_header()->height."' alt='' />";
-	}
-}
-
-add_filter('pre_get_posts','atc_filter');
-function atc_filter($query) {
-	if ( isset($_GET['s']) && $_GET['s'] == '' ) { 
-		$query->query_vars['s'] = '&#160;';
-		$query->set( 'is_search', 1 );
-		add_action('template_redirect','atc_search_error');
-	}
-	return $query;
-}
-
-function atc_search_error() {
-	$search = locate_template( 'search.php' );
-	if ( $search ) {
-		load_template( $search );
-		exit;
 	}
 }
 
