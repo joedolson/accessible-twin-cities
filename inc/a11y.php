@@ -27,3 +27,29 @@ function atc_search_error() {
 		exit;
 	}
 }
+
+add_filter( 'get_the_excerpt', 'atc_custom_excerpt_more',100 );
+add_filter( 'excerpt_more', 'atc_excerpt_more',100 );
+add_filter( 'the_content_more_link', 'atc_content_more', 100 );
+
+function atc_continue_reading( $id ) {
+    return '<a class="continue" href="'.get_permalink( $id ).'">Finish Reading<span> "'.get_the_title($id).'"</span></a>';
+}
+
+function atc_excerpt_more($more) {
+	global $id;
+	return '&hellip; '.atc_continue_reading( $id );
+}
+
+function atc_content_more($more) {
+	global $id;
+	return atc_continue_reading( $id );
+}
+
+function atc_custom_excerpt_more($output) {
+	if (has_excerpt() && !is_attachment()) {
+		global $id;
+		$output .= ' '.atc_continue_reading( $id ); // insert a blank space.
+	}
+	return $output;
+}

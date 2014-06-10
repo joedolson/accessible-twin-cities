@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-    <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
+    <?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
 		<div class='featured-image'><?php the_post_thumbnail(); ?></div>
 		<?php

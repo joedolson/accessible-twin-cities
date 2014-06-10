@@ -3,6 +3,10 @@ body {
 	unicode-bidi: embed;
 }
 
+blockquote cite {
+	text-align: left;
+}
+
 .page-wrapper {
 	text-align: right;
 }

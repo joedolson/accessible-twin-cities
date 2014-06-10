@@ -11,6 +11,7 @@ register_sidebar( array(
 
 register_sidebar( array(
 	'name'=>'Home Sidebar',
+	'description' => __( 'Add up to 5 widgets to show on the bottom of your front page.', 'accessible-twin-cities' ),
 	'id' => 'ps2',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -20,6 +21,7 @@ register_sidebar( array(
 
 register_sidebar( array(
 	'name'=>'Page Sidebar',
+	'description' => __( 'Widgets in this region will appear on WordPress Pages.', 'accessible-twin-cities' ),
 	'id' => 'ps3',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -29,6 +31,7 @@ register_sidebar( array(
 
 register_sidebar( array(
 	'name'=>'Global Sidebar - Top',
+	'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'accessible-twin-cities' ),
 	'id' => 'ps4',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -38,6 +41,7 @@ register_sidebar( array(
 
 register_sidebar( array(
 	'name'=>'Global Sidebar - Bottom',
+	'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'accessible-twin-cities' ),
 	'id' => 'ps5',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
