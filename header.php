@@ -5,6 +5,7 @@
 <head>
 	<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
+	<meta name="viewport" content="width=device-width" />		
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -14,8 +15,10 @@
 		<div id="header" class='header'>
 			<header>
 				<?php apply_filters( 'atc_top_of_header', '' ); ?>								
-				<div class='site-title'><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
-				<div class='site-description'><?php bloginfo('description'); ?></div>
+				<div class="text-header">
+					<div class='site-title'><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
+					<div class='site-description'><?php bloginfo('description'); ?></div>
+				</div>
 				<?php apply_filters( 'atc_end_of_header', '' ); ?>	
 			</header>
 		</div>

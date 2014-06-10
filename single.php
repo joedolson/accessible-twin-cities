@@ -4,7 +4,9 @@
     <?php while (have_posts()) : the_post(); ?>
 	<div <?php post_class(); ?>>
 		<section>
-			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
+			<?php if ( has_post_thumbnail() ) { ?>
+				<div class='featured-image'><?php the_post_thumbnail(); ?></div>
+			<?php } ?>
 			<h1 class="post-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 			<?php get_template_part( 'post-meta' ); ?>
 			<div class='post-content' id="post-<?php the_ID(); ?>">

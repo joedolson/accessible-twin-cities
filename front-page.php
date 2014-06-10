@@ -4,8 +4,9 @@
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
 		<section>
-		<div class='featured-image'><?php the_post_thumbnail(); ?></div>
-		<?php
+		<?php if ( has_post_thumbnail() ) { ?>
+			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
+		<?php }
 			$post_link = ''; 
 			if ( get_the_title() == '' ) {
 				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'accessible-twin-cities' ), get_the_permalink() ) );

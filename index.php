@@ -3,8 +3,9 @@
     <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
-		<div class='featured-image'><?php the_post_thumbnail(); ?></div>
-		<?php
+		<?php if ( has_post_thumbnail() ) { ?>
+			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
+		<?php }
 			/* Handles posts without titles */
 			$post_link = ''; 
 			if ( get_the_title() == '' ) {

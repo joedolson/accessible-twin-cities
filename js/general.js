@@ -1,12 +1,12 @@
 (function( $ ) { 'use strict';
 	// menu toggle
 	var width = $( window ).width();
-	if ( width <= 480 ) {
+	if ( width <= 800 ) {
 		$( '.primary-menu nav').hide();
 	}
 	$( window ).resize(function() {
 		var width = $( window ).width();
-		if ( width <= 480 ) {
+		if ( width <= 800 ) {
 			$( '.primary-menu nav').hide();
 		} else {
 			$( '.primary-menu nav').show();
