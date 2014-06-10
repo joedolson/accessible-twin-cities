@@ -3,6 +3,7 @@
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
 	<div <?php post_class(); ?>>
+		<section>
 		<div class='featured-image'><?php the_post_thumbnail(); ?></div>
 		<?php
 			$post_link = ''; 
@@ -24,6 +25,7 @@
 		<!--
 		<?php trackback_rdf(); ?>
 		-->
+		</section>
 	</div>
     <?php endwhile; ?>
 

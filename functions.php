@@ -48,8 +48,8 @@ register_sidebar( array(
 load_theme_textdomain( 'accessible-twin-cities', get_template_directory() . '/lang' );
 
 // for demo purposes, I want this overridden by the inaccessible child; but will change after.
-require_once( get_stylesheet_directory_uri() . '/inc/a11y.php' );
-//require_once( get_template_directory_uri() . '/inc/a11y.php' );
+require_once( get_stylesheet_directory() . '/inc/a11y.php' );
+//require_once( get_template_directory() . '/inc/a11y.php' );
 
 if ( ! isset( $content_width ) ) $content_width = 600; 
 if ( is_singular() ) wp_enqueue_script( "comment-reply" );
@@ -97,8 +97,8 @@ if ( function_exists( 'register_nav_menu' ) ) {
 
 add_action('wp_print_styles', 'atc_load_styles');
 function atc_load_styles() {
-		wp_register_style('Lato', 'http://fonts.googleapis.com/css?family=Raleway:400,700');
-		wp_enqueue_style( 'atc-style', get_stylesheet_uri(), array( 'dashicons', 'Lato' ), '1.0' );	
+		wp_register_style('Raleway', 'http://fonts.googleapis.com/css?family=Raleway:400,700');
+		wp_enqueue_style( 'atc-style', get_stylesheet_uri(), array( 'dashicons', 'Raleway' ), '1.0' );	
 }
 
 
@@ -121,7 +121,6 @@ function atc_heading_title( $title, $id ) {
 
 add_action( 'wp_enqueue_scripts','atc_enqueue_scripts' );
 function atc_enqueue_scripts() {
-	wp_enqueue_script( 'atc.dropdown', get_template_directory_uri() . '/js/jquery.dropdown.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'atc.a11y', get_template_directory_uri() . '/js/a11y.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'atc.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'atc.skiplinks', get_template_directory_uri() . '/js/skiplinks.js', array(), '1.0.0', true );

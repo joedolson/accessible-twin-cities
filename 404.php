@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 		<div class="post-content">
+			<section>
 			<h1><?php _e( 'Error: Page not found!', 'accessible-twin-cities' ); ?></h1>
 			<p>
 			<?php _e( 'Sorry, the page you requested could not be located.', 'accessible-twin-cities' ); ?>
@@ -11,6 +12,7 @@
 			<p>
 			<?php bloginfo( 'author' ); ?>
 			</p>
+			</section>
 		</div>
 
 <?php get_sidebar(); ?>
