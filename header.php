@@ -31,6 +31,6 @@
 		</div>
 		<?php apply_filters( 'atc_after_primary_menu', '' ); ?>
 		<div id="page" class='page-wrapper'>
-			<div id="content" class="content clear">
+			<div id="content" class="content clear" tabindex="-1">
 				<main role="main">
 					<div class='post-wrapper'>
