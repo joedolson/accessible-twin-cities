@@ -34,7 +34,13 @@ Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, bl
 	margin: .5em;
 }
 
-/* Colors */
+/* 
+ *	Colors 
+ *	All major background and text colors are defined here. 
+ *	For accessibility, color contrasts should always meet a minimum of 4.5 luminosity ratio.
+ *	https://www.joedolson.com/tools/color-contrast-compare.php?color=%23333&color2=%23fff&alpha=1
+ *
+*/
 .header { background-color: #fff; color: #333; }
 .sidebar { background-color: #fff; color: #333; }
 .content { background-color: #fff; color: #333; }
@@ -48,6 +54,13 @@ body {
 	background-color: #344f92;
 }
 
+/* 
+ * Text decoration
+ * In addition to defining colors with sufficient contrast, there should be a secondary differentiator for focusable elements.
+ * A text-decoration that alternates between underlined and not is easy to use and of high visibility for sighted keyboard users.
+ * Remember to always define styles for :focus as well as :hover.
+*/
+
 a {
 	color: #00d;
 	text-decoration: underline;
@@ -57,6 +70,10 @@ a:hover, a:focus, a:active {
 	color: #33f;
 	text-decoration: none;
 }
+
+/* 
+ *	General HTML element styles. 
+*/
 
 sub, sup {
 	font-size: 75%;
@@ -139,7 +156,7 @@ pre {
 	clear: both;
 }
 
-.post:last {
+.post:nth-last-of-type(1) {
 	margin-bottom: 0;
 }
 
@@ -169,7 +186,7 @@ address {
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted #aaa;
+	border-bottom: 1px dotted rgba( 0,0,0,.4 );
 }
 
 cite, em, address {
@@ -199,7 +216,7 @@ blockquote {
 	padding: 2em;
 	font-size: 1.2em;
 	margin-bottom: 1em;
-	background: rgba( 0,0,0,.05 );
+	background-color: rgba( 0,0,0,.05 );
 }
 
 blockquote cite {
@@ -208,7 +225,7 @@ blockquote cite {
 	font-weight: 700;
 }
 
-dt:first {
+dt:nth-of-type(1) {
 	margin-top: 0;
 }
 
@@ -308,14 +325,14 @@ table th, table td {
 
 table th {
 	text-align: center;
-	background: #ddd;
+	background-color: rgba( 0,0,0,.15 );
 	color: #000;
 	font-weight: 700;
-	border: 1px solid #ccc;
+	border: 1px solid rgba( 0,0,0,.2 );
 }
 
 table td {
-	border: 1px solid #eee;
+	border: 1px solid rgba( 0,0,0,.1 );
 }
 
 caption {
@@ -369,17 +386,17 @@ caption {
 	height: 100%;
 	padding: .5em;
 	border-radius: 30px;
-	background: #e0e0e0;	
+	background-color: rgba( 0,0,0,.1 );	
 }
 
 #wp-calendar a:hover, #wp-calendar a:focus {
-	background: #fff; 
+	background-color: rgba( 255, 255, 255, 1 ); 
 }
 
 .wp-caption {
 	text-align: center;
 	padding: 5px 0;
-	background: rgba( 0,0,0,.05 );
+	background-color: rgba( 0,0,0,.05 );
 }
 
 .alignright {
@@ -477,7 +494,7 @@ caption {
 }
 
 .comment.bypostauthor {
-	background: #fff;
+	background-color: rgba( 255, 255, 255, 1);
 	color: #111; 
 	outline: 1px solid #888;
 }
@@ -502,7 +519,7 @@ caption {
 }
 
 .comment .comment-reply-link {
-	background: rgba( 0,0,0,.9 );
+	background-color: rgba( 0,0,0,.9 );
 	color: #fff;
 	border-radius: 4px;
 	border: 1px solid;
@@ -510,7 +527,7 @@ caption {
 }
 
 .comment .comment-reply-link:focus, .comment .comment-reply-link:hover {
-	background: rgba( 0,0,0,.7 );
+	background-color: rgba( 0,0,0,.7 );
 	border: 1px solid #333;
 }
 
@@ -528,7 +545,7 @@ textarea[id=comment] { width: 100%; }
 /* Utility Classes */
 .clear:after { content: ''; display: table; clear: both; }
 .screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; }
-.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background: #fff; font-size: 1.1em; }
+.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; }
 
 /* Menu Toggle */
 

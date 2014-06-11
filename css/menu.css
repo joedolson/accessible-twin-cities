@@ -1,21 +1,21 @@
 @media only screen and (min-width: 800px) {
 	/* Colors */
-	.primary-menu, .primary-menu a, .primary-menu li li.current_page_item a {
+	.primary-menu, .primary-menu a, .primary-menu li.current_page_item > li a {
 		background: #111;
-		color: #fff;	
-	}
-
-	.primary-menu li.current_page_item a , .primary-menu li.current_page_item a:active, .primary-menu li.current_page_item a:focus, .primary-menu a:hover,.primary-menu a:active, .primary-menu a:focus, .primary-menu li.current_page_item a:hover, .primary-menu li li a:hover, .primary-menu li li a:active, .primary-menu li li a:focus {
-		background: #555;
 		color: #fff;
 	}
 
+	.primary-menu li.current_page_item > a , .primary-menu li.current_page_item > li a:active, .primary-menu li.current_page_item > li a:focus, .primary-menu a:hover,.primary-menu a:active, .primary-menu a:focus, .primary-menu li.current_page_item a:hover, .primary-menu li li a:hover, .primary-menu li li a:active, .primary-menu li li a:focus {
+		background: #555;
+		color: #fff;
+	}
+	
 	.primary-menu ul ul ul li a {
 		background: #333;
 		color: #fff;
 	}
 
-	.primary-menu li.current_page_item a:hover {
+	.primary-menu li.current_page_item > a:hover {
 		background: #000;
 		color: #fff;
 	}
@@ -45,7 +45,7 @@
 		text-decoration: none;
 	}
 
-	.primary-menu li.current_page_item a {
+	.primary-menu li.current_page_item > a {
 		text-decoration: underline;
 	}
 
@@ -57,7 +57,7 @@
 		text-decoration: underline;
 	}
 
-	.primary-menu li.current_page_item a:hover {
+	.primary-menu li.current_page_item > a:hover {
 		text-decoration: none; 
 	}
 
