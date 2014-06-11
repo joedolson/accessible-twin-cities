@@ -13,26 +13,19 @@
 	} );
 	
 	// fix cases where blog post photos have title attributes but not alt attributes
-    // this is caused by WP making authors think only title is required
+    // this is caused by WP using title for title but not requiring alt attribute through version 3.6
     $('img[title]').not(':has([alt])').each(function () {
         var theTitle = $(this).attr('title');
         $(this).attr('alt', theTitle).removeAttr('title');
     });	
 	
-	/**
-     *
-     * @param selector
-     */
-    jQuery.fn.removeRedundantTitleAttributes = function () {
+    $('*').each( function () {
         var self = $(this);
-        var theTitle = $.trim(self.attr('title'));
-        var theText = $.trim(self.text());
-        if (theTitle === theText) {
-            self.removeAttr('title');
+        var theTitle = $.trim( self.attr( 'title' ) );
+        var theText = $.trim( self.text() );
+        if ( theTitle === theText ) {
+            self.removeAttr( 'title' );
         }
-    };
-	
-	// Remove redundant title attributes from everything
-	$('*').removeRedundantTitleAttributes();
+    } );
 	
 }(jQuery));

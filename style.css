@@ -108,6 +108,11 @@ pre {
 	list-style-type: none;
 }
 
+.sidebar li {
+	line-height: 1.5;
+	margin: 0 0 .25em;
+}
+
 .post-wrapper ul, .post-wrapper ol { 
 	margin: 1em 2em;
 }
