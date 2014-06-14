@@ -23,6 +23,7 @@ Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, bl
 	text-align: left;
 	padding: .25em 1em;
 	line-height: 1.5;
+	font-size: 1.2em;
 }
 
 .secondary-menu li {
@@ -69,6 +70,10 @@ a {
 a:hover, a:focus, a:active {
 	color: #33f;
 	text-decoration: none;
+}
+
+a:focus {
+	outline: 1px solid rgba( 200, 200, 240, .8 );
 }
 
 /* 
@@ -545,8 +550,8 @@ textarea[id=comment] { width: 100%; }
 /* Utility Classes */
 .clear:after { content: ''; display: table; clear: both; }
 .screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; }
-.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; }
-
+.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; }
+.admin-bar .skiplink a:focus { margin-top: 32px; }
 /* Menu Toggle */
 
 .menu-toggle {

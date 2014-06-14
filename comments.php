@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation" aria-labelledby="comment-navigation">
-			<h1 class="screen-reader-text section-heading" id="comment-navigation"><?php _e( 'Comment navigation', 'accessible-twin-cities' ); ?></h1>
+			<h3 class="screen-reader-text" id="comment-navigation"><?php _e( 'Comment navigation', 'accessible-twin-cities' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'accessible-twin-cities' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'accessible-twin-cities' ) ); ?></div>
 		</nav>
