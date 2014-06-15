@@ -4,7 +4,8 @@
 <?php
 	$atc_options = get_option( 'atc_options' );
 ?>
-<div id="sidebar" role="complementary" class="sidebar clear">
+<div id="sidebar" role="complementary" class="sidebar clear" aria-labelledby="sidebar-header">
+	<h1 class="screen-reader-text" id="sidebar-header"><?php _e( 'Sidebar', 'accessible-twin-cities' ); ?></h1>
 	<?php apply_filters( 'atc_top_of_sidebar', '' ); ?>
 	<?php if ( is_front_page() ) {
 		$sidebars = wp_get_sidebars_widgets();
@@ -12,7 +13,7 @@
 		$count = count( $home_sidebar );
 		$class = " widgets-$count";
 	} else {
-		$class = "widgets";
+		$class = " widgets";
 	}	?>
 	<div class='post-wrapper<?php echo $class; ?>'>
 	<?php 

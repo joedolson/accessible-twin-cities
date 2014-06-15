@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
     <?php if ( have_posts() ) : ?>
+	<?php if ( !is_singular() ) { ?>
+		<h1 class="screen-reader-text"><?php _e( 'Posts','accessible-twin-cities' ); ?></h1>
+	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
 		<?php if ( has_post_thumbnail() ) { ?>
@@ -12,7 +15,7 @@
 				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'accessible-twin-cities' ), get_the_permalink() ) );
 			} else {
 		?>
-		<h1 class="post-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h2 class="post-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<?php 
 			}	
 			get_template_part( 'post-meta' ); ?>

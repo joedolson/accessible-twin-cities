@@ -13,7 +13,7 @@
 	<div id="wrapper" class='wrapper'>
 		<?php apply_filters( 'atc_before_header', '' ); ?>
 		<div id="header" class='header'>
-			<header>
+			<header role="banner">
 				<?php apply_filters( 'atc_top_of_header', '' ); ?>								
 				<div class="text-header">
 					<div class='site-title'><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
@@ -25,7 +25,8 @@
 		<?php apply_filters( 'atc_before_primary_menu', '' ); ?>		
 		<div class='primary-menu'>
 			<button class='menu-toggle' title='<?php _e( 'Open Menu', 'accessible-twin-cities' ); ?>'><span class="screen-reader-text"><?php _e( 'Open Menu','accessible-twin-cities' ); ?></span></button>
-			<nav role="navigation" aria-label='<?php _e( 'Primary Navigation', 'accessible-twin-cities' ); ?>'>
+			<nav role="navigation" aria-label='<?php _e( 'Primary Menu ', 'accessible-twin-cities' ); ?>'>
+			<h1 class="screen-reader-text"><?php _( 'Primary Menu', 'accessible-twin-cities' ); ?></h1>
 			<?php wp_nav_menu( array( 'theme_location'=>'primary' ) ); ?>
 			</nav>
 		</div>
