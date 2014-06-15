@@ -6,11 +6,30 @@ Header image: Wikimedia Commons, Public Domain (http://commons.wikimedia.org/wik
 
 Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway)
 
+
+= Resources =
+
+Color Contrast Testing:
+
+http://contrast-finder.tanaguru.com
+https://www.joedolson.com/tools/color-contrast-compare.php
+https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en-US
+
+General Testing Tools
+
+https://addons.mozilla.org/en-US/firefox/addon/juicy-studio-accessibility-too/
+http://wave.webaim.org
+
+Headings Map Add on:
+
+https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
+
 = TO DO =
 
+ - Comments, comments, comments.
  - custom colors (detect color contrast and auto-configure text color to mesh background choice)
  - editor styles
  - post formats
  - screenshot
- - review translations
+ - review translation prep
  

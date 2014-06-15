@@ -24,7 +24,13 @@
 		</div>
 		<?php apply_filters( 'atc_before_primary_menu', '' ); ?>		
 		<div class='primary-menu'>
-			<button class='menu-toggle' title='<?php _e( 'Open Menu', 'accessible-twin-cities' ); ?>'><span class="screen-reader-text"><?php _e( 'Open Menu','accessible-twin-cities' ); ?></span></button>
+			<button class='menu-toggle' title='<?php _e( 'Open Menu', 'accessible-twin-cities' ); ?>'><span class="screen-reader-text"><?php _e( 'Open Menu','accessible-twin-cities' ); ?></span></button>]
+			<?php
+				/*
+				 * Aria Label: Provides a label to differentiate multiple navigation landmarks
+				 * hidden heading: provides navigational structure to site for scanning with screen reader
+				 */
+			?>
 			<nav role="navigation" aria-label='<?php _e( 'Primary Menu ', 'accessible-twin-cities' ); ?>'>
 			<h1 class="screen-reader-text"><?php _( 'Primary Menu', 'accessible-twin-cities' ); ?></h1>
 			<?php wp_nav_menu( array( 'theme_location'=>'primary' ) ); ?>
