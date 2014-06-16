@@ -2,14 +2,16 @@
 
     <?php if ( have_posts() ) : ?>
 	<?php if ( !is_singular() ) { ?>
-		<h1 class="screen-reader-text"><?php _e( 'Posts','accessible-twin-cities' ); ?></h1>
+		<h1 class="screen-reader-text"><?php atc_archive_title(); ?></h1>
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
 		<?php }
-			/* Handles posts without titles */
+			/* 
+			 * Handles posts without titles 
+			 */
 			$post_link = ''; 
 			if ( get_the_title() == '' ) {
 				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'accessible-twin-cities' ), get_the_permalink() ) );
@@ -22,7 +24,7 @@
 		<div class='post-content' id="post-<?php the_ID(); ?>">
 			<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
 			<?php echo $post_link; ?>
-			<?php edit_post_link('Edit this entry.', '<p class="edit">', '</p>'); ?>
+			<?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>
 		</div> 
 
 		<div class="comments">

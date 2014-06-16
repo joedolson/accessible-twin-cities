@@ -1,21 +1,33 @@
-@media only screen and (min-width: 800px) {
-	/* Colors */
+/*
+ * Styles only apply on screen widths over 800px; below 800px menu button applies.
+ */
+
+@media only screen and ( min-width: 800px ) {
+	/* 
+	 * Colors
+	 * Base colors are high contrast but less than 21:1, to avoid triggering contrast sensitivity issues for users with dyslexia.
+	 */
 	.primary-menu, .primary-menu a, .primary-menu li.current_page_item > li a {
 		background: #111;
-		color: #fff;
+		color: #e6e6e6;
 	}
-
+	/*
+	 * Color change for current pages, :hover states, and :focus states change both background and foreground colors.
+	 */
 	.primary-menu li.current_page_item > a , .primary-menu li.current_page_item > li a:active, .primary-menu li.current_page_item > li a:focus, .primary-menu a:hover,.primary-menu a:active, .primary-menu a:focus, .primary-menu li.current_page_item a:hover, .primary-menu li li a:hover, .primary-menu li li a:active, .primary-menu li li a:focus {
 		background: #555;
 		color: #fff;
 	}
-	
+	/*
+	 * Second-level dropdown menus are nested within their parents, 
+	 * but have a color difference to make the parent/child relationship more obvious
+	 */
 	.primary-menu ul ul ul li a {
 		background: #333;
 		color: #fff;
 	}
 
-	.primary-menu li.current_page_item > a:hover {
+	.primary-menu li.current_page_item > a:hover, .primary-menu li.current_page_item > a:focus {
 		background: #000;
 		color: #fff;
 	}

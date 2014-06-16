@@ -1,8 +1,13 @@
 <?php get_header(); ?>
 
     <?php if ( have_posts() ) : ?>
-	<?php if ( !is_page() ) { ?>
-		<h1 class="screen-reader-text"><?php _e( 'Posts','accessible-twin-cities' ); ?></h1>
+	<?php if ( !is_page() ) { 
+		/*
+		 *	Add hidden text to provide page structure. Page structure helps non-sighted users navigate the page, 
+		 *	but also informs screen readers about how your information relates.
+		 */
+	?>
+		<h1 class="screen-reader-text"><?php atc_archive_title(); ?></h1>
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
@@ -23,7 +28,7 @@
 				<div class='post-content' id="post-<?php the_ID(); ?>">
 					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
 					<?php echo $post_link; ?>
-					<?php edit_post_link('Edit this entry.', '<p class="edit">', '</p>'); ?>			
+					<?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>			
 				</div> 
 				
 			<?php

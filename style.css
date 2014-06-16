@@ -7,13 +7,17 @@ Author URI: http://www.joedolson.com
 Description: Accessible Twin Cities is a theme. Woot woot.
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, editor-style, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
+Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 */
-/* general */
+
+/* Import Reset and Menu styles */
 @import url('css/reset.css');
 @import url('css/menu.css');
 
-/* Menu for mobile */
+/* 
+ * Menu for mobile 
+ * Styles for menu don't apply below 800px; base styles.
+ */
 .primary-menu ul {
 	margin: 1em 2em;
 }
@@ -36,8 +40,9 @@ Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, bl
 
 /* 
  *	Colors 
- *	All major background and text colors are defined here. 
- *	For accessibility, color contrasts should always meet a minimum of 4.5 luminosity ratio.
+ *	All major background and text colors outside of menu.css are defined here. 
+ *	Border and shadow colors are defined below using rgba values.
+ *	Color contrast must meet a minimum of 4.5:1 luminosity ratio, or 3:1 for text rendered larger than 18pt/14pt bold
  *	https://www.joedolson.com/tools/color-contrast-compare.php?color=%23333&color2=%23fff&alpha=1
  *
 */
@@ -48,26 +53,63 @@ Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, bl
 .page-wrapper { background-color: #fff; color: #333; }
 
 body {
-	font-family: Raleway, Arial, Verdana, sans-serif;
-	text-align: center;
-	font-size: 62.5%;
 	background-color: #344f92;
+	color: #fff;
 }
 
-/* 
- * Text decoration
- * In addition to defining colors with sufficient contrast, there should be a secondary differentiator for focusable elements.
- * A text-decoration that alternates between underlined and not is easy to use and of high visibility for sighted keyboard users.
- * Remember to always define styles for :focus as well as :hover.
-*/
-
-a {
+a { 
 	color: #00d;
-	text-decoration: underline;
 }
 
 a:hover, a:focus, a:active {
 	color: #33f;
+}
+
+table th {
+	text-align: center;
+	background-color: rgba( 0,0,0,.15 );
+	color: #000;
+}
+
+.sticky {
+	background-color: rgba( 0,0,0,.1 );
+	color: #000;
+}
+
+.wp-caption {
+	background-color: rgba( 0,0,0,.05 );
+	color: #111;	
+}
+
+.comment.bypostauthor {
+	background-color: rgba( 255, 255, 255, 1);
+	color: #111; 
+}
+
+.comment .comment-reply-link {
+	background-color: rgba( 0,0,0,.9 );
+	color: #fff;
+}
+
+
+.menu-toggle:hover, .menu-toggle:focus {
+	background-color: #333;
+	color: #fff;
+}
+
+/* 
+ * Text decoration for links: underlines, outlines, etc.
+ * In addition to defining colors with sufficient contrast, there should be a secondary differentiator for focusable elements.
+ * A text-decoration that alternates between underlined/none is easy to use and of high visibility for sighted keyboard users.
+ * Always define styles for :focus as well as :hover.
+*/
+
+
+a {
+	text-decoration: underline;
+}
+
+a:hover, a:focus, a:active {
 	text-decoration: none;
 }
 
@@ -77,8 +119,14 @@ a:focus {
 }
 
 /* 
- *	General HTML element styles. 
-*/
+ * General styling for major HTML elements
+ */
+
+body {
+	font-family: Raleway, Arial, Verdana, sans-serif;
+	text-align: center;
+	font-size: 62.5%;
+}
 
 sub, sup {
 	font-size: 75%;
@@ -124,7 +172,8 @@ pre {
 .page-wrapper {
 	padding: 1em;
 	text-align: left;
-	outline: 1px solid #ccc;
+	outline: 1px solid rgb( 200, 200, 200 );
+	outline: 1px solid rgba( 255, 255, 255, .7 );
 }
 
 .sidebar ul {
@@ -295,8 +344,11 @@ h5, h6 { font-weight: 700; }
 	line-height: 1.5;
 }
 
-/* icons */
-
+/* 
+ *	dashicons 
+ *	dashicons and similar choices are inaccessible by themselves, since they provide no alternate text.
+ *	These dashicons are supplemental, added before the terms that they represent. 
+ */
 .dashicon { font-family: 'dashicons'; vertical-align: middle; }
 .dashicon.the-tags:before { content: "\f323"; }
 .dashicon.the-author:before { content: "\f110"; }
@@ -335,8 +387,6 @@ table th, table td {
 
 table th {
 	text-align: center;
-	background-color: rgba( 0,0,0,.15 );
-	color: #000;
 	font-weight: 700;
 	border: 1px solid rgba( 0,0,0,.2 );
 }
@@ -373,8 +423,6 @@ caption {
 }
 
 .sticky {
-	background-color: rgba( 0,0,0,.1 );
-	color: #000;
 	padding: 1em;
 	margin: -1em -1em 0;
 }
@@ -405,8 +453,7 @@ caption {
 
 .wp-caption {
 	text-align: center;
-	padding: 5px 0;
-	background-color: rgba( 0,0,0,.05 );
+	padding: 5px 0;	
 }
 
 .alignright {
@@ -431,7 +478,6 @@ caption {
 
 .wp-caption-text {
 	font-size: .9em;
-	color: #111;
 	padding: 0 5px;
 	text-align: center;
 }
@@ -504,9 +550,7 @@ caption {
 }
 
 .comment.bypostauthor {
-	background-color: rgba( 255, 255, 255, 1);
-	color: #111; 
-	outline: 1px solid #888;
+	outline: 1px solid rgba( 0,0,0,.6 );
 }
 
 .comment.even {
@@ -529,8 +573,6 @@ caption {
 }
 
 .comment .comment-reply-link {
-	background-color: rgba( 0,0,0,.9 );
-	color: #fff;
 	border-radius: 4px;
 	border: 1px solid;
 	padding: 2px 6px;
@@ -557,17 +599,12 @@ textarea[id=comment] { width: 100%; }
 .screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; }
 .screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; }
 .admin-bar .skiplink a:focus { margin-top: 32px; }
-/* Menu Toggle */
 
+/* Menu Toggle */
 .menu-toggle {
 	font-size: 3em;
 	margin: .25em 0;
 	padding: 0;
-}
-
-.menu-toggle:hover, .menu-toggle:focus {
-	background-color: rgb( 40,40,40 ); background-color: rgba( 0,0,0,.8 );
-	color: #fff;
 }
 
 .menu-toggle:before {
@@ -613,7 +650,7 @@ textarea[id=comment] { width: 100%; }
 		width: 66.666666%;
 		float: right;
 	}
-	.home.page .content {
+	.home.page .content, .page-template-page-full-width-php .content {
 		width: 100%;
 		float: none;
 	}
@@ -623,7 +660,7 @@ textarea[id=comment] { width: 100%; }
 	.sidebar .post-wrapper {
 		padding-right: 2em;
 	}
-	.home.page .sidebar {
+	.home.page .sidebar, .page-template-page-full-width-php .sidebar {
 		width: 100%;
 	}
 	.home.page .sidebar .post-wrapper {

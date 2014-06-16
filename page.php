@@ -3,12 +3,15 @@
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
 		<section>
+		<?php if ( has_post_thumbnail() ) { ?>
+			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
+		<?php } ?>		
 		<h1 class="page-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 
 		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
 		</div> 
-		<p class="edit"><?php edit_post_link('Edit this entry.', '', ''); ?></p>
+		<p class="edit"><?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '', '' ); ?></p>
 		</section>
 
     <?php endwhile; ?>

@@ -1,9 +1,6 @@
 			</div>
 		</main>
 	</div> <?php // #content .content ?>
-<?php
-	$atc_options = get_option( 'atc_options' );
-?>
 <div id="sidebar" role="complementary" class="sidebar clear" aria-labelledby="sidebar-header">
 	<h1 class="screen-reader-text" id="sidebar-header"><?php _e( 'Sidebar', 'accessible-twin-cities' ); ?></h1>
 	<?php apply_filters( 'atc_top_of_sidebar', '' ); ?>

@@ -42,7 +42,7 @@
 	endif; ?>
 
     <div class="prev_next">
-    <?php posts_nav_link('&nbsp; &nbsp;', __( '&larr; Previous Posts','accessible-twin-cities' ), __( 'Next Posts &rarr;','accessible-twin-cities' ) ); ?>
+    <?php posts_nav_link( '&nbsp; &nbsp;', __( '&larr; Previous Posts','accessible-twin-cities' ), __( 'Next Posts &rarr;','accessible-twin-cities' ) ); ?>
     </div>
 
 <?php get_sidebar(); ?>

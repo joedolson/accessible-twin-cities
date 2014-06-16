@@ -24,8 +24,6 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-wrapper">
 
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
@@ -39,6 +37,13 @@ if ( post_password_required() ) {
 		</ol><!-- .commentlist -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php
+		/*
+		 * Add aria labelled by and a section header to provide easy access to comment navigation. 
+		 * Comments label specifies what is being navigate for easy comprehension, and includes directional arrows
+		 * to help cue sighted users with learning disabilities concerning the use of the links
+		 */
+		?>
 		<nav id="comment-nav-below" class="navigation" role="navigation" aria-labelledby="comment-navigation">
 			<h3 class="screen-reader-text" id="comment-navigation"><?php _e( 'Comment navigation', 'accessible-twin-cities' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'accessible-twin-cities' ) ); ?></div>
