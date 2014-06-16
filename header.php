@@ -56,7 +56,8 @@
 			</nav>
 		</div>
 		<?php apply_filters( 'atc_after_primary_menu_role', '' ); ?>
-		<div id="page" class='page-wrapper'>
+		<div id="page" class='page-wrapper clear'>
 			<div id="content" class="content clear" tabindex="-1">
 				<main role="main">
 					<div class='post-wrapper'>
+					<?php apply_filters( 'atc_before_posts', '' ); ?>

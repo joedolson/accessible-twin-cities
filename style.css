@@ -650,12 +650,18 @@ textarea[id=comment] { width: 100%; }
 		width: 66.666666%;
 		float: right;
 	}
+	.page-template-page-sidebar-right-php .content {
+		float: left;
+	}
 	.home.page .content, .page-template-page-full-width-php .content {
 		width: 100%;
 		float: none;
 	}
 	.sidebar {
 		width: 33.333333%;
+	}
+	.page-template-page-sidebar-right-php .sidebar {
+		float: right;
 	}
 	.sidebar .post-wrapper {
 		padding-right: 2em;
