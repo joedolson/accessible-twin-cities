@@ -30,9 +30,11 @@
 					<?php echo $post_link; ?>
 					<?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>			
 				</div> 
-				
-			<?php
-			} else { ?>
+				<!--
+				<?php trackback_rdf(); ?>
+				-->
+
+			<?php } else { ?>
 				<h2 class="post-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 				<?php
 				get_template_part( 'post-meta' ); ?>
@@ -43,10 +45,7 @@
 					<?php edit_post_link('Edit this entry.', '<p class="edit">', '</p>'); ?>			
 				</div> 
 
-				<!--
-				<?php trackback_rdf(); ?>
-				--><?php
-			} ?>
+			<?php } ?>
 		</section>
 	</div>
     <?php endwhile; ?>

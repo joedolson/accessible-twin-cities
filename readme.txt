@@ -26,9 +26,7 @@ https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
 
 = TO DO =
 
- - Comments, comments, comments.
  - custom colors (detect color contrast and auto-configure text color to mesh background choice)
- - editor styles
  - post formats
  - screenshot
  - review translation prep

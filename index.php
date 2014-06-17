@@ -32,9 +32,14 @@
 			<?php comments_popup_link( __( 'Comments (0)', 'accessible-twin-cities' ), __( 'Comments (1)', 'accessible-twin-cities' ), __( 'Comments (%)', 'accessible-twin-cities' ) ); ?>
 		</div>
 
-		<!--
-		<?php trackback_rdf(); ?>
-		-->
+		<?php
+		/* Only render trackback_rdf when appropriate and allowed */
+		if ( is_single() ) {
+			echo '<!--';
+			trackback_rdf();
+			echo '-->' . "\n";
+		}
+		?>
 	</div>
     <?php endwhile; ?>
 

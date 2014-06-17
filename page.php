@@ -14,6 +14,10 @@
 		<p class="edit"><?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '', '' ); ?></p>
 		</section>
 
+		<!--
+		<?php trackback_rdf(); ?>
+		-->
+		
     <?php endwhile; ?>
 
 	<?php 

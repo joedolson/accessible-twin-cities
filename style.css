@@ -4,7 +4,7 @@ Theme URI: http://www.joedolson.com/articles/accessible-twin-cities/
 Version: 1.0
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
-Description: Accessible Twin Cities is a theme. Woot woot.
+Description: Accessible Twin Cities is part of the Cities project, a project to create themes that will help you build accessible web sites. Accessible Twin Cities includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your own theme! Out of the box, Accessible Twin Cities is responsive and flexible, letting you build the web site you need for blogging or business.
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
@@ -174,6 +174,12 @@ pre {
 	text-align: left;
 	outline: 1px solid rgb( 200, 200, 200 );
 	outline: 1px solid rgba( 255, 255, 255, .7 );
+}
+/*
+ * I want to be able to move focus to #content, but I don't need to see that.
+ */
+#content:focus {
+	outline: none;
 }
 
 .sidebar ul {
