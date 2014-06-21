@@ -51,8 +51,7 @@ if ( ! function_exists( 'capitol_setup' ) ) {
 		add_theme_support( 'custom-background', apply_filters( 'atc_custom_background_args', array(
 				'default-color' => 'f5f5f5',
 				'default-image' => '',
-			) ) );
-
+			) ) );	
 	}
 }
 

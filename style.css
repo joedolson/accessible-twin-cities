@@ -91,10 +91,17 @@ table th {
 	color: #fff;
 }
 
+.menu-toggle {
+	border: 1px solid #aaa;
+	background-color: #ccc;
+	color: #000;
+	border-radius: 2px;
+}
 
 .menu-toggle:hover, .menu-toggle:focus {
 	background-color: #333;
 	color: #fff;
+	border: 1px solid #666;
 }
 
 /* 

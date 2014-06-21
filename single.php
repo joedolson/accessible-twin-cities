@@ -22,8 +22,8 @@
 				$args = array( 
 							'before'=>'<p class="paginated">',
 							'next_or_number' => 'next',
-							'nextpagelink' => 'Next Page<span class="dashicon nextpage"></span>',
-							'previouspagelink' => '<span class="dashicon prevpage"></span>Previous Page'
+							'nextpagelink' => 'Next Page<span class="dashicon nextpage" aria-hidden="true"></span>',
+							'previouspagelink' => '<span class="dashicon prevpage" aria-hidden="true"></span>Previous Page'
 						);
 				wp_link_pages( $args ); 
 			?>
