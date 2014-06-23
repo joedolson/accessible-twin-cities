@@ -373,12 +373,14 @@ h5, h6 { font-weight: 700; }
 .widget h2:before { font-family: 'dashicons'; vertical-align: middle; padding-right: .25em; }
 .widget_meta h2:before {  content: "\f107"; }
 .widget_search h2:before { content: "\f179"; }
-.widget_archive h2:before, .widget_calendar h2:before  { content: "\f145"; }
+.widget_archive h2:before, .widget_calendar h2:before, .widget_recent_entries h2:before  { content: "\f145"; }
 .widget_categories h2:before { content: "\f318"; }
 .widget_tag_cloud h2:before { content: "\f323"; }
 .widget_nav_menu h2:before, .widget_pages h2:before { content: "\f333"; }
 .widget_links h2:before { content: "\f103"; }
 .widget_recent_comments h2:before { content: "\f101"; }
+.widget_rss h2:before { content: "\f303"; }
+.widget_rss h2 img { display: none; }
 
 .footer {
 	clear: both;
@@ -627,6 +629,10 @@ textarea[id=comment] { width: 100%; }
 	line-height: 1;
 }
 
+.home .featured-image, .page .featured-image {
+	margin: -1em -1em 0;
+}
+
 /* Mobile first */
 /* Triggered when wider than 480px */
 @media only screen and (min-width: 480px) {
@@ -663,6 +669,9 @@ textarea[id=comment] { width: 100%; }
 		width: 66.666666%;
 		float: right;
 	}
+	.home .featured-image, .page .featured-image {
+		margin: -2em -2em 0;
+	}	
 	.page-template-page-sidebar-right-php .content {
 		float: left;
 	}

@@ -15,7 +15,7 @@
 			</div> 
 			<!--
 			<?php trackback_rdf(); ?>
-			-->			
+			-->
 		</section>
 		<div class="comments">
 			<?php 
