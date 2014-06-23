@@ -51,6 +51,103 @@ function atc_continue_reading( $id ) {
     return '<a class="continue" href="'.get_permalink( $id ).'">Finish Reading<span> "'.get_the_title( $id ).'"</span></a>';
 }
 
+/*
+ * Invert colors
+ * This function takes a hexadecimal value and selects the contrasting light or dark color that gives the best contrast with that color.
+*/
+function atc_inverse_color( $color ){
+    $color = str_replace('#', '', $color);
+    if ( strlen( $color ) != 6 ) { return '#000000'; }
+    $rgb = '';
+	$total = 0; 
+	$red = 0.299 * ( 255 - hexdec(substr($color,0,2)) );
+	$green = 0.587 * ( 255 - hexdec(substr($color,2,2)) );
+	$blue = 0.114 * ( 255 - hexdec(substr($color,4,2)) );
+	$luminance = 1 - ( ( $red + $green + $blue )/255 );
+	if ( $luminance < 0.5 ) {
+		return '#ffffff';
+	} else {
+		return '#000000';
+	}
+}
+
+/* 
+ * Shift Colors
+ * This function takes a given hexadecimal color and shifts it a step lighter or darker, depending on the current color band.
+ * Used with theme customizer to prevent non-WCAG compliant color combinations.
+ */
+function atc_shift_color( $color ) {
+	$color = str_replace('#','',$color);
+	$rgb = ''; // Empty variable
+	$percent = ( atc_inverse_color( $color ) == '#ffffff' ) ? -20 : 20;
+    $per = $percent/100*255; // Creates a percentage to work with. Change the middle figure to control colour temperature
+    if  ($per < 0 ) {
+        // DARKER
+        $per =  abs($per); // Turns Neg Number to Pos Number
+        for ($x=0;$x<3;$x++) {
+            $c = hexdec(substr($color,(2*$x),2)) - $per;
+            $c = ($c < 0) ? 0 : dechex($c);
+            $rgb .= (strlen($c) < 2) ? '0'.$c : $c;
+        }
+    } else {
+        // LIGHTER        
+        for ($x=0;$x<3;$x++) {         
+            $c = hexdec(substr($color,(2*$x),2)) + $per;
+            $c = ($c > 255) ? 'ff' : dechex($c);
+            $rgb .= (strlen($c) < 2) ? '0'.$c : $c;
+        }
+    }
+    return '#'.$rgb; 	
+}
+
+/* 
+ * Tests whether two hex colors meet color contrast requirements up to WCAG AA for regular text.
+ * @uses atc_luminosity, atc_hex2rgb
+ */
+function atc_compare_contrast( $bg, $fg ) {
+	$rgb1 = atc_hex2rgb( $fg );
+	$rgb2 = atc_hex2rgb( $bg );
+	$luminosity = atc_luminosity( $rgb1[0], $rgb2[0], $rgb1[1], $rgb2[1], $rgb1[2], $rgb2[2] );
+	return  ( $luminosity >= 4.5 ) ? true : false;
+}
+
+
+function atc_luminosity($r,$r2,$g,$g2,$b,$b2) {
+	$RsRGB = $r/255;
+	$GsRGB = $g/255;
+	$BsRGB = $b/255;
+	$R = ($RsRGB <= 0.03928) ? $RsRGB/12.92 : pow(($RsRGB+0.055)/1.055, 2.4);
+	$G = ($GsRGB <= 0.03928) ? $GsRGB/12.92 : pow(($GsRGB+0.055)/1.055, 2.4);
+	$B = ($BsRGB <= 0.03928) ? $BsRGB/12.92 : pow(($BsRGB+0.055)/1.055, 2.4);
+
+	$RsRGB2 = $r2/255;
+	$GsRGB2 = $g2/255;
+	$BsRGB2 = $b2/255;
+	$R2 = ($RsRGB2 <= 0.03928) ? $RsRGB2/12.92 : pow(($RsRGB2+0.055)/1.055, 2.4);
+	$G2 = ($GsRGB2 <= 0.03928) ? $GsRGB2/12.92 : pow(($GsRGB2+0.055)/1.055, 2.4);
+	$B2 = ($BsRGB2 <= 0.03928) ? $BsRGB2/12.92 : pow(($BsRGB2+0.055)/1.055, 2.4);
+
+	if ($r+$g+$b <= $r2+$g2+$b2) {	
+		$l2 = (.2126 * $R + 0.7152 * $G + 0.0722 * $B);
+		$l1 = (.2126 * $R2 + 0.7152 * $G2 + 0.0722 * $B2);
+	} else {
+		$l1 = (.2126 * $R + 0.7152 * $G + 0.0722 * $B);
+		$l2 = (.2126 * $R2 + 0.7152 * $G2 + 0.0722 * $B2);	
+	}
+	$luminosity = round(($l1 + 0.05)/($l2 + 0.05),2);
+	return $luminosity;
+}
+
+function atc_hex2rgb($color){
+	$color = str_replace('#', '', $color);
+	if (strlen($color) != 6){ return array(0,0,0); }
+	$rgb = array();
+	for ($x=0;$x<3;$x++){
+		$rgb[$x] = hexdec(substr($color,(2*$x),2));
+	}
+	return $rgb;
+}
+
 /* 
  * Breadcrumb navigation support.
  * Breadcrumbs are important to accessibility because they provide contextual orientation for navigation.

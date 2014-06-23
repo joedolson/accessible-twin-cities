@@ -68,12 +68,10 @@ a:hover, a:focus, a:active {
 table th {
 	text-align: center;
 	background-color: rgba( 0,0,0,.15 );
-	color: #000;
 }
 
 .sticky {
 	background-color: rgba( 0,0,0,.1 );
-	color: #000;
 }
 
 .wp-caption {

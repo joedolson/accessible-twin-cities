@@ -3,8 +3,8 @@
  * Capitol functions and definitions
  * @package capitol
  */
-add_action( 'after_setup_theme', 'capitol_setup' );
-if ( ! function_exists( 'capitol_setup' ) ) {
+add_action( 'after_setup_theme', 'atc_setup' );
+if ( ! function_exists( 'atc_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -12,7 +12,7 @@ if ( ! function_exists( 'capitol_setup' ) ) {
 	 * before the init hook. The init hook is too late for some features, such as indicating
 	 * support post thumbnails.
 	 *
-	 * To override capitol_setup() in a child theme, add your own capitol_setup to your child theme's
+	 * To override atc_setup() in a child theme, add your own atc_setup to your child theme's
 	 * functions.php file.
 	 *
 	 * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
@@ -26,7 +26,7 @@ if ( ! function_exists( 'capitol_setup' ) ) {
 	 *
 	 * @since Capitol 1.0
 	 */
-	function capitol_setup() {
+	function atc_setup() {
 	
 		global $content_width;
 		if ( ! isset( $content_width ) ) {
@@ -55,9 +55,9 @@ if ( ! function_exists( 'capitol_setup' ) ) {
 	}
 }
 
-add_action( 'widgets_init', 'capitol_widgets_init' );
-if ( ! function_exists( 'capitol_widgets_init' ) ) {
-	function capitol_widgets_init() {
+add_action( 'widgets_init', 'atc_widgets_init' );
+if ( ! function_exists( 'atc_widgets_init' ) ) {
+	function atc_widgets_init() {
 		register_sidebar( array(
 			'name'=>'Post Sidebar',
 			'description' => __( 'Widgets in this region will appear on all posts and post archives', 'accessible-twin-cities' ),
@@ -111,7 +111,7 @@ if ( ! function_exists( 'capitol_widgets_init' ) ) {
 }
 // for demo purposes, I want this overridden by the inaccessible child; but will change after.
 require_once( get_stylesheet_directory() . '/inc/a11y.php' );
-//require_once( get_template_directory() . '/inc/a11y.php' );
+require_once( get_template_directory() . '/inc/customizer.php' );
 
 add_filter( 'wp_title', 'atc_home_title' );
 function atc_home_title( $title ) {
@@ -131,12 +131,65 @@ if ( function_exists( 'register_nav_menu' ) ) {
 	);	
 }
 
-add_action('wp_print_styles', 'atc_load_styles');
+add_action( 'wp_print_styles', 'atc_load_styles' );
 function atc_load_styles() {
 		wp_register_style('Raleway', 'http://fonts.googleapis.com/css?family=Raleway:400,700');
 		wp_enqueue_style( 'atc-style', get_stylesheet_uri(), array( 'dashicons', 'Raleway' ), '1.0' );	
 }
 
+/* 
+ * Check for customizer color settings. 
+ * If set, check whether links can be blue against that background. If not, use calculated inverse color. 
+ */
+add_action( 'wp_head', 'atc_customizer_styles' );
+function atc_customizer_styles() {
+
+	$header = atc_generate_custom_styles( 'header', '#ffffff' );
+	$sidebar = atc_generate_custom_styles( 'sidebar', '#ffffff' );
+	$content = atc_generate_custom_styles( 'content', '#ffffff' );
+	$wrapper = atc_generate_custom_styles( 'wrapper', '#dddddd' );
+	$menu = atc_generate_custom_styles( 'primary-menu', '#111111' );
+	$pw = atc_generate_custom_styles( 'page-wrapper', '#ffffff' );
+
+	if ( $header || $sidebar || $content || $wrapper || $pw || $menu ) {
+		?>
+		<style>
+			<?php echo "$wrapper"; ?>
+			<?php echo "$pw"; ?>
+			<?php echo "$header"; ?>
+			<?php echo "$menu"; ?>
+			<?php echo "$sidebar"; ?>
+			<?php echo "$content"; ?>
+		</style>
+		<?php
+	}
+}
+
+function atc_generate_custom_styles( $setting, $default ) {
+	$value = $color = '';
+	if ( $setting == 'primary-menu' ) {
+		$get_setting = 'menu'; 
+	} else if ( $setting == 'page-wrapper' ) { 
+		$get_setting = 'pw'; 
+	} else {
+		$get_setting = $setting;
+	}
+	
+	if ( $setting == 'primary-menu' ) {
+		$value = ( get_theme_mod( 'atc_'.$get_setting.'_bg' ) && get_theme_mod( 'atc_'.$get_setting.'_bg' ) != $default ) ? "\n.$setting, .$setting a { background-color: ".get_theme_mod( 'atc_'.$get_setting.'_bg' )."; }" : false;
+	} else {
+		$value = ( get_theme_mod( 'atc_'.$get_setting.'_bg' ) && get_theme_mod( 'atc_'.$get_setting.'_bg' ) != $default ) ? "\n.$setting { background-color: ".get_theme_mod( 'atc_'.$get_setting.'_bg' )."; }" : false;
+	}
+	if ( $value ) { 
+		$viable = atc_compare_contrast( get_theme_mod( 'atc_'.$get_setting.'_bg' ), apply_filters( 'atc_custom_link_color','#0000dd' ) );
+		if ( $viable ) { 
+			$color = "\n.$setting { color: ".atc_inverse_color( get_theme_mod( 'atc_'.$get_setting.'_bg' ) )."; }\n.$setting a { color: #0000dd; }";
+		} else {
+			$color = "\n.$setting, .$setting a { color: ".atc_inverse_color( get_theme_mod( 'atc_'.$get_setting.'_bg' ) )."; }"; 
+		}
+	}
+	return $value.$color;
+}
 
 add_filter( 'atc_end_of_header', 'atc_custom_header_image' );
 function atc_custom_header_image( $value ) {

@@ -40,7 +40,6 @@ https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
 
  - custom colors (detect color contrast and auto-configure text color to mesh background choice)
  - post formats
- - screenshot
  - review translation prep
  - Figure out how to hide the custom header text color field
  
