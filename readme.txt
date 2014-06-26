@@ -24,7 +24,6 @@ Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway)
 == TO DO ==
 
  - post formats
- - review translation prep
  - Figure out how to hide the custom header text color field
  
 == Translations ==

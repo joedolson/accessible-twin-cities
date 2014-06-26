@@ -281,6 +281,11 @@ dt {
 	margin-top: 1em;
 }
 
+embed {
+	display: block;
+	margin: 1em auto;
+}
+
 blockquote {
 	padding: 2em;
 	font-size: 1.2em;
@@ -367,6 +372,10 @@ h5, h6 { font-weight: 700; }
 .dashicon.the-date:before { content: "\f145"; }
 .dashicon.prevpage:before { content: "\f340"; }
 .dashicon.nextpage:before { content: "\f344"; }
+.dashicon.video:before { content: "\f234"; }
+.dashicon.audio:before { content: "\f127"; }
+.dashicon.image:before { content: "\f306"; }
+.dashicon.gallery:before { content: "\f232"; }
 
 .widget h2:before { font-family: 'dashicons'; vertical-align: middle; padding-right: .25em; }
 .widget_meta h2:before {  content: "\f107"; }

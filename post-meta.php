@@ -10,5 +10,8 @@
 			<span class="the-author dashicon" aria-hidden="true"></span> <?php the_author_link();
 			if ( get_the_tags() ) { ?> &bull; 
 				<?php the_tags( '<span class="the-tags dashicon" aria-hidden="true"></span> ', ', ', '' ); 
-			} ?>
+			} 
+			if ( get_post_format() ) { ?>
+				 &bull; <span class="<?php echo get_post_format(); ?> dashicon" aria-hidden="true"></span> <a href="<?php echo esc_url( get_post_format_link( get_post_format() ) ); ?>"><?php echo get_post_format_string( get_post_format() ); ?></a>
+			<?php } ?>
 	</div>

@@ -6,27 +6,13 @@
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
-		<?php if ( has_post_thumbnail() ) { ?>
-			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
-		<?php }
-			/* 
-			 * Handles posts without titles 
-			 */
-			$post_link = ''; 
-			if ( get_the_title() == '' ) {
-				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'accessible-twin-cities' ), get_the_permalink() ) );
-			} else {
-		?>
-		<h2 class="post-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-		<?php 
-			}	
-			get_template_part( 'post-meta' ); ?>
-		<div class='post-content' id="post-<?php the_ID(); ?>">
-			<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
-			<?php echo $post_link; ?>
-			<?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>
-		</div> 
-
+		<?php
+			$format = get_post_format();
+			if ( $format === false ) {
+				$format = 'format';
+			}
+			get_template_part( 'format', $format );
+		?>	
 		<div class="comments">
 			<?php wp_link_pages(); ?>
 			<?php comments_popup_link( __( 'Comments (0)', 'accessible-twin-cities' ), __( 'Comments (1)', 'accessible-twin-cities' ), __( 'Comments (%)', 'accessible-twin-cities' ) ); ?>
