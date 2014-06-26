@@ -17,24 +17,9 @@ Accessible Twin Cities is part of the Cities project, a project to create themes
 
 Header image: Wikimedia Commons, Public Domain (http://commons.wikimedia.org/wiki/Category:Saint_Paul,_Minnesota#mediaviewer/File:St._Paul%2C_Minnesota%2C_c1900%2C_panorama.jpg)
 
+Screenshot photo: Personal photo. I hereby declare it GPL. Cheers.
+
 Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway)
-
-== Resources ==
-
-Color Contrast Testing:
-
-http://contrast-finder.tanaguru.com
-https://www.joedolson.com/tools/color-contrast-compare.php
-https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en-US
-
-General Testing Tools
-
-https://addons.mozilla.org/en-US/firefox/addon/juicy-studio-accessibility-too/
-http://wave.webaim.org
-
-Headings Map Add on:
-
-https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
 
 == TO DO ==
 
@@ -66,6 +51,23 @@ Nothing yet!
 = You created this theme as a demo theme; can I use it for my site as it is? =
 
 Absolutely. This is a full-fledged, highly extensible theme, and you should be able to create a great web site using it. It's not just a demo!
+
+= Where can I find some useful accessibility resources? =
+
+'''Color Contrast Testing:'''
+
+http://contrast-finder.tanaguru.com
+https://www.joedolson.com/tools/color-contrast-compare.php
+https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en-US
+
+'''General Testing Tools:'''
+
+https://addons.mozilla.org/en-US/firefox/addon/juicy-studio-accessibility-too/
+http://wave.webaim.org
+
+'''Headings Map Add on:'''
+
+https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
 
 == Screenshots ==
 
