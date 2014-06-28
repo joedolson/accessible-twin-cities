@@ -24,6 +24,7 @@ Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway)
 == TO DO ==
 
  - import editor.css into main stylesheet
+ - add social media toolbar
  - Figure out how to hide the custom header text color field
  
 == Translations ==

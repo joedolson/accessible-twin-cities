@@ -35,7 +35,7 @@
 	endif; ?>
 
     <div class="prev_next">
-    <?php posts_nav_link( '&nbsp; &nbsp;', __( '&larr; Previous Posts','accessible-twin-cities' ), __( 'Next Posts &rarr;','accessible-twin-cities' ) ); ?>
+    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Post','accessible-twin-cities' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Post %s','accessible-twin-cities' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
     </div>
 
 <?php get_sidebar(); ?>
