@@ -58,7 +58,8 @@ if ( ! function_exists( 'atc_setup' ) ) {
 		register_nav_menus( array( 
 				'primary' => __( 'Main Menu', 'accessible-twin-cities' ),
 				'secondary' => __( 'Footer Menu', 'accessible-twin-cities' ),
-				'site-map' => __( 'Site Map', 'accessible-twin-cities' )
+				'site-map' => __( 'Site Map', 'accessible-twin-cities' ),
+				'social-networks' => __( 'Social Networks', 'accessible-twin-cities' )
 			)
 		);		
 		
@@ -132,6 +133,16 @@ function atc_home_title( $title ) {
 		return $title . get_bloginfo( 'name' );
 	}
 	return $title;
+}
+
+add_filter( 'atc_end_of_header', 'atc_social_media_menu' );
+function atc_social_media_menu( $return ) {
+	if ( has_nav_menu( 'social-networks' ) ) {
+		$return = "<div class='social-networks' role='navigation' aria-label='Social Media'>";
+		$return .= wp_nav_menu( array( 'theme_location'=>'social-networks', 'fallback_cb'=>'', 'echo'=>false, 'link_before'=>'<span class="screen-reader-text">', 'link_after'=>'</span>' ) );
+		$return .= "</div>";
+	}
+	echo $return;
 }
 
 add_action( 'wp_print_styles', 'atc_load_styles' );
@@ -208,7 +219,7 @@ function atc_enqueue_scripts() {
 	wp_enqueue_script( 'atc.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}	
+	}
 }
 
 function atc_archive_title( $display = true ) {	

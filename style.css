@@ -111,6 +111,8 @@ body {
 	font-size: 62.5%;
 }
 
+.header, .sidebar, .content, .wrapper, .page-wrapper, .hentry { position: relative; }
+
 .wrapper {
 	width: 100%;
 	margin: 0 auto;
@@ -356,6 +358,19 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 	margin: 1em auto!important;
 }
 
+/* Social Networks */
+.social-networks { position: absolute; bottom: 0; right: 0; background-color: rgb( 255,255,255 ); background-color: rgba( 255,255,255,.8 ); line-height: 1; border-radius: 4px 0 0 0; }
+.social-networks li { display: inline-block; }
+.social-networks a:before { font-family: dashicons; vertical-align: middle; }
+.social-networks a span { font-family: Raleway, Helvetica, Arial, sans-serif; }
+
+.social-networks a[href*="twitter.com"]:before { content: "\f301"; color: #55acee; }
+.social-networks a[href*="facebook.com"]:before { content: "\f304"; color: #4c66a4; }
+.social-networks a[href*="plus.google.com"]:before { content: "\f462"; color: #dd4b39; }
+
+.social-networks a { text-decoration: none; font-size: 4em; height: 3em; width: 3em; }
+.social-networks a:hover, .social-networks a:focus { background: #fff; }
+
 /* Comments */
 .comments-wrapper .commentlist, .comments-wrapper .commentlist ol {
 	margin: 0;
@@ -482,7 +497,7 @@ textarea[id=comment] { width: 100%; }
 	
 	.sticky {
 		padding: 2em;
-		margin: -2em -2em 0;
+		margin: -2em -2em 0 -1em;
 	}
 	
 	.header .site-title {
@@ -549,8 +564,9 @@ textarea[id=comment] { width: 100%; }
 		background: rgba( 0,0,0,.05 );
 	}
 	.header .site-title {
-		font-size: 4em;
-	}	
+	font-size: 4em;
+	}
+	.social-networks li { display: list-item; }
 }
 
 /* Triggered when wider than 1000px */
