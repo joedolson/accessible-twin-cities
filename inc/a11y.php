@@ -175,7 +175,11 @@ function atc_breadcrumbs() {
 	$crumb = sprintf( __( '<i>You are here:</i> %s', 'accessible-twin-cities' ), $link );
 	$breadcrumbs[] = $crumb;
 	if ( is_category() || is_single() ) {
-		$breadcrumbs[] = '<span class="breadcrumb category">'.get_the_category_list( ', ' ).'</span>'; 
+		if ( is_attachment() ) {
+			$breadcrumbs[] = '<span class="breadcrumb parent"><a href="'.get_permalink( $post->post_parent ).'">'.get_the_title( $post->post_parent ).'</a></span>';
+		} else {
+			$breadcrumbs[] = '<span class="breadcrumb category">'.get_the_category_list( ', ' ).'</span>'; 
+		}
 		if ( is_single() ) {
 			$breadcrumbs[] = '<span class="breadcrumb single">'.get_the_title().'</span>';
 		}
@@ -207,7 +211,7 @@ function atc_breadcrumbs() {
 		$breadcrumbs[] = "<span class=\"breadcrumb search-results\">". sprintf( __( 'Search Results for &ldquo;%s&rdquo;', 'accessible-twin-cities' ), get_search_query() ). "</span"; 
 	} else if ( is_404() ) { 
 		$breadcrumbs[] = "<span class=\"breadcrumb missing\">". __( '404: File not found', 'accessible-twin-cities' ). "</span"; 
-	}
+	} 
 	if ( is_rtl() && is_array( $breadcrumbs ) ) {
 		$breadcrumbs = array_reverse( $breadcrumbs );	
 	}

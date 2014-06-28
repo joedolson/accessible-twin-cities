@@ -281,7 +281,7 @@ dt {
 	margin-top: 1em;
 }
 
-embed {
+embed, iframe {
 	display: block;
 	margin: 1em auto;
 }
@@ -389,6 +389,21 @@ h5, h6 { font-weight: 700; }
 .widget_rss h2:before { content: "\f303"; }
 .widget_rss h2 img { display: none; }
 
+a[href*=\.mp3]:before, a[href*=\.wma]:before, a[href*=\.ogg]:before, a[href*=\.m4a]:before {
+	content: "\f127"; 
+	font-family: 'dashicons';
+	color: rgb( 120,120,120 );
+	color: rgba( 100,100,100,.8 );
+	padding-right: .25em;
+}
+a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.mov]:before, a[href*=\.m4v]:before {
+	content: "\f234"; 
+	font-family: 'dashicons'; 
+	color: rgb( 120,120,120 );
+	color: rgba( 100,100,100,.8 );
+	padding-right: .25em;	
+}
+
 .footer {
 	clear: both;
 	padding: 15px;
@@ -442,6 +457,13 @@ caption {
 .format-quote .post-content {
 	font-size: 1.3em;
 	padding: 1em;
+}
+
+.single-attachment .post-content img {
+	margin: .5em auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 .sticky {
