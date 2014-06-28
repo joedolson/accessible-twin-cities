@@ -11,7 +11,9 @@
 			</p>
 			<p>
 			<?php bloginfo( 'author' ); ?>
-			</p>
+			</p>			
+			<h2><?php _e( 'Browse the site map', 'accessible-twin-cities' ); ?></h2>
+			<?php wp_nav_menu( array( 'theme_location'=>'site-map' ) ); ?>
 			</section>
 		</div>
 

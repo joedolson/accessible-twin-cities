@@ -54,6 +54,14 @@ if ( ! function_exists( 'atc_setup' ) ) {
 			) ) );
 		$font_url = "http://fonts.googleapis.com/css?family=Raleway:400,700";
 		add_editor_style( array( 'css/editor.css', str_replace( ',', '%2C', $font_url ) ) );
+		
+		register_nav_menus( array( 
+				'primary' => __( 'Main Menu', 'accessible-twin-cities' ),
+				'secondary' => __( 'Footer Menu', 'accessible-twin-cities' ),
+				'site-map' => __( 'Site Map', 'accessible-twin-cities' )
+			)
+		);		
+		
 	}
 }
 
@@ -124,14 +132,6 @@ function atc_home_title( $title ) {
 		return $title . get_bloginfo( 'name' );
 	}
 	return $title;
-}
-
-if ( function_exists( 'register_nav_menu' ) ) {
-	register_nav_menus( array( 
-			'primary' => __( 'Main Menu', 'accessible-twin-cities' ),
-			'secondary' => __( 'Footer Menu', 'accessible-twin-cities' )
-		)
-	);	
 }
 
 add_action( 'wp_print_styles', 'atc_load_styles' );
