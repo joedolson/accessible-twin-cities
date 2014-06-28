@@ -427,19 +427,19 @@ caption {
 	font-size: 1.1em;
 }
 
-.tag-aside, .tag-status, .tag-quote {
+.format-aside, .format-status, .format-quote {
 	padding: 2em;
 }
 
-.tag-aside .post-content {
+.format-aside .post-content {
 	font-style: italic;
 }
 
-.tag-status .post-content {
+.format-status .post-content {
 	font-size: 1.3em;
 }
 
-.tag-quote .post-content {
+.format-quote .post-content {
 	font-size: 1.3em;
 	padding: 1em;
 }

@@ -24,7 +24,7 @@ if ( ! function_exists( 'atc_setup' ) ) {
 	 * @uses register_default_headers() To register the default custom header images provided with the theme.
 	 * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
 	 *
-	 * @since Capitol 1.0
+	 * @since Accessible Twin Cities 1.0
 	 */
 	function atc_setup() {
 	
@@ -37,7 +37,7 @@ if ( ! function_exists( 'atc_setup' ) ) {
 
 		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form' ) );
 		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video' ) );
+		add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video', 'aside', 'status', 'quote' ) );
 		add_theme_support( 'automatic-feed-links' ); 
 		add_theme_support( 'custom-header', apply_filters( 'atc_custom_header_args', array(
 				'default-color' => 'fff',
@@ -51,9 +51,12 @@ if ( ! function_exists( 'atc_setup' ) ) {
 		add_theme_support( 'custom-background', apply_filters( 'atc_custom_background_args', array(
 				'default-color' => 'f5f5f5',
 				'default-image' => '',
-			) ) );	
+			) ) );
+		$font_url = "http://fonts.googleapis.com/css?family=Raleway:400,700";
+		add_editor_style( array( 'css/editor.css', str_replace( ',', '%2C', $font_url ) ) );
 	}
 }
+
 
 add_action( 'widgets_init', 'atc_widgets_init' );
 if ( ! function_exists( 'atc_widgets_init' ) ) {

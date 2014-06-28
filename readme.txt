@@ -23,7 +23,7 @@ Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway)
 
 == TO DO ==
 
- - post formats
+ - import editor.css into main stylesheet
  - Figure out how to hide the custom header text color field
  
 == Translations ==
