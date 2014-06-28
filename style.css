@@ -12,8 +12,8 @@ Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, bl
 
 /* Import Reset and Menu styles */
 @import url('css/reset.css');
+@import url('css/editor.css');
 @import url('css/menu.css');
-
 /* 
  * Menu for mobile 
  * Styles for menu don't apply below 800px; base styles.
@@ -103,65 +103,12 @@ table th {
 }
 
 /* 
- * Text decoration for links: underlines, outlines, etc.
- * In addition to defining colors with sufficient contrast, there should be a secondary differentiator for focusable elements.
- * A text-decoration that alternates between underlined/none is easy to use and of high visibility for sighted keyboard users.
- * Always define styles for :focus as well as :hover.
-*/
-
-
-a {
-	text-decoration: underline;
-}
-
-a:hover, a:focus, a:active {
-	text-decoration: none;
-}
-
-a:focus {
-	outline: 1px solid rgb( 200,200,240 );
-	outline: 1px solid rgba( 200, 200, 240, .8 );
-}
-
-/* 
  * General styling for major HTML elements
  */
 
 body {
-	font-family: Raleway, Arial, Verdana, sans-serif;
 	text-align: center;
 	font-size: 62.5%;
-}
-
-sub, sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-}
-
-sup {
-	top: -0.5em;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-strong {
-	font-weight: 700;
-}
-
-pre, code, kbd, var, tt {
-	font-family: monospace;
-	font-size: 1.1em;
-	background-color: rgb( 245,245,245 );
-	background-color: rgba( 0,0,0, .05 );
-	word-wrap: break-word;
-}
-
-pre { 
-	padding: .5em; 
-	overflow: scroll;
 }
 
 .wrapper {
@@ -212,11 +159,11 @@ pre {
 	line-height: 1.5;
 }
 
-.post {
+.hentry {
 	margin-bottom: 1em;
 }
 
-.post:after {
+.hentry:after {
 	content: ''; 
 	display: table;
 	clear: both;
@@ -249,61 +196,6 @@ pre {
 	height: auto;
 }
 
-address {
-	line-height: 1.5;
-}
-
-abbr, acronym {
-	border-bottom: 1px dotted rgb( 140,140,140 );
-	border-bottom: 1px dotted rgba( 0,0,0,.4 );
-}
-
-cite, em, address {
-	font-style: italic;
-}
-
-small {
-	font-size: .8em;
-}
-
-dl {
-	margin: 1em 0;
-}
-
-dt, dd {
-	margin: 0; 
-	padding: 0;
-	line-height: 1.5; 
-}
-
-dt {
-	font-weight: 700;
-	margin-top: 1em;
-}
-
-embed, iframe {
-	display: block;
-	margin: 1em auto;
-}
-
-blockquote {
-	padding: 2em;
-	font-size: 1.2em;
-	margin-bottom: 1em;
-	background-color: rgb( 240,240,240 );
-	background-color: rgba( 0,0,0,.05 );
-}
-
-blockquote cite {
-	display: block;
-	text-align: right;
-	font-weight: 700;
-}
-
-dt:nth-of-type(1) {
-	margin-top: 0;
-}
-
 .header {
 	padding: 1em 0 0;
 	line-height: 1.5;
@@ -334,23 +226,7 @@ dt:nth-of-type(1) {
 	opacity: .95; 
 }
 
-h1, h2, h3, h4, h5, h6 {
-	padding: .25em 0;
-	line-height: 1.4;
-}
-
-p {
-	padding: 0 0 1em;
-	line-height: 1.7;
-}
-
 .hentry p:last-of-type { padding-bottom: 0; }
-
-h1, h2.post-title { font-weight: 700; font-size: 2.4em; }
-h2 { font-size: 2em; }
-h3 { font-weight: 700; font-size: 1.8em; }
-h4 { font-weight: 700; font-size: 1.4em; }
-h5, h6 { font-weight: 700; }
 
 .meta {
 	border: 1px solid rgba( 0,0,0,.1 );
@@ -413,31 +289,6 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 	font-size: 1.2em; 
 }
 
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-table th, table td {
-	padding: .5em;
-}
-
-table th {
-	text-align: center;
-	font-weight: 700;
-	border: 1px solid rgba( 0,0,0,.2 );
-}
-
-table td {
-	border: 1px solid rgba( 0,0,0,.1 );
-}
-
-caption {
-	font-weight: 700;
-	font-size: 1.2em;
-	line-height: 1.5;
-}
-
 .post-content {
 	font-size: 1.1em;
 }
@@ -495,60 +346,14 @@ caption {
 	background-color: rgba( 255, 255, 255, 1 ); 
 }
 
-.wp-caption {
-	text-align: center;
-	padding: 5px 0;	
-}
-
-.alignright {
-	float: right;
-	margin-left: 10px;
-}
-
-.alignleft {
-	float: left;
-	margin-right: 10px;
-}
-
-.aligncenter {
-	display: block;
-	margin: 0 auto 1em;
-}
-
-.alignnone, .alignnone img, .aligncenter, .aligncenter img, .alignleft, .alignleft img, .alignright, .alignright img {
-	max-width: 100%;
-	height: auto;
-}
-
-.wp-caption-text {
-	font-size: .9em;
-	padding: 0 5px;
-	text-align: center;
-}
-
 #content .gallery-caption { 
 	text-align: left;
 	width: 70%;
 	margin: 0 auto!important;
 }
 
-.alignright .wp-caption-text {
-	text-align: right;
-}
-
-.alignleft .wp-caption-text {
-	text-align: left;
-}
-
 .post-content .twitter-tweet {
 	margin: 1em auto!important;
-}
-
-.more-link {
-	float: right;
-	font-size: .9em;
-	padding: 3px;
-	background-color: rgba( 0,0,0,.05 );
 }
 
 /* Comments */
