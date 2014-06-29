@@ -7,7 +7,7 @@
 		 *	but also informs screen readers about how your information relates.
 		 */
 	?>
-		<h1 class="screen-reader-text"><?php atc_archive_title(); ?></h1>
+		<h1 class="screen-reader-text"><?php universal_archive_title(); ?></h1>
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
@@ -17,7 +17,7 @@
 		<?php }
 			$post_link = ''; 
 			if ( get_the_title() == '' ) {
-				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'accessible-twin-cities' ), get_the_permalink() ) );
+				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'universal' ), get_the_permalink() ) );
 			} else {
 		?>
 		<?php 
@@ -26,9 +26,9 @@
 			
 				<h1 class="post-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 				<div class='post-content' id="post-<?php the_ID(); ?>">
-					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
+					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 					<?php echo $post_link; ?>
-					<?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>			
+					<?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>			
 				</div> 
 				<!--
 				<?php trackback_rdf(); ?>
@@ -57,7 +57,7 @@
 	endif; ?>
 
 	<div class="prev_next">
-    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Posts','accessible-twin-cities' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Posts %s','accessible-twin-cities' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
+    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Posts','universal' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Posts %s','universal' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
 	</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

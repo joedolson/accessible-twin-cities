@@ -14,7 +14,7 @@ get_header();
 		<h1 class="page-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 
 		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
+		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 		</div> 
 		<p class="edit"><?php edit_post_link('Edit this entry.', '', ''); ?></p>
 		</section>

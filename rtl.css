@@ -60,6 +60,10 @@ blockquote cite {
 	right: 0;
 }
 
+.social-networks { 
+	left: .5em; 
+}
+
 /* Utility Classes */
 .screen-reader-text:focus { right: 1em;  }
 

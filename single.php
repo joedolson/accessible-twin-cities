@@ -20,7 +20,7 @@
 						);
 				wp_link_pages( $args ); 
 			?>
-			<?php comments_popup_link( __( 'Comments (0)', 'accessible-twin-cities' ), __( 'Comments (1)', 'accessible-twin-cities' ), __( 'Comments (%)', 'accessible-twin-cities' ) ); ?>
+			<?php comments_popup_link( __( 'Comments (0)', 'universal' ), __( 'Comments (1)', 'universal' ), __( 'Comments (%)', 'universal' ) ); ?>
 
 		</div>
 	</div>
@@ -35,7 +35,7 @@
 	endif; ?>
 
     <div class="prev_next">
-    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Post','accessible-twin-cities' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Post %s','accessible-twin-cities' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
+    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Post','universal' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Post %s','universal' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
     </div>
 
 <?php get_sidebar(); ?>

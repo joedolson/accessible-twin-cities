@@ -10,17 +10,17 @@
  * @return $query
  */
 
-add_filter('pre_get_posts','atc_filter');
-function atc_filter( $query ) {
+add_filter('pre_get_posts','universal_filter');
+function universal_filter( $query ) {
 	if ( isset( $_GET['s'] ) && $_GET['s'] == '' ) { 
 		$query->query_vars['s'] = '&#160;';
 		$query->set( 'is_search', 1 );
-		add_action( 'template_redirect','atc_search_error' );
+		add_action( 'template_redirect','universal_search_error' );
 	}
 	return $query;
 }
 
-function atc_search_error() {
+function universal_search_error() {
 	$search = locate_template( 'search.php' );
 	if ( $search ) {
 		load_template( $search );
@@ -32,22 +32,22 @@ function atc_search_error() {
  * Append full text titles to continue reading links when not themable.
  */
 
-add_filter( 'excerpt_more', 'atc_excerpt_more',100 );
-function atc_excerpt_more( $more ) {
+add_filter( 'excerpt_more', 'universal_excerpt_more',100 );
+function universal_excerpt_more( $more ) {
 	global $id;
-	return '&hellip; '.atc_continue_reading( $id );
+	return '&hellip; '.universal_continue_reading( $id );
 }
 
-add_filter( 'get_the_excerpt', 'atc_custom_excerpt_more',100 );
-function atc_custom_excerpt_more( $output ) {
+add_filter( 'get_the_excerpt', 'universal_custom_excerpt_more',100 );
+function universal_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && !is_attachment() ) {
 		global $id;
-		$output .= ' '.atc_continue_reading( $id ); // insert a blank space.
+		$output .= ' '.universal_continue_reading( $id ); // insert a blank space.
 	}
 	return $output;
 }
 
-function atc_continue_reading( $id ) {
+function universal_continue_reading( $id ) {
     return '<a class="continue" href="'.get_permalink( $id ).'">Finish Reading<span> "'.get_the_title( $id ).'"</span></a>';
 }
 
@@ -55,7 +55,7 @@ function atc_continue_reading( $id ) {
  * Invert colors
  * This function takes a hexadecimal value and selects the contrasting light or dark color that gives the best contrast with that color.
 */
-function atc_inverse_color( $color ){
+function universal_inverse_color( $color ){
     $color = str_replace('#', '', $color);
     if ( strlen( $color ) != 6 ) { return '#000000'; }
     $rgb = '';
@@ -76,10 +76,10 @@ function atc_inverse_color( $color ){
  * This function takes a given hexadecimal color and shifts it a step lighter or darker, depending on the current color band.
  * Used with theme customizer to prevent non-WCAG compliant color combinations.
  */
-function atc_shift_color( $color ) {
+function universal_shift_color( $color ) {
 	$color = str_replace('#','',$color);
 	$rgb = ''; // Empty variable
-	$percent = ( atc_inverse_color( $color ) == '#ffffff' ) ? -20 : 20;
+	$percent = ( universal_inverse_color( $color ) == '#ffffff' ) ? -20 : 20;
     $per = $percent/100*255; // Creates a percentage to work with. Change the middle figure to control colour temperature
     if  ($per < 0 ) {
         // DARKER
@@ -102,17 +102,17 @@ function atc_shift_color( $color ) {
 
 /* 
  * Tests whether two hex colors meet color contrast requirements up to WCAG AA for regular text.
- * @uses atc_luminosity, atc_hex2rgb
+ * @uses universal_luminosity, universal_hex2rgb
  */
-function atc_compare_contrast( $bg, $fg ) {
-	$rgb1 = atc_hex2rgb( $fg );
-	$rgb2 = atc_hex2rgb( $bg );
-	$luminosity = atc_luminosity( $rgb1[0], $rgb2[0], $rgb1[1], $rgb2[1], $rgb1[2], $rgb2[2] );
+function universal_compare_contrast( $bg, $fg ) {
+	$rgb1 = universal_hex2rgb( $fg );
+	$rgb2 = universal_hex2rgb( $bg );
+	$luminosity = universal_luminosity( $rgb1[0], $rgb2[0], $rgb1[1], $rgb2[1], $rgb1[2], $rgb2[2] );
 	return  ( $luminosity >= 4.5 ) ? true : false;
 }
 
 
-function atc_luminosity($r,$r2,$g,$g2,$b,$b2) {
+function universal_luminosity($r,$r2,$g,$g2,$b,$b2) {
 	$RsRGB = $r/255;
 	$GsRGB = $g/255;
 	$BsRGB = $b/255;
@@ -138,7 +138,7 @@ function atc_luminosity($r,$r2,$g,$g2,$b,$b2) {
 	return $luminosity;
 }
 
-function atc_hex2rgb($color){
+function universal_hex2rgb($color){
 	$color = str_replace('#', '', $color);
 	if (strlen($color) != 6){ return array(0,0,0); }
 	$rgb = array();
@@ -153,8 +153,8 @@ function atc_hex2rgb($color){
  * Breadcrumbs are important to accessibility because they provide contextual orientation for navigation.
  * These breadcrumbs are very basic; if Yoast's SEO plug-in or John Havlik's Breadcrumbs NavXT plug-ins are installed, those breadcrumbs will be automatically used instead.
  */
-add_filter( 'atc_before_posts', 'atc_insert_breadcrumbs' );
-function atc_insert_breadcrumbs() {
+add_filter( 'universal_before_posts', 'universal_insert_breadcrumbs' );
+function universal_insert_breadcrumbs() {
 	if ( function_exists( 'bcn_display' ) ) {
 		$reverse = false;
 		if ( is_rtl() ) { $reverse = true; }
@@ -163,16 +163,16 @@ function atc_insert_breadcrumbs() {
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
 		yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
 	}
-	atc_breadcrumbs();
+	universal_breadcrumbs();
 }
 
-function atc_breadcrumbs() {
+function universal_breadcrumbs() {
     global $post;
 	$sep = ( is_rtl() ) ? "<span class='separator'> &laquo; </span>" : "<span class='separator'> &raquo; </span>";
     $breadcrumb = '<p class="breadcrumbs">';
 
-	$link = '<span class="breadcrumb top-level"><a href="'.home_url().'">'.apply_filters( 'atc_breadcrumb_home_text', __( 'Home', 'accessible_twin_cities' ) ).'</a></span>';
-	$crumb = sprintf( __( '<i>You are here:</i> %s', 'accessible-twin-cities' ), $link );
+	$link = '<span class="breadcrumb top-level"><a href="'.home_url().'">'.apply_filters( 'universal_breadcrumb_home_text', __( 'Home', 'accessible_twin_cities' ) ).'</a></span>';
+	$crumb = sprintf( __( '<i>You are here:</i> %s', 'universal' ), $link );
 	$breadcrumbs[] = $crumb;
 	if ( is_category() || is_single() ) {
 		if ( is_attachment() ) {
@@ -198,19 +198,19 @@ function atc_breadcrumbs() {
     } else if ( is_tax() ) {
 		$breadcrumbs[] = "<span class=\"breadcrumb term\">".single_term_title( '', false )."</span>"; 
 	} else if ( is_day() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb archive-day\">". sprintf( __( 'Archive for %s', 'accessible-twin-cities' ), get_the_time( 'F jS, Y' ) ) . "</span>"; 
+		$breadcrumbs[] = "<span class=\"breadcrumb archive-day\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'F jS, Y' ) ) . "</span>"; 
 	} else if ( is_month() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb archive-month\">". sprintf( __( 'Archive for %s', 'accessible-twin-cities' ), get_the_time( 'F, Y' ) ) . "</span>"; 
+		$breadcrumbs[] = "<span class=\"breadcrumb archive-month\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'F, Y' ) ) . "</span>"; 
 	} else if ( is_year() ) { 
-		$breadcrumbs[] =  "<span class=\"breadcrumb archive-year\">". sprintf( __( 'Archive for %s', 'accessible-twin-cities' ), get_the_time( 'Y' ) ) . "</span>"; 
+		$breadcrumbs[] =  "<span class=\"breadcrumb archive-year\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'Y' ) ) . "</span>"; 
 	} else if ( is_author() ) { 
-		$breadcrumbs[] =  "<span class=\"breadcrumb archive-author\">". sprintf( __( 'Author Archive for %s', 'accessible-twin-cities' ), get_the_author() ) . "</span>";  
+		$breadcrumbs[] =  "<span class=\"breadcrumb archive-author\">". sprintf( __( 'Author Archive for %s', 'universal' ), get_the_author() ) . "</span>";  
 	} else if ( is_home() && is_page() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb blog-home\">".__( 'Blog Home', 'accessible-twin-cities' )."</span>"; 
+		$breadcrumbs[] = "<span class=\"breadcrumb blog-home\">".__( 'Blog Home', 'universal' )."</span>"; 
 	} else if ( is_search() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb search-results\">". sprintf( __( 'Search Results for &ldquo;%s&rdquo;', 'accessible-twin-cities' ), get_search_query() ). "</span"; 
+		$breadcrumbs[] = "<span class=\"breadcrumb search-results\">". sprintf( __( 'Search Results for &ldquo;%s&rdquo;', 'universal' ), get_search_query() ). "</span"; 
 	} else if ( is_404() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb missing\">". __( '404: File not found', 'accessible-twin-cities' ). "</span"; 
+		$breadcrumbs[] = "<span class=\"breadcrumb missing\">". __( '404: File not found', 'universal' ). "</span"; 
 	} 
 	if ( is_rtl() && is_array( $breadcrumbs ) ) {
 		$breadcrumbs = array_reverse( $breadcrumbs );	

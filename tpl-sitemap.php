@@ -14,11 +14,11 @@ get_header();
 		<h1 class="page-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 
 		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'accessible-twin-cities' ), get_the_title() ) ); ?>
-		<h2><?php _e( 'Site Map', 'accessible-twin-cities' ); ?></h2>
+		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
+		<h2><?php _e( 'Site Map', 'universal' ); ?></h2>
 		<?php wp_nav_menu( array( 'theme_location'=>'site-map' ) ); ?>
 		</div> 
-		<p class="edit"><?php edit_post_link( sprintf( __( 'Edit %s', 'accessible-twin-cities' ), get_the_title() ), '', '' ); ?></p>
+		<p class="edit"><?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '', '' ); ?></p>
 		</section>
 
 		<!--

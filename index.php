@@ -2,7 +2,7 @@
 
     <?php if ( have_posts() ) : ?>
 	<?php if ( !is_singular() ) { ?>
-		<h1 class="screen-reader-text"><?php atc_archive_title(); ?></h1>
+		<h1 class="screen-reader-text"><?php universal_archive_title(); ?></h1>
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
 	<div <?php post_class(); ?>>
@@ -15,7 +15,7 @@
 		?>	
 		<div class="comments">
 			<?php wp_link_pages(); ?>
-			<?php comments_popup_link( __( 'Comments (0)', 'accessible-twin-cities' ), __( 'Comments (1)', 'accessible-twin-cities' ), __( 'Comments (%)', 'accessible-twin-cities' ) ); ?>
+			<?php comments_popup_link( __( 'Comments (0)', 'universal' ), __( 'Comments (1)', 'universal' ), __( 'Comments (%)', 'universal' ) ); ?>
 		</div>
 
 		<?php
@@ -38,7 +38,7 @@
 	endif; ?>
 
     <div class="prev_next">
-    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Posts','accessible-twin-cities' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Posts %s','accessible-twin-cities' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
+    <?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Posts','universal' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Posts %s','universal' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
     </div>
 
 <?php get_sidebar(); ?>

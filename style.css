@@ -1,10 +1,10 @@
 /*
-Theme Name: Accessible Twin Cities
-Theme URI: http://www.joedolson.com/articles/accessible-twin-cities/
+Theme Name: Universal
+Theme URI: http://themes.joedolson.com/universal/
 Version: 1.0
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
-Description: Accessible Twin Cities is part of the Cities project, a project to create themes that will help you build accessible web sites. Accessible Twin Cities includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your own theme! Out of the box, Accessible Twin Cities is responsive and flexible, letting you build the web site you need for blogging or business.
+Description: Universal is part of the Cities project, a project to create WordPress themes for accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your site's theme! Universal is responsive and flexible, helping you build the accessible web site you need for blogging or business.
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
@@ -362,10 +362,10 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 /* Social Networks */
 .social-networks { position: absolute; bottom: .5em; right: .5em; }
 .social-networks li { display: inline-block; }
-.social-networks a:before { font-family: dashicons; vertical-align: middle;  background-color: rgb( 255,255,255 ); background-color: rgba( 255,255,255,.8 ); padding: 2px; margin: 2px; }
+.social-networks a:before { font-family: dashicons; vertical-align: middle;  background-color: rgb( 255,255,255 ); background-color: rgba( 255,255,255,.8 ); padding: 2px; margin: 0 0 0 2px; }
 .social-networks a span { font-family: Raleway, Helvetica, Arial, sans-serif; }
-.social-networks a { text-decoration: none; font-size: 4em; line-height: 1; }
-.social-networks a:hover:before, .social-networks a:focus:before { background: #fff; }
+.social-networks a { text-decoration: none; font-size: 2em; line-height: 1; }
+.social-networks a:hover:before, .social-networks a:focus:before { background: #f0f0f0; }
 
 /* dashicon fonts */
 .social-networks a[href*="twitter.com"]:before { content: "\f301"; color: #55acee; }
@@ -580,9 +580,11 @@ textarea[id=comment] { width: 100%; }
 		background: rgba( 0,0,0,.05 );
 	}
 	.header .site-title {
-	font-size: 4em;
+		font-size: 4em;
 	}
-	.social-networks li { display: list-item; }
+	.social-networks a { 
+		font-size: 3em;
+	}
 }
 
 /* Triggered when wider than 1000px */
@@ -591,6 +593,9 @@ textarea[id=comment] { width: 100%; }
 		width: 960px;
 		padding: 1em;		
 	}
+	.social-networks a { 
+		font-size: 4em;
+	}	
 }
 
 /* Triggered when wider than 1360px */

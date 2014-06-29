@@ -4,12 +4,12 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to atc_comment() which is
+ * handled by a callback to universal_comment() which is
  * located in the functions.php file.
  *
  * @package WordPress
- * @subpackage Accessible Twin Cities
- * @since Accessible Twin Cities 1.0
+ * @subpackage Universal
+ * @since Universal 1.0
  */
 
 /*
@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _n( 'One opinion on &ldquo;%2$s&rdquo;', '%1$s opinions on &ldquo;%2$s&rdquo;', get_comments_number(), 'accessible-twin-cities' ),
+				printf( _n( 'One opinion on &ldquo;%2$s&rdquo;', '%1$s opinions on &ldquo;%2$s&rdquo;', get_comments_number(), 'universal' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
@@ -45,9 +45,9 @@ if ( post_password_required() ) {
 		 */
 		?>
 		<nav id="comment-nav-below" class="navigation" role="navigation" aria-labelledby="comment-navigation">
-			<h3 class="screen-reader-text" id="comment-navigation"><?php _e( 'Comment navigation', 'accessible-twin-cities' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'accessible-twin-cities' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'accessible-twin-cities' ) ); ?></div>
+			<h3 class="screen-reader-text" id="comment-navigation"><?php _e( 'Comment navigation', 'universal' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'universal' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'universal' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -56,7 +56,7 @@ if ( post_password_required() ) {
 		 * But we only want the note on posts and pages that had comments in the first place.
 		 */
 		if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="nocomments"><?php _e( 'Comments are closed.' , 'accessible-twin-cities' ); ?></p>
+		<p class="nocomments"><?php _e( 'Comments are closed.' , 'universal' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

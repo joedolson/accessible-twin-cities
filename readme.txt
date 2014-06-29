@@ -1,17 +1,17 @@
-=== Accessible Twin Cities ===
+=== Universal ===
 Contributors: joedolson
 Donate link: http://www.joedolson.com/donate.php
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
 Tested up to: 3.9.1
-Stable tag: 1.0.0
+Stable tag: 0.9.0
 License: GPLv2 or later
 
-Accessible Twin Cities: ready for accessibility, responsive, and waiting for your content. 
+Universal: ready for accessibility, responsive, and waiting for your content. 
 
 == Description ==
 
-Accessible Twin Cities is part of the Cities project, a project to create themes that will help you build accessible web sites. Accessible Twin Cities includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your own theme! Out of the box, Accessible Twin Cities is responsive and flexible, letting you build the web site you need for blogging or business.
+Universal is part of the Cities project, a project to create WordPress themes that will help you build accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your own theme! Universal is responsive and flexible, letting you build the accessible web site you need for blogging or business.
 
 == Licensing: ==
 
@@ -25,8 +25,6 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 
 == TO DO ==
 
- - import editor.css into main stylesheet
- - add social media toolbar
  - Figure out how to hide the custom header text color field
  
 == Translations ==
@@ -39,7 +37,7 @@ Nothing yet!
 == Installation ==
 
 1. Download the theme's zip file, extract the contents, and upload them to your wp-content/themes folder.
-2. Login to your WordPress dashboard, click "Appearance > Themes", and activate "Accessible Twin Cities"
+2. Login to your WordPress dashboard, click "Appearance > Themes", and activate "Universal"
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
@@ -77,4 +75,4 @@ https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
 
 == Upgrade Notice ==
 
-* 1.0.0 Initial release.
+* 0.9.0 Initial submission.
