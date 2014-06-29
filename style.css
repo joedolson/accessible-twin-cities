@@ -14,6 +14,7 @@ Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, bl
 @import url('css/reset.css');
 @import url('css/editor.css');
 @import url('css/menu.css');
+@import url('css/font.css');
 /* 
  * Menu for mobile 
  * Styles for menu don't apply below 800px; base styles.
@@ -359,17 +360,32 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 }
 
 /* Social Networks */
-.social-networks { position: absolute; bottom: 0; right: 0; background-color: rgb( 255,255,255 ); background-color: rgba( 255,255,255,.8 ); line-height: 1; border-radius: 4px 0 0 0; }
+.social-networks { position: absolute; bottom: .5em; right: .5em; }
 .social-networks li { display: inline-block; }
-.social-networks a:before { font-family: dashicons; vertical-align: middle; }
+.social-networks a:before { font-family: dashicons; vertical-align: middle;  background-color: rgb( 255,255,255 ); background-color: rgba( 255,255,255,.8 ); padding: 2px; margin: 2px; }
 .social-networks a span { font-family: Raleway, Helvetica, Arial, sans-serif; }
+.social-networks a { text-decoration: none; font-size: 4em; line-height: 1; }
+.social-networks a:hover:before, .social-networks a:focus:before { background: #fff; }
 
+/* dashicon fonts */
 .social-networks a[href*="twitter.com"]:before { content: "\f301"; color: #55acee; }
 .social-networks a[href*="facebook.com"]:before { content: "\f304"; color: #4c66a4; }
 .social-networks a[href*="plus.google.com"]:before { content: "\f462"; color: #dd4b39; }
+.social-networks a[href*="wordpress.org"]:before { content: "\f120"; color: #21759b; border-color: #464646; }
+.social-networks a[href*="wordpress.com"]:before { content: "\f120"; color: #21759b; border-color: #d54e21; }
 
-.social-networks a { text-decoration: none; font-size: 4em; height: 3em; width: 3em; }
-.social-networks a:hover, .social-networks a:focus { background: #fff; }
+/* icomoon fonts */
+.social-networks a[href*="instagram.com"]:before { font-family: icomoon; content: "\e600"; color: #3f729b; }
+.social-networks a[href*="lanyrd.com"]:before { font-family: icomoon; content: "\e609"; color: #0d6797; }
+.social-networks a[href*="flickr.com"]:before { font-family: icomoon; content: "\e60a"; color: #ff0084; border-color: #0063dc; }
+.social-networks a[href*="picasa.google.com"]:before { font-family: icomoon; content: "\e60b"; color: #0f9d58; border-color: #db4437; }
+.social-networks a[href*="dribbble.com"]:before { font-family: icomoon; content: "\e60d"; color: #ff8833; border-color: #00b6e3; }
+.social-networks a[href*="github.com"]:before { font-family: icomoon; content: "\e602"; color: #333; border-color: #4183c4; }
+.social-networks a[href*="tumblr.com"]:before { font-family: icomoon; content: "\e604"; color: #35465c; }
+.social-networks a[href*="linkedin.com"]:before { font-family: icomoon; content: "\e605"; color: #0976b4; border-color: #000; }
+.social-networks a[href*="stumbleupon.com"]:before { font-family: icomoon; content: "\e606"; color: #eb4924; }
+.social-networks a[href*="pinterest.com"]:before { font-family: icomoon; content: "\e607"; color: #cc2127; }
+.social-networks a[href*="paypal.com"]:before { font-family: icomoon; content: "\e608"; color: #253b80; border-color: #179bd7;  }
 
 /* Comments */
 .comments-wrapper .commentlist, .comments-wrapper .commentlist ol {

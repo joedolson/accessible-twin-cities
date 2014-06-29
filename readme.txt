@@ -19,7 +19,9 @@ Header image: Wikimedia Commons, Public Domain (http://commons.wikimedia.org/wik
 
 Screenshot photo: Personal photo. I hereby declare it GPL. Cheers.
 
-Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway)
+Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway) [SIL Open Font License, 1.1]
+
+Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 
 == TO DO ==
 
