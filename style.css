@@ -234,9 +234,17 @@ body {
 .meta {
 	border: 1px solid rgba( 0,0,0,.1 );
 	box-shadow: 1px 1px 1px rgba( 0,0,0,.05 );
+	background-color: rgb( 245,245,245 );
+	background-color: rgba( 0,0,0,.05 );
 	padding: .5em;
 	margin-bottom: .5em;
 	line-height: 1.5;
+	font-size: 1.2em;
+}
+
+.meta.foot {
+	margin-top: 1em;
+	font-size: 1em;
 }
 
 /* 

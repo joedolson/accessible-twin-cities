@@ -27,7 +27,8 @@
 			<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 			<?php echo $post_link; ?>
 			<?php edit_post_link('Edit this entry.', '<p class="edit">', '</p>'); ?>
-		</div> 
+		</div>
+		<?php get_template_part( 'post-meta-tags' ); ?>
 		<!--
 		<?php trackback_rdf(); ?>
 		-->
