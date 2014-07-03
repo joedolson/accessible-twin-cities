@@ -222,4 +222,26 @@ function universal_breadcrumbs() {
 		echo $breadcrumb;
 	}
 }
+
+
+add_filter( 'comment_form_default_fields', 'universal_comment_form_default_fields', 10, 1 );
+function universal_comment_form_default_fields( $fields ) {
+	// set global values
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+	
+	$fields['author'] = '<p class="comment-form-author"><label for="author">' . __( 'Name', 'domainreference' ) . 
+    ( $req ? ' <span class="required">(required)</span>' : '' ) . '</label> ' .  
+    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+    '" size="30"' . $aria_req . ' required /></p>';
+	
+	$fields['email'] = '<p class="comment-form-email"><label for="email" id="comment-email">' . __( 'Email', 'domainreference' ) . 
+    ( $req ? ' <span class="required">(required)</span>' : '' ) . '</label> ' .
+    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+    '" size="30"' . $aria_req . ' required aria-labelledby="comment-email, comment-notes" /></p>';
+	
+	return $fields;
+}
+
 ?>
