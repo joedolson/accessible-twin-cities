@@ -61,6 +61,17 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<?php 
+	/* 
+	 *	Custom arguments add surrounding text (email address not published and HTML tags) as ARIA labels for associated form fields.
+	 *	Required field marking indicator removed, as required fields are now marked as "required", in plain text.
+	*/
+	$universal_args = array( 
+ 	        // redefine your own textarea (the comment body) 
+ 	        'comment_field' => '<p class="comment-form-comment"><label for="comment" id="comment-label">' . _x( 'Comment', 'noun' ) . ' <span class="required">(required)</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required aria-labelledby="comment-label, html-tags"></textarea></p>', 
+			'comment_notes_after' => '<p class="form-allowed-tags" id="html-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+			'comment_notes_before' => '<p class="comment-notes" id="comment-notes">' . __( 'Your email address will not be published.' ).'</p>'
+ 	    );
+	comment_form( $universal_args ); ?>
 
 </div><!-- #comments .comments-area -->

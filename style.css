@@ -1,7 +1,7 @@
 /*
 Theme Name: Universal
 Theme URI: http://themes.joedolson.com/universal/
-Version: 0.9.0
+Version: 0.9.1
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
 Description: Universal is part of the Cities project, a project to create WordPress themes for accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your site's theme! Universal is responsive and flexible, helping you build the accessible web site you need for blogging or business.
@@ -90,6 +90,11 @@ table th {
 	color: #fff;
 }
 
+.comment-respond .required {
+	color: #b00;
+	font-size: .9em;
+}
+
 .menu-toggle {
 	border: 1px solid #aaa;
 	background-color: #ccc;
@@ -144,6 +149,11 @@ body {
 .sidebar li {
 	line-height: 1.5;
 	margin: 0 0 .25em;
+}
+
+.sidebar img {
+	max-width: 100%;
+	height: auto;
 }
 
 .post-wrapper ul, .post-wrapper ol { 

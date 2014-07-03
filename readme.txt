@@ -4,7 +4,7 @@ Donate link: http://www.joedolson.com/donate.php
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
 Tested up to: 3.9.1
-Stable tag: 0.9.0
+Stable tag: 0.9.1
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -42,9 +42,15 @@ Nothing yet!
 
 == Changelog ==
 
-= 1.0.0 =
+= 0.9.1 =
 
-* Initial release!
+* Bug fix: Handle sidebar images wider than sidebar.
+* A11y: Pass custom Comment fields through comment_form()
+* A11y: Add aria-labelledby parameters to comment_form()
+
+= 0.9.0 =
+
+* Initial upload.
 
 == Frequently Asked Questions ==
 
