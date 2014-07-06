@@ -40,7 +40,9 @@ if ( ! function_exists( 'universal_setup' ) ) {
 		add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video', 'aside', 'status', 'quote' ) );
 		add_theme_support( 'automatic-feed-links' ); 
 		add_theme_support( 'custom-header', apply_filters( 'universal_custom_header_args', array(
-				'default-color' => 'fff',
+				'default-color' => '#fff',
+				'default-text-color' => '#fff',
+				'header-text' => false,
 				'width' => 960, 
 				'flex-width' => true,
 				'height' => 180,

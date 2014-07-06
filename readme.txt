@@ -4,7 +4,7 @@ Donate link: http://www.joedolson.com/donate.php
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
 Tested up to: 3.9.1
-Stable tag: 0.9.1
+Stable tag: 0.9.2
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -41,6 +41,12 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 0.9.2 =
+
+* Disabled "Display header text" option in customizer
+* Disabled option to change header text color in customizer
+* Added max-width to select element in sidebar
 
 = 0.9.1 =
 
