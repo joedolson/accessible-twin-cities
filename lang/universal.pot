@@ -1,0 +1,328 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Universal\n"
+"POT-Creation-Date: 2014-07-06 10:47-0600\n"
+"PO-Revision-Date: 2014-07-06 10:48-0600\n"
+"Last-Translator: Joseph Dolson <joe@joedolson.com>\n"
+"Language-Team: Joseph Dolson <joe@joedolson.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:5
+msgid "Error: Page not found!"
+msgstr ""
+
+#: 404.php:7
+msgid "Sorry, the page you requested could not be located."
+msgstr ""
+
+#: 404.php:10
+msgid "Thanks for your patience!"
+msgstr ""
+
+#: 404.php:15
+msgid "Browse the site map"
+msgstr ""
+
+#: comments.php:30
+#, php-format
+msgid "One opinion on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s opinions on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:48
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:49
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:71
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: comments.php:72
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+
+#: comments.php:73
+msgid "Your email address will not be published."
+msgstr ""
+
+#: footer.php:1
+msgid "Footer Content"
+msgstr ""
+
+#: footer.php:1
+msgid "Secondary Navigation"
+msgstr ""
+
+#: format-aside.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled aside</a>"
+msgstr ""
+
+#: format-aside.php:27 format-audio.php:27 format-gallery.php:27
+#: format-image.php:28 format-quote.php:27 format-status.php:27
+#: format-video.php:27 format.php:26 front-page.php:29 page-full-width.php:17
+#: page-sidebar-right.php:17 page.php:12 tpl-sitemap.php:17
+#, php-format
+msgid "Finish reading <em>%s</em>"
+msgstr ""
+
+#: format-audio.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">Visit untitled audio</a>"
+msgstr ""
+
+#: format-gallery.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">Visit untitled gallery</a>"
+msgstr ""
+
+#: format-image.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled image</a>"
+msgstr ""
+
+#: format-quote.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled quote</a>"
+msgstr ""
+
+#: format-status.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled status</a>"
+msgstr ""
+
+#: format-video.php:16
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled video</a>"
+msgstr ""
+
+#: format.php:15 front-page.php:20
+#, php-format
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled post</a>"
+msgstr ""
+
+#: front-page.php:31 page.php:14 tpl-sitemap.php:21
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: front-page.php:60 index.php:41
+#, php-format
+msgid "%s Previous Posts"
+msgstr ""
+
+#: front-page.php:60 index.php:41
+#, php-format
+msgid "Next Posts %s"
+msgstr ""
+
+#: functions.php:61
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:62
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:63 tpl-sitemap.php:18
+msgid "Site Map"
+msgstr ""
+
+#: functions.php:64
+msgid "Social Networks"
+msgstr ""
+
+#: functions.php:77
+msgid "Widgets in this region will appear on all posts and post archives"
+msgstr ""
+
+#: functions.php:87
+msgid "Add up to 5 widgets to show on the bottom of your front page."
+msgstr ""
+
+#: functions.php:97
+msgid "Widgets in this region will appear on WordPress Pages."
+msgstr ""
+
+#: functions.php:107 functions.php:117
+msgid ""
+"These widgets appear globally on posts and pages, excluding the front page."
+msgstr ""
+
+#: functions.php:133 inc/a11y.php:174
+msgid "Home"
+msgstr ""
+
+#: functions.php:235
+#, php-format
+msgid "%s Posts"
+msgstr ""
+
+#: header.php:52
+msgid "Primary Menu "
+msgstr ""
+
+#: header.php:53
+msgid "Primary Menu"
+msgstr ""
+
+#: header.php:54
+msgid "Open Menu"
+msgstr ""
+
+#: inc/a11y.php:175
+#, php-format
+msgid "<i>You are here:</i> %s"
+msgstr ""
+
+#: inc/a11y.php:201 inc/a11y.php:203 inc/a11y.php:205
+#, php-format
+msgid "Archive for %s"
+msgstr ""
+
+#: inc/a11y.php:207
+#, php-format
+msgid "Author Archive for %s"
+msgstr ""
+
+#: inc/a11y.php:209
+msgid "Blog Home"
+msgstr ""
+
+#: inc/a11y.php:211 search.php:5
+#, php-format
+msgid "Search Results for &ldquo;%s&rdquo;"
+msgstr ""
+
+#: inc/a11y.php:213
+msgid "404: File not found"
+msgstr ""
+
+#: inc/a11y.php:234
+msgid "Name"
+msgstr ""
+
+#: inc/a11y.php:239
+msgid "Email"
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Universal Color Settings"
+msgstr ""
+
+#: inc/customizer.php:24
+msgid ""
+"Modify selected background colors. Text colors are automatically adjusted "
+"for you."
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "Header Background"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Menu Background"
+msgstr ""
+
+#: inc/customizer.php:81
+msgid "Sidebar Background"
+msgstr ""
+
+#: inc/customizer.php:93
+msgid "Content Background"
+msgstr ""
+
+#: inc/customizer.php:105
+msgid "Wrapper Background"
+msgstr ""
+
+#: inc/customizer.php:117
+msgid "Page Wrapper Background"
+msgstr ""
+
+#: index.php:18 single.php:23
+msgid "Comments (0)"
+msgstr ""
+
+#: index.php:18 single.php:23
+msgid "Comments (1)"
+msgstr ""
+
+#: index.php:18 single.php:23
+msgid "Comments (%)"
+msgstr ""
+
+#: no-posts-search.php:1 no-posts.php:1
+msgid "Error! I can't find what you're looking for."
+msgstr ""
+
+#: no-posts-search.php:2
+msgid "Sorry, no posts matched your search terms. Try another search!"
+msgstr ""
+
+#: no-posts.php:2
+msgid "Sorry, no posts matched your criteria. Try searching our archives!"
+msgstr ""
+
+#: post-meta-tags.php:9
+msgid "Categories:"
+msgstr ""
+
+#: post-meta-tags.php:12
+msgid "Tags:"
+msgstr ""
+
+#: search.php:9
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
+msgstr ""
+
+#: searchform.php:4 searchform.php:5 searchform.php:6
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:5
+msgid "Sidebar"
+msgstr ""
+
+#: single.php:38
+#, php-format
+msgid "%s Previous Post"
+msgstr ""
+
+#: single.php:38
+#, php-format
+msgid "Next Post %s"
+msgstr ""
+
+#: skiplinks.php:1
+msgid "Skip to Content"
+msgstr ""
