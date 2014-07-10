@@ -4,7 +4,7 @@ Donate link: http://www.joedolson.com/donate.php
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
 Tested up to: 3.9.1
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -22,10 +22,6 @@ Screenshot photo: Personal photo. I hereby declare it GPL. Cheers.
 Font: Google Fonts (http://www.google.com/fonts/specimen/Raleway) [SIL Open Font License, 1.1]
 
 Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
-
-== TO DO ==
-
- - Figure out how to hide the custom header text color field
  
 == Translations ==
  
@@ -41,6 +37,11 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 0.9.3 =
+
+* Bug fix: Full page width sidebar rendered incorrectly
+* Bug fix: Horizontal scrollbar when social media icons bar in use
 
 = 0.9.2 =
 
