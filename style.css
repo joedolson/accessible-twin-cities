@@ -60,6 +60,17 @@ body {
 
 a { 
 	color: #00d;
+	display: inline-block;
+}
+
+a img {
+	padding: 1px;
+	display: block;
+}
+
+a:hover img, a:focus img {
+	background: rgb( 50,50,50 );
+	background: rgba( 0,0,0,.2 );
 }
 
 a:hover, a:focus, a:active {
