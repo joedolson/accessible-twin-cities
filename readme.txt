@@ -42,6 +42,7 @@ Nothing yet!
 
 * Bug fix: Full page width sidebar rendered incorrectly
 * Bug fix: Horizontal scrollbar when social media icons bar in use
+* Bug fix: Linked images didn't have visible focus.
 
 = 0.9.2 =
 
