@@ -542,7 +542,7 @@ textarea[id=comment] { width: 100%; }
 	
 	.sticky {
 		padding: 2em;
-		margin: -2em -2em 0 -1em;
+		margin: -2em -2em 0 -2em;
 	}
 	
 	.header .site-title {

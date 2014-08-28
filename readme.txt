@@ -43,6 +43,7 @@ Nothing yet!
 * Bug fix: Full page width sidebar rendered incorrectly
 * Bug fix: Horizontal scrollbar when social media icons bar in use
 * Bug fix: Linked images didn't have visible focus.
+* Bug fix: under 480px, sticky post had 1em margin on left.
 
 = 0.9.2 =
 
