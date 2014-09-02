@@ -38,6 +38,10 @@ Nothing yet!
 
 == Changelog ==
 
+= 0.9.4 =
+
+* Bug fix: style issue with sticky posts overlayed by sidebar.
+
 = 0.9.3 =
 
 * Bug fix: Full page width sidebar rendered incorrectly
