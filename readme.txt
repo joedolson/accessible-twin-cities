@@ -3,7 +3,7 @@ Contributors: joedolson
 Donate link: http://www.joedolson.com/donate.php
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: 0.9.3
 License: GPLv2 or later
 
@@ -41,6 +41,7 @@ Nothing yet!
 = 0.9.4 =
 
 * Bug fix: style issue with sticky posts overlayed by sidebar.
+* Changed: all output from apply_filters() is now echoed, so filters can alter output of earlier filters.
 
 = 0.9.3 =
 

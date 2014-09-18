@@ -3,7 +3,7 @@
 	</div> <?php // #content .content ?>
 <div id="sidebar" role="complementary" class="sidebar clear" aria-labelledby="sidebar-header">
 	<h1 class="screen-reader-text" id="sidebar-header"><?php _e( 'Sidebar', 'universal' ); ?></h1>
-	<?php apply_filters( 'universal_top_of_sidebar', '' ); ?>
+	<?php echo apply_filters( 'universal_top_of_sidebar', '' ); ?>
 	<?php if ( is_front_page() || is_page_template( 'page-full-width.php' ) ) {
 		$sidebars = wp_get_sidebars_widgets();
 		$home_sidebar = $sidebars['ps2'];
@@ -32,5 +32,5 @@
 		}
 	?>
 	</div>
-	<?php apply_filters( 'universal_bottom_of_sidebar', '' ); ?>	
+	<?php echo apply_filters( 'universal_bottom_of_sidebar', '' ); ?>	
 </div>
