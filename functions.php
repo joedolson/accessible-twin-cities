@@ -54,6 +54,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 				'default-color' => 'f5f5f5',
 				'default-image' => '',
 			) ) );
+		add_theme_support( 'woocommerce' );			
 		$font_url = "http://fonts.googleapis.com/css?family=Raleway:400,700";
 		add_editor_style( array( 'css/editor.css', str_replace( ',', '%2C', $font_url ) ) );
 		
@@ -239,4 +240,17 @@ function universal_archive_title( $display = true ) {
 	} else {
 		return $title;
 	}
+}
+
+/* WooCommerce support */
+
+add_action( 'woocommerce_before_main_content', 'universal_theme_wrapper_start', 10 );
+add_action( 'woocommerce_after_main_content', 'universal_theme_wrapper_end', 10 );
+
+function universal_theme_wrapper_start() {
+  echo '<section>';
+}
+
+function universal_theme_wrapper_end() {
+  echo '</section>';
 }

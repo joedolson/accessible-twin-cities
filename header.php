@@ -56,8 +56,8 @@
 			</nav>
 		</div>
 		<?php echo apply_filters( 'universal_after_primary_menu_role', '' ); ?>
-		<div id="page" class='page-wrapper clear'>
-			<div id="content" class="content clear" tabindex="-1">
+		<div id="page" class="page-wrapper universal-clear">
+			<div id="content" class="content universal-clear" tabindex="-1">
 				<main role="main">
 					<div class='post-wrapper'>
 					<?php echo apply_filters( 'universal_before_posts', '' ); ?>

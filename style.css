@@ -505,7 +505,7 @@ label[for=comment], label[for=email], label[for=author], label[for=url] { displa
 textarea[id=comment] { width: 100%; }
 
 /* Utility Classes */
-.clear:after { content: ''; display: table; clear: both; }
+.universal-clear:after { content: ''; display: table; clear: both; }
 .screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; width: 1px; height: 1px; }
 .screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; width: auto; height: auto; }
 .admin-bar .skiplink a:focus { margin-top: 32px; }
