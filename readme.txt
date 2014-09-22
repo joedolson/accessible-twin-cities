@@ -42,6 +42,7 @@ Nothing yet!
 
 * Bug fix: style issue with sticky posts overlayed by sidebar.
 * Changed: all output from apply_filters() is now echoed, so filters can alter output of earlier filters.
+* Support added for WooCommerce.
 
 = 0.9.3 =
 
