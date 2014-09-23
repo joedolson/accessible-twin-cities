@@ -55,7 +55,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 				'default-image' => '',
 			) ) );
 		add_theme_support( 'woocommerce' );			
-		$font_url = "http://fonts.googleapis.com/css?family=Raleway:400,700";
+		$font_url = apply_filter( 'universal_custom_font', "http://fonts.googleapis.com/css?family=Raleway:400,700" );
 		add_editor_style( array( 'css/editor.css', str_replace( ',', '%2C', $font_url ) ) );
 		
 		register_nav_menus( array( 
@@ -220,6 +220,10 @@ add_action( 'wp_enqueue_scripts','universal_enqueue_scripts' );
 function universal_enqueue_scripts() {
 	wp_enqueue_script( 'universal.a11y', get_template_directory_uri() . '/js/a11y.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'universal.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
+	wp_register_style( 'universal.woocommerce', get_template_directory_uri() . '/css/woocommerce.css' ); 
+	if ( class_exists( 'WC_Cart' ) ) {
+		wp_enqueue_style( 'universal.woocommerce' );
+	}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

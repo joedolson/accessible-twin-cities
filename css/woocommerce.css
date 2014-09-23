@@ -1,0 +1,17 @@
+/* Minimal WooCommerce Classes (Create a child theme to customize) */
+.woocommerce .cart_totals th, .cart_totals td {
+	border: none;
+	background: none;
+	line-height: 1.5;
+}
+.woocommerce .cart_totals th {
+	text-align: left;
+}
+
+.woocommerce #payment div.payment_box, .woocommerce-page #payment div.payment_box {
+	color: #000;
+}
+
+.post-wrapper .woocommerce #payment ul > li {
+	list-style-type: none;
+}
