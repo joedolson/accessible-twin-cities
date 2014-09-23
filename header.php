@@ -11,6 +11,7 @@
 <head>
 	<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php 
 		/*
 		 *	The important thing in the viewport is what's not here: zoom control. Limiting or disallowing zoom on mobile prevents
