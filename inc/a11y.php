@@ -243,5 +243,3 @@ function universal_comment_form_default_fields( $fields ) {
 	
 	return $fields;
 }
-
-?>
