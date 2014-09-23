@@ -55,7 +55,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 				'default-image' => '',
 			) ) );
 		add_theme_support( 'woocommerce' );			
-		$font_url = apply_filter( 'universal_custom_font', "http://fonts.googleapis.com/css?family=Raleway:400,700" );
+		$font_url = apply_filters( 'universal_custom_font', "http://fonts.googleapis.com/css?family=Raleway:400,700" );
 		add_editor_style( array( 'css/editor.css', str_replace( ',', '%2C', $font_url ) ) );
 		
 		register_nav_menus( array( 
