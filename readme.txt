@@ -1,6 +1,6 @@
 === Universal ===
 Contributors: joedolson
-Donate link: http://www.joedolson.com/donate.php
+Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
 Tested up to: 4.0
