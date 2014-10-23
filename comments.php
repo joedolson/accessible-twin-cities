@@ -68,9 +68,9 @@ if ( post_password_required() ) {
 	*/
 	$universal_args = array( 
  	        // redefine your own textarea (the comment body) 
- 	        'comment_field' => '<p class="comment-form-comment"><label for="comment" id="comment-label">' . _x( 'Comment', 'noun' ) . ' <span class="required">(required)</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required aria-labelledby="comment-label, html-tags"></textarea></p>', 
-			'comment_notes_after' => '<p class="form-allowed-tags" id="html-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
-			'comment_notes_before' => '<p class="comment-notes" id="comment-notes">' . __( 'Your email address will not be published.' ).'</p>'
+ 	        'comment_field' => '<p class="comment-form-comment"><label for="comment" id="comment-label">' . _x( 'Comment', 'noun', 'universal' ) . ' <span class="required">('.__( 'required', 'universal' ).')</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required aria-labelledby="comment-label, html-tags"></textarea></p>', 
+			'comment_notes_after' => '<p class="form-allowed-tags" id="html-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'universal' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+			'comment_notes_before' => '<p class="comment-notes" id="comment-notes">' . __( 'Your email address will not be published.', 'universal' ).'</p>'
  	    );
 	comment_form( $universal_args ); ?>
 
