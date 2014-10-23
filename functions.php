@@ -124,8 +124,8 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 		));
 	}
 }
-// for demo purposes, I want this overridden by the inaccessible child; but will change after.
-require_once( get_stylesheet_directory() . '/inc/a11y.php' );
+
+require_once( get_template_directory() . '/inc/a11y.php' );
 require_once( get_template_directory() . '/inc/customizer.php' );
 
 add_filter( 'wp_title', 'universal_home_title' );
@@ -161,23 +161,25 @@ function universal_load_styles() {
 add_action( 'wp_head', 'universal_customizer_styles' );
 function universal_customizer_styles() {
 
-	$header = universal_generate_custom_styles( 'header', '#ffffff' );
-	$sidebar = universal_generate_custom_styles( 'sidebar', '#ffffff' );
-	$content = universal_generate_custom_styles( 'content', '#ffffff' );
-	$wrapper = universal_generate_custom_styles( 'wrapper', '#dddddd' );
-	$menu = universal_generate_custom_styles( 'primary-menu', '#111111' );
-	$pw = universal_generate_custom_styles( 'page-wrapper', '#ffffff' );
+	$header = 	universal_generate_custom_styles( 'header', '#ffffff' );
+	$sidebar = 	universal_generate_custom_styles( 'sidebar', '#ffffff' );
+	$content = 	universal_generate_custom_styles( 'content', '#ffffff' );
+	$wrapper =	universal_generate_custom_styles( 'wrapper', '#dddddd' );
+	$menu = 	universal_generate_custom_styles( 'primary-menu', '#111111' );
+	$pw = 		universal_generate_custom_styles( 'page-wrapper', '#ffffff' );
 
 	if ( $header || $sidebar || $content || $wrapper || $pw || $menu ) {
 		?>
-		<style>
-			<?php echo "$wrapper"; ?>
-			<?php echo "$pw"; ?>
-			<?php echo "$header"; ?>
-			<?php echo "$menu"; ?>
-			<?php echo "$sidebar"; ?>
-			<?php echo "$content"; ?>
-		</style>
+
+<style>
+/* Styles for Universal by Joe Dolson http://themes.joedolson.com/universal/ */
+<?php echo "$wrapper"; ?>
+<?php echo "$pw"; ?>
+<?php echo "$header"; ?>
+<?php echo "$menu"; ?>
+<?php echo "$sidebar"; ?>
+<?php echo "$content"; ?>
+</style>
 		<?php
 	}
 }
@@ -192,17 +194,19 @@ function universal_generate_custom_styles( $setting, $default ) {
 		$get_setting = $setting;
 	}
 	
+	$theme_mod = get_theme_mod( 'universal_'.$get_setting.'_bg' );
+	
 	if ( $setting == 'primary-menu' ) {
-		$value = ( get_theme_mod( 'universal_'.$get_setting.'_bg' ) && get_theme_mod( 'universal_'.$get_setting.'_bg' ) != $default ) ? "\n.$setting, .$setting a { background-color: ".get_theme_mod( 'universal_'.$get_setting.'_bg' )."; }" : false;
+		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting, .$setting a { background-color: ".$theme_mod."; }\n" : ".$setting, .$setting a { background-color: ".$default."; }\n";
 	} else {
-		$value = ( get_theme_mod( 'universal_'.$get_setting.'_bg' ) && get_theme_mod( 'universal_'.$get_setting.'_bg' ) != $default ) ? "\n.$setting { background-color: ".get_theme_mod( 'universal_'.$get_setting.'_bg' )."; }" : false;
+		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting { background-color: ".$theme_mod."; }\n" : ".$setting { background-color: ".$default."; }\n";
 	}
 	if ( $value ) { 
-		$viable = universal_compare_contrast( get_theme_mod( 'universal_'.$get_setting.'_bg' ), apply_filters( 'universal_custom_link_color','#0000dd' ) );
+		$viable = universal_compare_contrast( $theme_mod, apply_filters( 'universal_custom_link_color','#0000dd' ) );
 		if ( $viable ) { 
-			$color = "\n.$setting { color: ".universal_inverse_color( get_theme_mod( 'universal_'.$get_setting.'_bg' ) )."; }\n.$setting a { color: #0000dd; }";
+			$color = ".$setting { color: ".universal_inverse_color( $theme_mod )."; }\n.$setting a { color: #0000dd; }\n";
 		} else {
-			$color = "\n.$setting, .$setting a { color: ".universal_inverse_color( get_theme_mod( 'universal_'.$get_setting.'_bg' ) )."; }"; 
+			$color = ".$setting, .$setting a { color: ".universal_inverse_color( $theme_mod )."; }\n"; 
 		}
 	}
 	return $value.$color;

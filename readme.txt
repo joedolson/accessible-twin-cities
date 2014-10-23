@@ -44,6 +44,8 @@ Nothing yet!
 * Changed: all output from apply_filters() is now echoed, so filters can alter output of earlier filters.
 * Support added for WooCommerce.
 * Added XFN profile reference (required by Theme Guidelines; missed in review)
+* Bug fix: forgot to revert getting a11y.php from child theme, needed for demo.
+* Bug fix: if wrapper background colors are defined and internal colors aren't, link colors break.
 
 = 0.9.3 =
 
