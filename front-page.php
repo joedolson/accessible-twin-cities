@@ -26,7 +26,13 @@
 			
 				<h1 class="post-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 				<div class='post-content' id="post-<?php the_ID(); ?>">
-					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
+					<?php 
+					if ( universal_show_excerpt() ) { 
+						the_excerpt();
+					} else {
+						the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); 
+					}	
+					?>
 					<?php echo $post_link; ?>
 					<?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>			
 				</div> 

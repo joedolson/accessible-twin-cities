@@ -24,7 +24,13 @@
 		}
 		get_template_part( 'post-meta' ); ?>
 		<div class='post-content' id="post-<?php the_ID(); ?>">
-			<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
+			<?php 
+			if ( universal_show_excerpt() ) { 
+				the_excerpt();
+			} else {
+				the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); 
+			}	
+			?>
 			<?php echo $post_link; ?>
 			<?php edit_post_link('Edit this entry.', '<p class="edit">', '</p>'); ?>
 		</div>

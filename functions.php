@@ -154,6 +154,14 @@ function universal_load_styles() {
 		wp_enqueue_style( 'universal-style', get_stylesheet_uri(), array( 'dashicons', 'Raleway' ), '1.0' );	
 }
 
+
+function universal_show_excerpt() {
+	if ( !is_singular() && get_theme_mod( 'universal_content_display' ) == 'excerpt' ) {
+		return true;
+	}
+	return false;
+}
+
 /* 
  * Check for customizer color settings. 
  * If set, check whether links can be blue against that background. If not, use calculated inverse color. 
@@ -202,11 +210,12 @@ function universal_generate_custom_styles( $setting, $default ) {
 		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting { background-color: ".$theme_mod."; }\n" : ".$setting { background-color: ".$default."; }\n";
 	}
 	if ( $value ) { 
-		$viable = universal_compare_contrast( $theme_mod, apply_filters( 'universal_custom_link_color','#0000dd' ) );
+		$test_color = ( $theme_mod != '' ) ? $theme_mod : $default;
+		$viable = universal_compare_contrast( $test_color, apply_filters( 'universal_custom_link_color', '#0000dd' ) );
 		if ( $viable ) { 
-			$color = ".$setting { color: ".universal_inverse_color( $theme_mod )."; }\n.$setting a { color: #0000dd; }\n";
+			$color = ".$setting { color: ".universal_inverse_color( $test_color )."; }\n.$setting a { color: #0000dd; }\n";
 		} else {
-			$color = ".$setting, .$setting a { color: ".universal_inverse_color( $theme_mod )."; }\n"; 
+			$color = ".$setting, .$setting a { color: ".universal_inverse_color( $test_color )."; }\n"; 
 		}
 	}
 	return $value.$color;

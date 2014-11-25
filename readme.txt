@@ -4,7 +4,7 @@ Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
 Tested up to: 4.0
-Stable tag: 0.9.4
+Stable tag: 0.9.5
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -37,6 +37,11 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 0.9.5 = 
+
+* Bug fix: color management for link colors failed if no value was set in customizer
+* Option added: Show excerpts on home page & archive pages
 
 = 0.9.4 =
 

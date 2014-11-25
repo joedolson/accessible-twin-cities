@@ -55,7 +55,7 @@ function universal_continue_reading( $id ) {
  * Invert colors
  * This function takes a hexadecimal value and selects the contrasting light or dark color that gives the best contrast with that color.
 */
-function universal_inverse_color( $color ){
+function universal_inverse_color( $color ) {
     $color = str_replace('#', '', $color);
     if ( strlen( $color ) != 6 ) { return '#000000'; }
     $rgb = '';
