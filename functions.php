@@ -55,7 +55,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 				'default-image' => '',
 			) ) );
 		add_theme_support( 'woocommerce' );			
-		$font_url = apply_filters( 'universal_custom_font', "http://fonts.googleapis.com/css?family=Raleway:400,700" );
+		$font_url = apply_filters( 'universal_custom_font', "//fonts.googleapis.com/css?family=Raleway:400,700" );
 		add_editor_style( array( 'css/editor.css', str_replace( ',', '%2C', $font_url ) ) );
 		
 		register_nav_menus( array( 
@@ -150,7 +150,7 @@ function universal_social_media_menu( $return ) {
 
 add_action( 'wp_print_styles', 'universal_load_styles' );
 function universal_load_styles() {
-		wp_register_style('Raleway', 'http://fonts.googleapis.com/css?family=Raleway:400,700');
+		wp_register_style('Raleway', '//fonts.googleapis.com/css?family=Raleway:400,700');
 		wp_enqueue_style( 'universal-style', get_stylesheet_uri(), array( 'dashicons', 'Raleway' ), '1.0' );	
 }
 
@@ -205,12 +205,12 @@ function universal_generate_custom_styles( $setting, $default ) {
 	$theme_mod = get_theme_mod( 'universal_'.$get_setting.'_bg' );
 	
 	if ( $setting == 'primary-menu' ) {
-		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting, .$setting a { background-color: ".$theme_mod."; }\n" : ".$setting, .$setting a { background-color: ".$default."; }\n";
+		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting, .$setting a { background-color: ".esc_attr( $theme_mod )."; }\n" : ".$setting, .$setting a { background-color: ".$default."; }\n";
 	} else {
-		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting { background-color: ".$theme_mod."; }\n" : ".$setting { background-color: ".$default."; }\n";
+		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting { background-color: ".esc_attr( $theme_mod )."; }\n" : ".$setting { background-color: ".$default."; }\n";
 	}
 	if ( $value ) { 
-		$test_color = ( $theme_mod != '' ) ? $theme_mod : $default;
+		$test_color = ( $theme_mod != '' ) ? esc_attr( $theme_mod ) : $default;
 		$viable = universal_compare_contrast( $test_color, apply_filters( 'universal_custom_link_color', '#0000dd' ) );
 		if ( $viable ) { 
 			$color = ".$setting { color: ".universal_inverse_color( $test_color )."; }\n.$setting a { color: #0000dd; }\n";

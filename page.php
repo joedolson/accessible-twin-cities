@@ -11,7 +11,7 @@
 		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 		</div> 
-		<p class="edit"><?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '', '' ); ?></p>
+		<?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>
 		</section>
 
 		<!--

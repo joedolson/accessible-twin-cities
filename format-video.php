@@ -32,7 +32,7 @@
 			}	
 			?>
 			<?php echo $post_link; ?>
-			<?php edit_post_link('Edit this entry.', '<p class="edit">', '</p>'); ?>
+			<?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>
 		</div>
 		<?php get_template_part( 'post-meta-tags' ); ?>
 		<!--

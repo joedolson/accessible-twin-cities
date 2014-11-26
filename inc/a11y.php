@@ -48,7 +48,7 @@ function universal_custom_excerpt_more( $output ) {
 }
 
 function universal_continue_reading( $id ) {
-    return '<a class="continue" href="'.get_permalink( $id ).'">Finish Reading<span> "'.get_the_title( $id ).'"</span></a>';
+    return '<a class="continue" href="'.get_permalink( $id ).'">'. sprintf( __( 'Finish Reading%s', 'universal' ), "<span> ".get_the_title( $id )."</span>" ) . '</a>';
 }
 
 /*
@@ -171,7 +171,7 @@ function universal_breadcrumbs() {
 	$sep = ( is_rtl() ) ? "<span class='separator'> &laquo; </span>" : "<span class='separator'> &raquo; </span>";
     $breadcrumb = '<p class="breadcrumbs">';
 
-	$link = '<span class="breadcrumb top-level"><a href="'.home_url().'">'.apply_filters( 'universal_breadcrumb_home_text', __( 'Home', 'accessible_twin_cities' ) ).'</a></span>';
+	$link = '<span class="breadcrumb top-level"><a href="'.esc_url( home_url( '/' ) ).'">'.apply_filters( 'universal_breadcrumb_home_text', __( 'Home', 'universal' ) ).'</a></span>';
 	$crumb = sprintf( __( '<i>You are here:</i> %s', 'universal' ), $link );
 	$breadcrumbs[] = $crumb;
 	if ( is_category() || is_single() ) {
@@ -231,12 +231,12 @@ function universal_comment_form_default_fields( $fields ) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	
-	$fields['author'] = '<p class="comment-form-author"><label for="author">' . __( 'Name', 'domainreference' ) . 
+	$fields['author'] = '<p class="comment-form-author"><label for="author">' . __( 'Name', 'universal' ) . 
     ( $req ? ' <span class="required">(required)</span>' : '' ) . '</label> ' .  
     '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
     '" size="30"' . $aria_req . ' required /></p>';
 	
-	$fields['email'] = '<p class="comment-form-email"><label for="email" id="comment-email">' . __( 'Email', 'domainreference' ) . 
+	$fields['email'] = '<p class="comment-form-email"><label for="email" id="comment-email">' . __( 'Email', 'universal' ) . 
     ( $req ? ' <span class="required">(required)</span>' : '' ) . '</label> ' .
     '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
     '" size="30"' . $aria_req . ' required aria-labelledby="comment-email, comment-notes" /></p>';

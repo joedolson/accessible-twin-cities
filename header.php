@@ -36,7 +36,7 @@
 			<header role="banner">
 				<?php echo apply_filters( 'universal_top_of_header', '' ); ?>								
 				<div class="text-header">
-					<div class='site-title'><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
+					<div class='site-title'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></div>
 					<div class='site-description'><?php bloginfo('description'); ?></div>
 				</div>
 				<?php echo apply_filters( 'universal_end_of_header', '' ); ?>	
