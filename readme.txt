@@ -3,8 +3,8 @@ Contributors: joedolson
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
-Tested up to: 4.0
-Stable tag: 0.9.6
+Tested up to: 4.1
+Stable tag: 0.9.7
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -37,6 +37,11 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 0.9.7 =
+
+* Added Youtube and Vimeo icons to social networks in icomoon font.
+* 
 
 = 0.9.6 =
 
