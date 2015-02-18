@@ -36,8 +36,23 @@
 			<header role="banner">
 				<?php echo apply_filters( 'universal_top_of_header', '' ); ?>								
 				<div class="text-header">
-					<div class='site-title'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></div>
-					<div class='site-description'><?php bloginfo('description'); ?></div>
+					<?php 
+					/**
+					 * If somebody sets their blog name to an empty string, they're intent is probably to hide the site title on the home page.
+					 * This results in an empty link with no text, so this pattern inserts a text and hides the link.
+					 */
+					if ( get_bloginfo( 'name' ) == '' ) {
+						$class = 'site-title screen-reader-text';
+						$name = 'Home';
+					} else {
+						$class = 'site-title';
+						$name = get_bloginfo( 'name' );
+					}
+					?>
+					<div class='<?php echo $class; ?>'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo $name; ?></a></div>
+					<?php if ( get_bloginfo( 'description' ) != '' ) { ?>
+						<div class='site-description'><?php bloginfo('description'); ?></div>
+					<?php } ?>
 				</div>
 				<?php echo apply_filters( 'universal_end_of_header', '' ); ?>	
 			</header>
