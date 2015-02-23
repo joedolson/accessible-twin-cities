@@ -41,7 +41,13 @@ Nothing yet!
 = 0.9.7 =
 
 * Added Youtube and Vimeo icons to social networks in icomoon font.
-* 
+* Added support for My Calendar widgets.
+* Added fallback in case of blank site titles.
+* Remove description HTML if blank site description.
+* Better looking search form widget.
+* Add widget-inner wrapper for improved styling options.
+* AJAX comment submission.
+* Text improvement on responsive menu button.
 
 = 0.9.6 =
 

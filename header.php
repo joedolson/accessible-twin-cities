@@ -67,7 +67,7 @@
 			?>
 			<nav role="navigation" aria-label='<?php _e( 'Primary Menu ', 'universal' ); ?>'>
 			<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'universal' ); ?></h1>
-			<button class='menu-toggle' title='<?php _e( 'Open Menu', 'universal' ); ?>'><span class="screen-reader-text"><?php _e( 'Open Menu','universal' ); ?></span></button>			
+			<button class='menu-toggle' title='<?php _e( 'Toggle Menu', 'universal' ); ?>'><span class="screen-reader-text"><?php _e( 'Toggle Menu','universal' ); ?></span></button>			
 			<?php wp_nav_menu( array( 'theme_location'=>'primary' ) ); ?>
 			</nav>
 		</div>

@@ -288,8 +288,8 @@ body {
 
 .widget h2:before { font-family: 'dashicons'; vertical-align: middle; padding-right: .25em; }
 .widget_meta h2:before {  content: "\f107"; }
-.widget_search h2:before { content: "\f179"; }
-.widget_archive h2:before, .widget_calendar h2:before, .widget_recent_entries h2:before  { content: "\f145"; }
+.widget_search h2:before, .widget_my_calendar_simple_search h2:before { content: "\f179"; }
+.widget_archive h2:before, .widget_calendar h2:before, .widget_recent_entries h2:before, .widget_my_calendar_mini_widget h2:before, .widget_my_calendar_upcoming_widget h2:before, .widget_my_calendar_today_widget h2:before  { content: "\f145"; }
 .widget_categories h2:before { content: "\f318"; }
 .widget_tag_cloud h2:before { content: "\f323"; }
 .widget_nav_menu h2:before, .widget_pages h2:before { content: "\f333"; }
@@ -318,8 +318,17 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 	padding: 15px;
 }
 
-.searchform input{
+.widget .searchform, .widget .mc-search {
+	padding: 15px;
+}
+
+.searchform input, .mc-search input {
 	font-size: 1.2em; 
+	padding: 4px;
+}
+
+.searchform input[type=text]:hover, .mc-search input[type=text] {
+	border-color: #666;
 }
 
 .post-content {
@@ -437,6 +446,37 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 
 .comment {
 	padding: 1em;
+}
+
+/* AJAX Comments */
+
+.universal-comment-processing {
+	background: rgba( 200, 200, 200, .8 );
+	transition: .1s;
+}
+
+.universal-comment-error {
+	background: rgba( 200, 0, 0, .9 );
+	color: #fff;
+}
+
+.universal-field-error {
+	margin-left: .5em;
+	padding: .25em;
+	background: rgba( 255, 255, 180, .9 );
+}
+
+.universal-ajax-comment {
+	transition: .1s;
+}
+
+#comment-status {
+	margin-bottom: 1em;
+}
+
+#comment-status p {
+	padding: .5em;
+	font-size: 1.1em;
 }
 
 .navigation:after {

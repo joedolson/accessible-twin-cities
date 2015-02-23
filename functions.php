@@ -78,9 +78,9 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 			'description' => __( 'Widgets in this region will appear on all posts and post archives', 'universal' ),
 			'id' => 'ps1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
+			'after_widget' => '</div></div>',
 			'before_title' => '<h2>',
-			'after_title' => '</h2>',
+			'after_title' => '</h2><div class="widget-inner">',
 		));
 
 		register_sidebar( array(
@@ -88,9 +88,9 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 			'description' => __( 'Add up to 5 widgets to show on the bottom of your front page.', 'universal' ),
 			'id' => 'ps2',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
+			'after_widget' => '</div></div>',
 			'before_title' => '<h2>',
-			'after_title' => '</h2>',
+			'after_title' => '</h2><div class="widget-inner">',
 		));
 
 		register_sidebar( array(
@@ -98,9 +98,9 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 			'description' => __( 'Widgets in this region will appear on WordPress Pages.', 'universal' ),
 			'id' => 'ps3',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
+			'after_widget' => '</div></div>',
 			'before_title' => '<h2>',
-			'after_title' => '</h2>',
+			'after_title' => '</h2><div class="widget-inner">',
 		));
 
 		register_sidebar( array(
@@ -108,9 +108,9 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'universal' ),
 			'id' => 'ps4',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
+			'after_widget' => '</div></div>',
 			'before_title' => '<h2>',
-			'after_title' => '</h2>',
+			'after_title' => '</h2><div class="widget-inner">',
 		));
 
 		register_sidebar( array(
@@ -118,14 +118,15 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'universal' ),
 			'id' => 'ps5',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
+			'after_widget' => '</div></div>',
 			'before_title' => '<h2>',
-			'after_title' => '</h2>',
+			'after_title' => '</h2><div class="widget-inner">',
 		));
 	}
 }
 
 require_once( get_template_directory() . '/inc/a11y.php' );
+require_once( get_template_directory() . '/inc/comments.php' );
 require_once( get_template_directory() . '/inc/customizer.php' );
 
 add_filter( 'wp_title', 'universal_home_title' );
@@ -232,6 +233,15 @@ function universal_custom_header_image( $value ) {
 add_action( 'wp_enqueue_scripts','universal_enqueue_scripts' );
 function universal_enqueue_scripts() {
 	wp_enqueue_script( 'universal.a11y', get_template_directory_uri() . '/js/a11y.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'universal.comments', get_template_directory_uri() . "/js/comments.js", array('jquery'), '1.0.0', true );
+	$comment_i18n = array( 
+		'processing' => __( 'Processing...', 'universal' ),
+		'flood' => sprintf( __( 'Your comment was either a duplicate or you are posting too rapidly. <a href="%s">Edit your comment</a>', 'universal' ), '#comment' ),
+		'error' => __( 'There were errors in submitting your comment; complete the missing fields and try again!', 'universal' ),
+		'emailInvalid' => __( 'That email appears to be invalid.', 'yourtheme' ),
+		'required' => __( 'This is a required field.', 'yourtheme' )		
+	);
+	wp_localize_script( 'universal.comments', 'universalComments', $comment_i18n );
 	wp_enqueue_script( 'universal.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
 	wp_register_style( 'universal.woocommerce', get_template_directory_uri() . '/css/woocommerce.css' ); 
 	if ( class_exists( 'WC_Cart' ) ) {
