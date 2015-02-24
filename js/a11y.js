@@ -9,7 +9,7 @@
 	
 	// make dropdowns functional on focus
 	$( '.primary-menu' ).find( 'a' ).on( 'focus blur', function() {
-		$( this ).parents().toggleClass( 'focus' );
+		$( this ).parents( 'ul, li' ).toggleClass( 'focus' );
 	} );
 	
 	// fix cases where blog post photos have title attributes but not alt attributes
