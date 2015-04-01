@@ -46,7 +46,7 @@ Nothing yet!
 * Remove description HTML if blank site description.
 * Better looking search form widget.
 * Add widget-inner wrapper for improved styling options.
-* AJAX comment submission.
+* AJAX comment submission & customizer options to disable
 * Text improvement on responsive menu button.
 
 = 0.9.6 =

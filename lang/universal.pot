@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Universal\n"
-"POT-Creation-Date: 2014-07-06 10:47-0600\n"
-"PO-Revision-Date: 2014-07-06 10:48-0600\n"
+"POT-Creation-Date: 2015-04-01 17:14-0600\n"
+"PO-Revision-Date: 2015-04-01 17:15-0600\n"
 "Last-Translator: Joseph Dolson <joe@joedolson.com>\n"
 "Language-Team: Joseph Dolson <joe@joedolson.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -17,6 +17,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:5
 msgid "Error: Page not found!"
@@ -62,6 +63,10 @@ msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
+#: comments.php:71
+msgid "required"
+msgstr ""
+
 #: comments.php:72
 #, php-format
 msgid ""
@@ -86,12 +91,22 @@ msgstr ""
 msgid "<a href=\"%s\" rel=\"bookmark\">View untitled aside</a>"
 msgstr ""
 
-#: format-aside.php:27 format-audio.php:27 format-gallery.php:27
-#: format-image.php:28 format-quote.php:27 format-status.php:27
-#: format-video.php:27 format.php:26 front-page.php:29 page-full-width.php:17
-#: page-sidebar-right.php:17 page.php:12 tpl-sitemap.php:17
+#: format-aside.php:31 format-audio.php:31 format-gallery.php:31
+#: format-image.php:32 format-quote.php:31 format-status.php:31
+#: format-video.php:31 format.php:30 front-page.php:29 front-page.php:47
+#: page-full-width.php:17 page-sidebar-right.php:17 page.php:12
+#: tpl-sitemap.php:17
 #, php-format
 msgid "Finish reading <em>%s</em>"
+msgstr ""
+
+#: format-aside.php:35 format-audio.php:35 format-gallery.php:35
+#: format-image.php:36 format-quote.php:35 format-status.php:35
+#: format-video.php:35 format.php:34 front-page.php:31 front-page.php:51
+#: page-full-width.php:19 page-sidebar-right.php:19 page.php:14
+#: tpl-sitemap.php:21
+#, php-format
+msgid "Edit %s"
 msgstr ""
 
 #: format-audio.php:16
@@ -129,73 +144,98 @@ msgstr ""
 msgid "<a href=\"%s\" rel=\"bookmark\">View untitled post</a>"
 msgstr ""
 
-#: front-page.php:31 page.php:14 tpl-sitemap.php:21
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: front-page.php:60 index.php:41
+#: front-page.php:66 index.php:41
 #, php-format
 msgid "%s Previous Posts"
 msgstr ""
 
-#: front-page.php:60 index.php:41
+#: front-page.php:66 index.php:41
 #, php-format
 msgid "Next Posts %s"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:62
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:63
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:63 tpl-sitemap.php:18
+#: functions.php:64 tpl-sitemap.php:18
 msgid "Site Map"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:65
 msgid "Social Networks"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:78
 msgid "Widgets in this region will appear on all posts and post archives"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:88
 msgid "Add up to 5 widgets to show on the bottom of your front page."
 msgstr ""
 
-#: functions.php:97
+#: functions.php:98
 msgid "Widgets in this region will appear on WordPress Pages."
 msgstr ""
 
-#: functions.php:107 functions.php:117
+#: functions.php:108 functions.php:118
 msgid ""
 "These widgets appear globally on posts and pages, excluding the front page."
 msgstr ""
 
-#: functions.php:133 inc/a11y.php:174
+#: functions.php:135 inc/a11y.php:174
 msgid "Home"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:239
+msgid "Processing..."
+msgstr ""
+
+#: functions.php:240
+#, php-format
+msgid ""
+"Your comment was either a duplicate or you are posting too rapidly. <a href="
+"\"%s\">Edit your comment</a>"
+msgstr ""
+
+#: functions.php:241
+msgid ""
+"There were errors in submitting your comment; complete the missing fields "
+"and try again!"
+msgstr ""
+
+#: functions.php:242
+msgid "That email appears to be invalid."
+msgstr ""
+
+#: functions.php:243
+msgid "This is a required field."
+msgstr ""
+
+#: functions.php:265
 #, php-format
 msgid "%s Posts"
 msgstr ""
 
-#: header.php:52
+#: header.php:68
 msgid "Primary Menu "
 msgstr ""
 
-#: header.php:53
+#: header.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: header.php:54
-msgid "Open Menu"
+#: header.php:70
+msgid "Toggle Menu"
+msgstr ""
+
+#: inc/a11y.php:51
+#, php-format
+msgid "Finish Reading%s"
 msgstr ""
 
 #: inc/a11y.php:175
@@ -234,6 +274,25 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: inc/comments.php:22
+msgid "Your comment has been sent for moderation. It should be approved soon!"
+msgstr ""
+
+#: inc/comments.php:37
+msgid "You said:"
+msgstr ""
+
+#: inc/comments.php:58
+#, php-format
+msgid ""
+"Thanks for commenting! Your comment has been approved. <a href=\"%s\">Read "
+"your comment</a>"
+msgstr ""
+
+#: inc/comments.php:67
+msgid "There was an error posting your comment. Try again later!"
+msgstr ""
+
 #: inc/customizer.php:22
 msgid "Universal Color Settings"
 msgstr ""
@@ -244,28 +303,44 @@ msgid ""
 "for you."
 msgstr ""
 
-#: inc/customizer.php:57
+#: inc/customizer.php:27
+msgid "Universal Content Settings"
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "Additional content & display options."
+msgstr ""
+
+#: inc/customizer.php:70
 msgid "Header Background"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:82
 msgid "Menu Background"
 msgstr ""
 
-#: inc/customizer.php:81
+#: inc/customizer.php:94
 msgid "Sidebar Background"
 msgstr ""
 
-#: inc/customizer.php:93
+#: inc/customizer.php:106
 msgid "Content Background"
 msgstr ""
 
-#: inc/customizer.php:105
+#: inc/customizer.php:118
 msgid "Wrapper Background"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:130
 msgid "Page Wrapper Background"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "Display archive and home page content as"
+msgstr ""
+
+#: inc/customizer.php:155
+msgid "Use AJAX Comments"
 msgstr ""
 
 #: index.php:18 single.php:23

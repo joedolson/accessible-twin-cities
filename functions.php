@@ -233,15 +233,17 @@ function universal_custom_header_image( $value ) {
 add_action( 'wp_enqueue_scripts','universal_enqueue_scripts' );
 function universal_enqueue_scripts() {
 	wp_enqueue_script( 'universal.a11y', get_template_directory_uri() . '/js/a11y.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'universal.comments', get_template_directory_uri() . "/js/comments.js", array('jquery'), '1.0.0', true );
-	$comment_i18n = array( 
-		'processing' => __( 'Processing...', 'universal' ),
-		'flood' => sprintf( __( 'Your comment was either a duplicate or you are posting too rapidly. <a href="%s">Edit your comment</a>', 'universal' ), '#comment' ),
-		'error' => __( 'There were errors in submitting your comment; complete the missing fields and try again!', 'universal' ),
-		'emailInvalid' => __( 'That email appears to be invalid.', 'yourtheme' ),
-		'required' => __( 'This is a required field.', 'yourtheme' )		
-	);
-	wp_localize_script( 'universal.comments', 'universalComments', $comment_i18n );
+	if ( get_theme_mod( 'universal_ajax_comments' ) == 1 ) {
+		wp_enqueue_script( 'universal.comments', get_template_directory_uri() . "/js/comments.js", array('jquery'), '1.0.0', true );
+		$comment_i18n = array( 
+			'processing' => __( 'Processing...', 'universal' ),
+			'flood' => sprintf( __( 'Your comment was either a duplicate or you are posting too rapidly. <a href="%s">Edit your comment</a>', 'universal' ), '#comment' ),
+			'error' => __( 'There were errors in submitting your comment; complete the missing fields and try again!', 'universal' ),
+			'emailInvalid' => __( 'That email appears to be invalid.', 'yourtheme' ),
+			'required' => __( 'This is a required field.', 'yourtheme' )		
+		);
+		wp_localize_script( 'universal.comments', 'universalComments', $comment_i18n );
+	}
 	wp_enqueue_script( 'universal.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
 	wp_register_style( 'universal.woocommerce', get_template_directory_uri() . '/css/woocommerce.css' ); 
 	if ( class_exists( 'WC_Cart' ) ) {

@@ -26,7 +26,7 @@ function universal_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'universal_content' , array(
 		'title' => __( 'Universal Content Settings', 'universal' ),
 		'priority' => 202,
-		'description' => __( 'Configure content display options.', 'universal' ),
+		'description' => __( 'Additional content & display options.', 'universal' ),
 	) );	
 	//Add Settings
 	$wp_customize->add_setting( 'universal_header_bg', array( 
@@ -57,6 +57,10 @@ function universal_customize_register( $wp_customize ) {
 		'default' => 'full',
 		'sanitize_callback' => 'universal_sanitize_content_display', 
 	));
+	$wp_customize->add_setting( 'universal_ajax_comments', array( 
+		'default' => '1',
+		'sanitize_callback' => 'universal_sanitize_checkbox', 
+	));	
 	// Header Background
 	$wp_customize->add_control( 
 	    new WP_Customize_Color_Control(
@@ -143,6 +147,17 @@ function universal_customize_register( $wp_customize ) {
 			),
 		)
 	);	
+	
+	// Content Display
+	$wp_customize->add_control( 
+		'universal_ajax_comments', 
+		array(
+			'label'    => __( 'Use AJAX Comments', 'universal' ),
+			'section'  => 'universal_content',
+			'settings' => 'universal_ajax_comments',
+			'type'     => 'checkbox'
+		)
+	);		
 }
 
 /**
@@ -153,6 +168,20 @@ function universal_sanitize_content_display( $value ) {
 		return $value;
 	}
 	return false;
+}
+
+/**
+ * Sanitize the checkbox.
+ *
+ * @param boolean $input.
+ * @return boolean (true|false).
+ */
+function universal_sanitize_checkbox( $input ) {
+	if ( $input == 1 ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 /**
