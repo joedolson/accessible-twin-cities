@@ -10,7 +10,7 @@
 		<h1 class="screen-reader-text"><?php universal_archive_title(); ?></h1>
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>
-	<div <?php post_class(); ?>>
+	<div class='front-page-wrapper'>
 		<section>
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
@@ -25,7 +25,7 @@
 			if ( is_page() ) { ?>
 			
 				<h1 class="post-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
-				<div class='post-content' id="post-<?php the_ID(); ?>">
+				<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
 					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 					<?php echo $post_link; ?>
 					<?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>			
@@ -39,7 +39,7 @@
 				<?php
 				get_template_part( 'post-meta' ); ?>
 
-				<div class='post-content' id="post-<?php the_ID(); ?>">
+				<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
 					<?php 
 					if ( universal_show_excerpt() ) { 
 						the_excerpt();
