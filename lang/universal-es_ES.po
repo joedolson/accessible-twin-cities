@@ -1,0 +1,358 @@
+# Translation of Universal in Spanish (Spain)
+# This file is distributed under the same license as the Universal package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-04-01 22:13:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Universal\n"
+
+#: comments.php:71
+msgid "required"
+msgstr ""
+
+#: functions.php:239
+msgid "Processing..."
+msgstr ""
+
+#: functions.php:240
+msgid "Your comment was either a duplicate or you are posting too rapidly. <a href=\"%s\">Edit your comment</a>"
+msgstr ""
+
+#: functions.php:241
+msgid "There were errors in submitting your comment; complete the missing fields and try again!"
+msgstr ""
+
+#: functions.php:242
+msgid "That email appears to be invalid."
+msgstr ""
+
+#: functions.php:243
+msgid "This is a required field."
+msgstr ""
+
+#: header.php:70
+msgid "Toggle Menu"
+msgstr ""
+
+#: inc/a11y.php:51
+msgid "Finish Reading%s"
+msgstr ""
+
+#: inc/comments.php:22
+msgid "Your comment has been sent for moderation. It should be approved soon!"
+msgstr ""
+
+#: inc/comments.php:37
+msgid "You said:"
+msgstr ""
+
+#: inc/comments.php:58
+msgid "Thanks for commenting! Your comment has been approved. <a href=\"%s\">Read your comment</a>"
+msgstr ""
+
+#: inc/comments.php:67
+msgid "There was an error posting your comment. Try again later!"
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "Universal Content Settings"
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "Additional content & display options."
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "Display archive and home page content as"
+msgstr ""
+
+#: inc/customizer.php:155
+msgid "Use AJAX Comments"
+msgstr ""
+
+#: 404.php:5
+msgid "Error: Page not found!"
+msgstr "Error: página no encontrada."
+
+#: 404.php:7
+msgid "Sorry, the page you requested could not be located."
+msgstr "Disculpa, la página que pediste no ha podido ser localizada."
+
+#: 404.php:10
+msgid "Thanks for your patience!"
+msgstr "¡Gracias por tu paciencia!"
+
+#: 404.php:15
+msgid "Browse the site map"
+msgstr "Navega por el mapa del sitio"
+
+#: comments.php:30
+msgid "One opinion on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s opinions on &ldquo;%2$s&rdquo;"
+msgstr[0] "Una opinión sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s opiniones sobre &ldquo;%2$s&rdquo;"
+
+#: comments.php:48
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: comments.php:49
+msgid "&larr; Older Comments"
+msgstr "&larr; comentarios más antiguos"
+
+#: comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr "comentarios más recientes &rarr;"
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#: comments.php:71
+msgctxt "noun"
+msgid "Comment"
+msgstr "Deja un comentario"
+
+#: comments.php:72
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr "Puedes usar estas etiquetas y atributos de <abbr title=\"HyperText Markup Language\">HTML</abbr>: %s"
+
+#: comments.php:73
+msgid "Your email address will not be published."
+msgstr "Tu dirección de correo no será publicada."
+
+#: footer.php:1
+msgid "Footer Content"
+msgstr "Contenido del pie"
+
+#: footer.php:1
+msgid "Secondary Navigation"
+msgstr "Menú de navegación secundario"
+
+#: format-aside.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled aside</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Ver aside sin título</a>"
+
+#: format-aside.php:31 format-audio.php:31 format-gallery.php:31
+#: format-image.php:32 format-quote.php:31 format-status.php:31
+#: format-video.php:31 format.php:30 front-page.php:29 front-page.php:47
+#: page-full-width.php:17 page-sidebar-right.php:17 page.php:12
+#: tpl-sitemap.php:17
+msgid "Finish reading <em>%s</em>"
+msgstr "Terminar de leer <em>%s</em>"
+
+#: format-audio.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">Visit untitled audio</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Visitar audio sin título</a>"
+
+#: format-gallery.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">Visit untitled gallery</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Visitar galería sin título</a>"
+
+#: format-image.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled image</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Ver imagen sin título</a>"
+
+#: format-quote.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled quote</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Ver cita sin título</a>"
+
+#: format-status.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled status</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Ver estado sin título</a>"
+
+#: format-video.php:16
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled video</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Ver vídeo sin título</a>"
+
+#: format.php:15 front-page.php:20
+msgid "<a href=\"%s\" rel=\"bookmark\">View untitled post</a>"
+msgstr "<a href=\"%s\" rel=\"bookmark\">Ver publicación sin título</a>"
+
+#: format-aside.php:35 format-audio.php:35 format-gallery.php:35
+#: format-image.php:36 format-quote.php:35 format-status.php:35
+#: format-video.php:35 format.php:34 front-page.php:31 front-page.php:51
+#: page-full-width.php:19 page-sidebar-right.php:19 page.php:14
+#: tpl-sitemap.php:21
+msgid "Edit %s"
+msgstr "Editar %s"
+
+#: front-page.php:66 index.php:41
+msgid "%s Previous Posts"
+msgstr "%s Publicaciones anteriores"
+
+#: front-page.php:66 index.php:41
+msgid "Next Posts %s"
+msgstr "Publicaciones siguientes %s"
+
+#: functions.php:62
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: functions.php:63
+msgid "Footer Menu"
+msgstr "Pie de página"
+
+#: functions.php:64 tpl-sitemap.php:18
+msgid "Site Map"
+msgstr "Mapa del sitio"
+
+#: functions.php:65
+msgid "Social Networks"
+msgstr "Redes sociales"
+
+#: functions.php:78
+msgid "Widgets in this region will appear on all posts and post archives"
+msgstr "Los widgets de esta región aparecerán en todas las publicaciones y archivos de publicaciones"
+
+#: functions.php:88
+msgid "Add up to 5 widgets to show on the bottom of your front page."
+msgstr "Añade hasta 5 widgets para que se muestren en la parte inferior de tu página de inicio."
+
+#: functions.php:98
+msgid "Widgets in this region will appear on WordPress Pages."
+msgstr "Los widgets de esta región aparecerán en las páginas de WordPress."
+
+#: functions.php:108 functions.php:118
+msgid "These widgets appear globally on posts and pages, excluding the front page."
+msgstr "Estos widgets aparecen de forma global en publicaciones y páginas, excepción hecha de la página de inicio."
+
+#: functions.php:135 inc/a11y.php:174
+msgid "Home"
+msgstr "Inicio"
+
+#: functions.php:265
+msgid "%s Posts"
+msgstr "%s Publicaciones"
+
+#: header.php:68
+msgid "Primary Menu "
+msgstr "Menú primario"
+
+#: header.php:69
+msgid "Primary Menu"
+msgstr "Menú primario"
+
+#: inc/a11y.php:175
+msgid "<i>You are here:</i> %s"
+msgstr "<i>Estás en:</i> %s"
+
+#: inc/a11y.php:201 inc/a11y.php:203 inc/a11y.php:205
+msgid "Archive for %s"
+msgstr "Archivo de %s"
+
+#: inc/a11y.php:207
+msgid "Author Archive for %s"
+msgstr "Archivo de autor de %s"
+
+#: inc/a11y.php:209
+msgid "Blog Home"
+msgstr "Inicio del blog"
+
+#: inc/a11y.php:211 search.php:5
+msgid "Search Results for &ldquo;%s&rdquo;"
+msgstr "Resultados de búsqueda para &ldquo;%s&rdquo;"
+
+#: inc/a11y.php:213
+msgid "404: File not found"
+msgstr "404: Archivo no encontrado"
+
+#: inc/a11y.php:234
+msgid "Name"
+msgstr "Nombre"
+
+#: inc/a11y.php:239
+msgid "Email"
+msgstr "Email"
+
+#: inc/customizer.php:22
+msgid "Universal Color Settings"
+msgstr "Opciones de color de Universal"
+
+#: inc/customizer.php:24
+msgid "Modify selected background colors. Text colors are automatically adjusted for you."
+msgstr "Modifica el color de fondo. El color del texto se modifica automáticamente."
+
+#: inc/customizer.php:70
+msgid "Header Background"
+msgstr "Fondo de la cabecera"
+
+#: inc/customizer.php:82
+msgid "Menu Background"
+msgstr "Fondo del menú"
+
+#: inc/customizer.php:94
+msgid "Sidebar Background"
+msgstr "Fondo de la barra lateral"
+
+#: inc/customizer.php:106
+msgid "Content Background"
+msgstr "Fondo del contenido"
+
+#: inc/customizer.php:118
+msgid "Wrapper Background"
+msgstr "Fondo del separador"
+
+#: inc/customizer.php:130
+msgid "Page Wrapper Background"
+msgstr "Fondo de los separadores de las páginas"
+
+#: index.php:18 single.php:23
+msgid "Comments (0)"
+msgstr "Comentarios (0)"
+
+#: index.php:18 single.php:23
+msgid "Comments (1)"
+msgstr "Comentarios (1)"
+
+#: index.php:18 single.php:23
+msgid "Comments (%)"
+msgstr "Comentarios (%)"
+
+#: no-posts-search.php:1 no-posts.php:1
+msgid "Error! I can't find what you're looking for."
+msgstr "Error: no encuentro lo que buscas."
+
+#: no-posts-search.php:2
+msgid "Sorry, no posts matched your search terms. Try another search!"
+msgstr "Disculpa, no hay publicaciones coincidentes con tus términos de búsqueda. Prueba otra búsqueda."
+
+#: no-posts.php:2
+msgid "Sorry, no posts matched your criteria. Try searching our archives!"
+msgstr "Disculpa, no hay publicaciones coincidentes con tus criterios. Intenta buscar en nuestros archivos."
+
+#: post-meta-tags.php:9
+msgid "Categories:"
+msgstr "Categorías:"
+
+#: post-meta-tags.php:12
+msgid "Tags:"
+msgstr "Etiquetas:"
+
+#: search.php:9
+msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
+msgstr "Editar<span class=\"screen-reader-text\"> %s</span>"
+
+#: searchform.php:4 searchform.php:5 searchform.php:6
+msgid "Search"
+msgstr "Búsqueda"
+
+#: sidebar.php:5
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: single.php:38
+msgid "%s Previous Post"
+msgstr "%s publicación anterior"
+
+#: single.php:38
+msgid "Next Post %s"
+msgstr "Siguiente post %s"
+
+#: skiplinks.php:1
+msgid "Skip to Content"
+msgstr "Saltar al contenido"
