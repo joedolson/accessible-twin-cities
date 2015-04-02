@@ -9,7 +9,6 @@
 <!--[if IE 9 ]><html <?php language_attributes(); ?> class="no-js ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 <head>
-	<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php 

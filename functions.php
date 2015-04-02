@@ -39,6 +39,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video', 'aside', 'status', 'quote' ) );
 		add_theme_support( 'automatic-feed-links' ); 
+		add_theme_support( 'title-tag' );
 		add_theme_support( 'custom-header', apply_filters( 'universal_custom_header_args', array(
 				'default-color' => '#fff',
 				'default-text-color' => '#fff',
@@ -69,6 +70,14 @@ if ( ! function_exists( 'universal_setup' ) ) {
 	}
 }
 
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+    function universal_render_title() {
+		?>
+		<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
+		<?php
+    }
+    add_action( 'wp_head', 'universal_render_title' );
+}
 
 add_action( 'widgets_init', 'universal_widgets_init' );
 if ( ! function_exists( 'universal_widgets_init' ) ) {
@@ -133,9 +142,7 @@ add_filter( 'wp_title', 'universal_home_title' );
 function universal_home_title( $title ) {
 	if ( ( is_front_page() || is_home() ) && empty( $title ) ) {
 		return __( 'Home', 'universal' ). ' &raquo; '.get_bloginfo( 'name' );
-	} else {
-		return $title . get_bloginfo( 'name' );
-	}
+	} 
 	return $title;
 }
 

@@ -327,8 +327,16 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 	padding: 4px;
 }
 
-.searchform input[type=text]:hover, .mc-search input[type=text] {
-	border-color: #666;
+.searchform input[type=text], .mc-search input[type=text] {
+	margin-bottom: .5em;
+	border-color: #ccc;
+	border-width: 1px;	
+}
+
+.searchform input[type=text]:hover, .mc-search input[type=text]:hover,
+.searchform input[type=text]:focus, .mc-search input[type=text]:focus {
+	border-color: #444;
+	border-width: 1px;
 }
 
 .post-content {
