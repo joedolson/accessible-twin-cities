@@ -1,7 +1,7 @@
 /*
 Theme Name: Universal
 Theme URI: http://themes.joedolson.com/universal/
-Version: 0.9.7
+Version: 0.9.8
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
 Description: Universal is part of the Cities project, a project to create WordPress themes for accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your site's theme! Universal is responsive and flexible, helping you build the accessible web site you need for blogging or business.
@@ -433,6 +433,8 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 .social-networks a[href*="stumbleupon.com"]:before { font-family: icomoon; content: "\e606"; color: #eb4924; }
 .social-networks a[href*="pinterest.com"]:before { font-family: icomoon; content: "\e607"; color: #cc2127; }
 .social-networks a[href*="paypal.com"]:before { font-family: icomoon; content: "\e608"; color: #253b80; border-color: #179bd7;  }
+.social-networks a[href*="youtube.com"]:before { font-family: icomoon; content: "\ea99"; color: #cc2127; }
+.social-networks a[href*="vimeo.com"]:before { font-family: icomoon; content: "\ea9d"; color: #253b80; border-color: #179bd7;  }
 
 /* Comments */
 .comments-wrapper .commentlist, .comments-wrapper .commentlist ol {
@@ -560,16 +562,20 @@ textarea[id=comment] { width: 100%; }
 
 /* Menu Toggle */
 .menu-toggle {
-	font-size: 3em;
-	margin: .25em 0;
-	padding: 0;
+	margin: .5em 0;
+	padding: 0 .5em;
 }
 
-.menu-toggle:before {
+.menu-toggle span:before {
 	font-family: dashicons;
 	content: "\f333";
 	vertical-align: middle;
 	line-height: 1;
+	font-size: 2.2em;
+}
+
+.menu-toggle span {
+	font-size: 1.5em;
 }
 
 .home .featured-image, .page .featured-image {
