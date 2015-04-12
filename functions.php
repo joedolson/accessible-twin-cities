@@ -246,8 +246,8 @@ function universal_enqueue_scripts() {
 			'processing' => __( 'Processing...', 'universal' ),
 			'flood' => sprintf( __( 'Your comment was either a duplicate or you are posting too rapidly. <a href="%s">Edit your comment</a>', 'universal' ), '#comment' ),
 			'error' => __( 'There were errors in submitting your comment; complete the missing fields and try again!', 'universal' ),
-			'emailInvalid' => __( 'That email appears to be invalid.', 'yourtheme' ),
-			'required' => __( 'This is a required field.', 'yourtheme' )		
+			'emailInvalid' => __( 'That email appears to be invalid.', 'universal' ),
+			'required' => __( 'This is a required field.', 'universal' )		
 		);
 		wp_localize_script( 'universal.comments', 'universalComments', $comment_i18n );
 	}

@@ -45,6 +45,7 @@ Nothing yet!
 * Clean-up on menu toggle appearance.
 * Bug fix: auto-collapsing menu when scrolling on mobile devices.
 * Generate random ID to prevent duplicate ID on search form.
+* Missing text domains.
 
 = 0.9.7 =
 
