@@ -46,6 +46,7 @@ Nothing yet!
 * Bug fix: auto-collapsing menu when scrolling on mobile devices.
 * Generate random ID to prevent duplicate ID on search form.
 * Missing text domains.
+* Updates to Spanish and Portuguese (Brazil) translations
 
 = 0.9.7 =
 
