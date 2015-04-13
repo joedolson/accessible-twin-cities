@@ -5,7 +5,7 @@
 	
 	// add target attribute when rel=external
 	// @why There are reasons for links to open in a new tab; this requires a higher knowledge barrier to do it.
-	$('a[rel=external]').attr( 'target', '_blank' );
+	$('a[rel=external]').attr( 'target', '_blank' ).append( ' <span class="dashicons dashicons-external" aria-hidden="true"></span><span class="screen-reader-text">' + universalA11y.newWindow + '</span>' );
 	
 	// make dropdowns functional on focus
 	$( '.primary-menu' ).find( 'a' ).on( 'focus blur', function() {
@@ -29,5 +29,25 @@
             self.removeAttr( 'title' );
         }
     } );
+	
+	var hostname = new RegExp(location.host);
+	// Check all links in the primary menu and mark if external.
+	$('.primary-menu a').each( function(){
+
+		// Store current link's url
+		var url = $(this).attr( "href" );
+
+		// Test if current host (domain) is in it
+		if ( hostname.test(url) ) {
+		   // If it's local...
+		   $(this).addClass( 'local' );
+		} else if ( url.slice(0, 1) == "#" ) {
+			// It's an anchor link
+			$(this).addClass( 'anchor' ); 
+		} else {
+		   // a link that does not contain the current host
+		   $(this).addClass( 'external' ).append( ' <span class="dashicons dashicons-external" aria-hidden="true"></span><span class="screen-reader-text">' + universalA11y.externalLink + '</span>' );                        
+		}
+	});	
 	
 }(jQuery));

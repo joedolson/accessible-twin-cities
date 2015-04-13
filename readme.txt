@@ -38,6 +38,11 @@ Nothing yet!
 
 == Changelog ==
 
+= 0.9.9 =
+
+* Appends screen reader text and visible icon for menu items pointing at external sites
+* Appends screen reader text and visible icon for links opening in new tabs or windows.
+
 = 0.9.8 =
 
 * Improvements to accessibility of menu toggle.

@@ -240,6 +240,11 @@ function universal_custom_header_image( $value ) {
 add_action( 'wp_enqueue_scripts','universal_enqueue_scripts' );
 function universal_enqueue_scripts() {
 	wp_enqueue_script( 'universal.a11y', get_template_directory_uri() . '/js/a11y.js', array('jquery'), '1.0.0', true );
+	$a11y_i18n = array(
+		'externalLink' => __( 'External link', 'universal' ),
+		'newWindow' => __( 'Opens in a new window', 'universal' )
+	);
+	wp_localize_script( 'universal.a11y', 'universalA11y', $a11y_i18n );
 	if ( get_theme_mod( 'universal_ajax_comments' ) == 1 ) {
 		wp_enqueue_script( 'universal.comments', get_template_directory_uri() . "/js/comments.js", array('jquery'), '1.0.0', true );
 		$comment_i18n = array( 
