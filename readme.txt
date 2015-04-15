@@ -25,7 +25,7 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
  
 == Translations ==
  
-Translations are always appreciated. Visit <a href="http://translate.joedolson.com">my translations site</a> to start getting your language into shape!
+Translations are always appreciated. Visit <a href="http://translate.joedolson.com/projects/universal/">my translations site</a> to start getting your language into shape!
 
 Available languages (in order of completeness):
 Nothing yet!
@@ -42,6 +42,7 @@ Nothing yet!
 
 * Appends screen reader text and visible icon for menu items pointing at external sites
 * Appends screen reader text and visible icon for links opening in new tabs or windows.
+* Added full translation site URL.
 
 = 0.9.8 =
 
