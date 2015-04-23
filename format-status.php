@@ -17,9 +17,9 @@
 		}
 		if ( get_the_title() != '' ) {
 			if ( is_single() ) { ?>
-				<h1 class="post-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
+				<h1 class="post-title" id="header-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 			<?php } else { ?>
-				<h2 class="post-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<h2 class="post-title" id="header-<?php the_ID(); ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php }
 		}
 		get_template_part( 'post-meta' ); ?>
