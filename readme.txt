@@ -38,6 +38,11 @@ Nothing yet!
 
 == Changelog ==
 
+= 1.0.0 =
+
+* Feature: navigate primary menu using arrow keys
+* 
+
 = 0.9.9 =
 
 * Appends screen reader text and visible icon for menu items pointing at external sites

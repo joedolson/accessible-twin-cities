@@ -46,8 +46,7 @@
 			e.preventDefault();
 			if($(this).next().length){
 				$(this).next().find('li:first-child a').first().focus();
-			}
-			else {
+			} else {
 				$(this).parent().next().children('a').focus();
 			}
 		}
