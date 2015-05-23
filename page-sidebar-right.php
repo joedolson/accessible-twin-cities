@@ -13,7 +13,7 @@ get_header();
 		<?php } ?>		
 		<h1 class="page-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 
-		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+		<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
 		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 		</div> 
 		<?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '<p class="edit">', '</p>' ); ?>

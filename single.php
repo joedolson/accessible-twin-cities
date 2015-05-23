@@ -2,7 +2,7 @@
 
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
-	<div <?php post_class(); ?>>
+	<div <?php post_class( 'post-content' ); ?>>
 		<?php
 			$format = get_post_format();
 			if ( $format === false ) {
