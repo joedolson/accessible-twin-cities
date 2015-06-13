@@ -65,8 +65,7 @@ if ( ! function_exists( 'universal_setup' ) ) {
 				'site-map' => __( 'Site Map', 'universal' ),
 				'social-networks' => __( 'Social Networks', 'universal' )
 			)
-		);		
-		
+		);
 	}
 }
 
@@ -137,6 +136,14 @@ if ( ! function_exists( 'universal_widgets_init' ) ) {
 require_once( get_template_directory() . '/inc/a11y.php' );
 require_once( get_template_directory() . '/inc/comments.php' );
 require_once( get_template_directory() . '/inc/customizer.php' );
+
+add_filter( 'tiny_mce_before_init', 'universal_tinymce_init' );
+function univeral_tinymce_init( $init ) {
+	// Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
+	$init['theme_advanced_blockformats'] = 'p,h2,h3,h4,h5,h6';
+	
+	return $init;
+}
 
 add_filter( 'wp_title', 'universal_home_title' );
 function universal_home_title( $title ) {

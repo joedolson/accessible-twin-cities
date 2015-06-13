@@ -41,7 +41,7 @@ Nothing yet!
 = 1.0.0 =
 
 * Feature: navigate primary menu using arrow keys
-* 
+* Restrict access to H1 in TinyMCE editor to encourage proper hierarchy.
 
 = 0.9.9 =
 
