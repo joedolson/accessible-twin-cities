@@ -138,7 +138,7 @@ require_once( get_template_directory() . '/inc/comments.php' );
 require_once( get_template_directory() . '/inc/customizer.php' );
 
 add_filter( 'tiny_mce_before_init', 'universal_tinymce_init' );
-function univeral_tinymce_init( $init ) {
+function universal_tinymce_init( $init ) {
 	// Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
 	$init['theme_advanced_blockformats'] = 'p,h2,h3,h4,h5,h6';
 	
