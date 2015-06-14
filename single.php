@@ -2,7 +2,8 @@
 
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
-	<div <?php post_class( 'post-content' ); ?>>
+	<?php /* post-content class is in the post format template. */ ?>
+	<div <?php post_class(); ?>>
 		<?php
 			$format = get_post_format();
 			if ( $format === false ) {

@@ -169,15 +169,17 @@ body {
 }
 
 .post-wrapper ul, .post-wrapper ol { 
-	margin: 1em 2em;
+	margin: 0 3em 1em;
 }
 
 .post-wrapper ol > li {
 	list-style-type: decimal;
+	line-height: 1.6;
 }
 
 .post-wrapper ul > li {
 	list-style-type: disc;
+	line-height: 1.6;
 }
 
 .post-wrapper li {
@@ -423,6 +425,16 @@ a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.
 
 /* icomoon fonts */
 .social-networks a[href*="instagram.com"]:before { font-family: icomoon; content: "\e600"; color: #3f729b; }
+.social-networks a[href*="yahoo.com"]:before { font-family: icomoon; content: "\eabd"; color: #400191; }
+.social-networks a[href*="yelp.com"]:before { font-family: icomoon; content: "\ead9"; color: #af0606; }
+.social-networks a[href*="foursquare.com"]:before { font-family: icomoon; content: "\ead5"; color: #0732a2; }
+.social-networks a[href*="flattr.com"]:before { font-family: icomoon; content: "\ead4"; color: #338d11; }
+.social-networks a[href*="stackoverflow.com"]:before { font-family: icomoon; content: "\eacf"; color: #fe7a15; }
+.social-networks a[href*="delicious.com"]:before { font-family: icomoon; content: "\eacc"; color: #3399ff; }
+.social-networks a[href*="soundcloud.com"]:before { font-family: icomoon; content: "\eac5"; color: #ff3300; }
+.social-networks a[href*="mailto:"]:before { font-family: icomoon; content: "\ea83"; color: #faaf3a; }
+.social-networks a[href*="dropbox.com"]:before { font-family: icomoon; content: "\eaaf"; color: #007ee5; }
+.social-networks a[href*="steam.com"]:before { font-family: icomoon; content: "\eaad"; color: #171A21; }
 .social-networks a[href*="lanyrd.com"]:before { font-family: icomoon; content: "\e609"; color: #0d6797; }
 .social-networks a[href*="flickr.com"]:before { font-family: icomoon; content: "\e60a"; color: #ff0084; border-color: #0063dc; }
 .social-networks a[href*="picasa.google.com"]:before { font-family: icomoon; content: "\e60b"; color: #0f9d58; border-color: #db4437; }

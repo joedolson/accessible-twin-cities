@@ -42,6 +42,9 @@ Nothing yet!
 
 * Feature: navigate primary menu using arrow keys
 * Restrict access to H1 in TinyMCE editor to encourage proper hierarchy.
+* Added support for Dropbox, Yahoo, Email, RSS, SOundcloud, Steam, Stackoverflow, Delicious, Flattr, Foursquare, & Yelp to Social Media icons.
+* Bug fix: Missing icons.
+* Duplicated post-content class on single post view.
 
 = 0.9.9 =
 
