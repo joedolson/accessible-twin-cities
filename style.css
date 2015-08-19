@@ -1,7 +1,7 @@
 /*
 Theme Name: Universal
 Theme URI: http://themes.joedolson.com/universal/
-Version: 0.9.9
+Version: 1.0.0
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
 Description: Universal is part of the Cities project, a project to create WordPress themes for accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your site's theme! Universal is responsive and flexible, helping you build the accessible web site you need for blogging or business.
@@ -300,14 +300,14 @@ body {
 .widget_rss h2:before { content: "\f303"; }
 .widget_rss h2 img { display: none; }
 
-a[href*=\.mp3]:before, a[href*=\.wma]:before, a[href*=\.ogg]:before, a[href*=\.m4a]:before {
+a[href*="\.mp3"]:before, a[href*="\.wma"]:before, a[href*="\.ogg"]:before, a[href*="\.m4a"]:before {
 	content: "\f127"; 
 	font-family: 'dashicons';
 	color: rgb( 120,120,120 );
 	color: rgba( 100,100,100,.8 );
 	padding-right: .25em;
 }
-a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.mov]:before, a[href*=\.m4v]:before {
+a[href*="\.mp4"]:before, a[href*="\.avi"]:before, a[href*="\.flv"]:before , a[href*="\.mov"]:before, a[href*="\.m4v"]:before {
 	content: "\f234"; 
 	font-family: 'dashicons'; 
 	color: rgb( 120,120,120 );
