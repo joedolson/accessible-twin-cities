@@ -24,7 +24,7 @@
 			}
 			if ( is_page() ) { ?>
 			
-				<h1 class="post-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
+				<h1 class="post-title" id="title-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 				<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
 					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
 					<?php echo $post_link; ?>
@@ -35,7 +35,7 @@
 				-->
 
 			<?php } else { ?>
-				<h2 class="post-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<h2 class="post-title" id="title-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 				<?php
 				get_template_part( 'post-meta' ); ?>
 

@@ -38,6 +38,16 @@ Nothing yet!
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Removed HTML tags from comment form.
+* Still show comments after comments are closed or disabled & comment form is removed.
+* Add function_exists on all functions.php
+* Add filter 'universal_footer' to modify copyright content.
+* Bug fix: extra closing div before footer
+* Bug fix: Duplicate post ID on title/post content
+* Bug fix: invalid ARIA controls value on menu toggle button
+
 = 1.0.0 =
 
 * Feature: navigate primary menu using arrow keys

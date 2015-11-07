@@ -1,6 +1,6 @@
 			</div>
 		</main>
-	</div> <?php // #content .content ?>
+	</div> <!-- #content .content -->
 <div id="sidebar" role="complementary" class="sidebar universal-clear" aria-labelledby="sidebar-header">
 	<h1 class="screen-reader-text" id="sidebar-header"><?php _e( 'Sidebar', 'universal' ); ?></h1>
 	<?php echo apply_filters( 'universal_top_of_sidebar', '' ); ?>
@@ -31,6 +31,6 @@
 			
 		}
 	?>
-	</div>
+	</div><!-- End post wrapper widgets -->
 	<?php echo apply_filters( 'universal_bottom_of_sidebar', '' ); ?>	
-</div>
+</div><!-- End sidebar -->

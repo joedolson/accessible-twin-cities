@@ -11,12 +11,12 @@ get_header();
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
 		<?php } ?>		
-		<h1 class="page-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
+		<h1 class="page-title" id="title-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 
 		<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
-		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
-		<h2><?php _e( 'Site Map', 'universal' ); ?></h2>
-		<?php wp_nav_menu( array( 'theme_location'=>'site-map' ) ); ?>
+			<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'universal' ), get_the_title() ) ); ?>
+			<h2><?php _e( 'Site Map', 'universal' ); ?></h2>
+			<?php wp_nav_menu( array( 'theme_location'=>'site-map' ) ); ?>
 		</div> 
 		<p class="edit"><?php edit_post_link( sprintf( __( 'Edit %s', 'universal' ), get_the_title() ), '', '' ); ?></p>
 		</section>
