@@ -168,7 +168,7 @@ function universal_insert_breadcrumbs() {
 
 function universal_breadcrumbs() {
     global $post;
-	$sep = ( is_rtl() ) ? "<span class='separator'> &laquo; </span>" : "<span class='separator'> &raquo; </span>";
+	$sep = ( is_rtl() ) ? "<span class='separator'> \ </span>" : "<span class='separator'> / </span>";
     $breadcrumb = '<p class="breadcrumbs">';
 
 	$link = '<span class="breadcrumb top-level"><a href="'.esc_url( home_url( '/' ) ).'">'.apply_filters( 'universal_breadcrumb_home_text', __( 'Home', 'universal' ) ).'</a></span>';
@@ -176,42 +176,45 @@ function universal_breadcrumbs() {
 	$breadcrumbs[] = $crumb;
 	if ( is_category() || is_single() ) {
 		if ( is_attachment() ) {
-			$breadcrumbs[] = '<span class="breadcrumb parent"><a href="'.get_permalink( $post->post_parent ).'">'.get_the_title( $post->post_parent ).'</a></span>';
+			$breadcrumbs['attachment'] = '<span class="breadcrumb parent"><a href="'.get_permalink( $post->post_parent ).'">'.get_the_title( $post->post_parent ).'</a></span>';
 		} else {
-			$breadcrumbs[] = '<span class="breadcrumb category">'.get_the_category_list( ', ' ).'</span>'; 
+			$breadcrumbs['category'] = '<span class="breadcrumb category">'.get_the_category_list( ', ' ).'</span>'; 
 		}
 		if ( is_single() ) {
-			$breadcrumbs[] = '<span class="breadcrumb single">'.get_the_title().'</span>';
+			$breadcrumbs['single'] = '<span class="breadcrumb single">'.get_the_title().'</span>';
 		}
 	} else if ( is_page() ) {
 		if ( $post->post_parent ) {
 			$parents = get_post_ancestors( $post->ID );
 			$title = get_the_title();
 			foreach ( $parents as $ancestor ) {
-				$breadcrumbs[] = '<span class="breadcrumb page-parent"><a href="'.get_permalink( $ancestor ).'">'.get_the_title( $ancestor ).'</a></span>';
+				$breadcrumbs['page-parent'] = '<span class="breadcrumb page-parent"><a href="'.get_permalink( $ancestor ).'">'.get_the_title( $ancestor ).'</a></span>';
 			}
 		}
-		$breadcrumbs[] = "<span class=\"breadcrumb page-current\">".get_the_title()."</span>";
+		$breadcrumbs['page-current'] = "<span class=\"breadcrumb page-current\">".get_the_title()."</span>";
 	}
     if ( is_tag() ) {
-		$breadcrumbs[] = "<span class=\"breadcrumb tag\">".single_tag_title( '', false )."</span>";     } else if ( is_tag() ) {
+		$breadcrumbs['tag'] = "<span class=\"breadcrumb tag\">".single_tag_title( '', false )."</span>";     } else if ( is_tag() ) {
     } else if ( is_tax() ) {
-		$breadcrumbs[] = "<span class=\"breadcrumb term\">".single_term_title( '', false )."</span>"; 
+		$breadcrumbs['term'] = "<span class=\"breadcrumb term\">".single_term_title( '', false )."</span>"; 
 	} else if ( is_day() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb archive-day\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'F jS, Y' ) ) . "</span>"; 
+		$breadcrumbs['archive-day'] = "<span class=\"breadcrumb archive-day\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'F jS, Y' ) ) . "</span>"; 
 	} else if ( is_month() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb archive-month\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'F, Y' ) ) . "</span>"; 
+		$breadcrumbs['archive-month'] = "<span class=\"breadcrumb archive-month\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'F, Y' ) ) . "</span>"; 
 	} else if ( is_year() ) { 
-		$breadcrumbs[] =  "<span class=\"breadcrumb archive-year\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'Y' ) ) . "</span>"; 
+		$breadcrumbs['archive-year'] =  "<span class=\"breadcrumb archive-year\">". sprintf( __( 'Archive for %s', 'universal' ), get_the_time( 'Y' ) ) . "</span>"; 
 	} else if ( is_author() ) { 
-		$breadcrumbs[] =  "<span class=\"breadcrumb archive-author\">". sprintf( __( 'Author Archive for %s', 'universal' ), get_the_author() ) . "</span>";  
+		$breadcrumbs['archive-author'] =  "<span class=\"breadcrumb archive-author\">". sprintf( __( 'Author Archive for %s', 'universal' ), get_the_author() ) . "</span>";  
 	} else if ( is_home() && is_page() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb blog-home\">".__( 'Blog Home', 'universal' )."</span>"; 
+		$breadcrumbs['blog-home'] = "<span class=\"breadcrumb blog-home\">".__( 'Blog Home', 'universal' )."</span>"; 
 	} else if ( is_search() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb search-results\">". sprintf( __( 'Search Results for &ldquo;%s&rdquo;', 'universal' ), get_search_query() ). "</span"; 
+		$breadcrumbs['search'] = "<span class=\"breadcrumb search-results\">". sprintf( __( 'Search Results for &ldquo;%s&rdquo;', 'universal' ), get_search_query() ). "</span"; 
 	} else if ( is_404() ) { 
-		$breadcrumbs[] = "<span class=\"breadcrumb missing\">". __( '404: File not found', 'universal' ). "</span"; 
-	} 
+		$breadcrumbs['missing'] = "<span class=\"breadcrumb missing\">". __( '404: File not found', 'universal' ). "</span"; 
+	}
+	
+	$breadcrumbs = apply_filters( 'universal_breadcrumbs', $breadcrumbs, $post );
+	
 	if ( is_rtl() && is_array( $breadcrumbs ) ) {
 		$breadcrumbs = array_reverse( $breadcrumbs );	
 	}

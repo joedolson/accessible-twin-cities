@@ -38,6 +38,9 @@ Nothing yet!
 
 == Changelog ==
 
+* Make breadcrumbs filterable
+* 
+
 = 1.0.1 =
 
 * Removed HTML tags from comment form.
