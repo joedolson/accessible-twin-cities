@@ -659,6 +659,9 @@ textarea[id=comment] { width: 100%; }
 		float: left;
 		vertical-align: top;
 	}
+	.home.page .sidebar .widgets-1 .widget, .page-template-page-full-width-php .sidebar .widgets-1 .widget {
+		width: 100%;
+	}	
 	.home.page .sidebar .widgets-3 .widget, .page-template-page-full-width-php .sidebar .widgets-3 .widget {
 		width: 33.333333%;
 	}
